@@ -24,20 +24,20 @@
                 </div>
                 <div style="width: 180px;">
                     <asp:DropDownList ID="ddlCategoryFilter" runat="server" CssClass="form-select">
-                        <option value="">All Categories</option>
-                        <option value="Power Tools">Power Tools</option>
-                        <option value="Hand Tools">Hand Tools</option>
-                        <option value="Fasteners">Fasteners & Screws</option>
-                        <option value="Electrical">Electrical Supplies</option>
-                        <option value="Plumbing">Plumbing Fittings</option>
+                        <asp:ListItem Value="">All Categories</asp:ListItem>
+                        <asp:ListItem Value="Power Tools">Power Tools</asp:ListItem>
+                        <asp:ListItem Value="Hand Tools">Hand Tools</asp:ListItem>
+                        <asp:ListItem Value="Fasteners">Fasteners &amp; Screws</asp:ListItem>
+                        <asp:ListItem Value="Electrical">Electrical Supplies</asp:ListItem>
+                        <asp:ListItem Value="Plumbing">Plumbing Fittings</asp:ListItem>
                     </asp:DropDownList>
                 </div>
                 <div style="width: 160px;">
                     <asp:DropDownList ID="ddlStockStatus" runat="server" CssClass="form-select">
-                        <option value="">All Stock Status</option>
-                        <option value="InStock">In Stock</option>
-                        <option value="LowStock">Low Stock Alert</option>
-                        <option value="OutOfStock">Out of Stock</option>
+                        <asp:ListItem Value="">All Stock Status</asp:ListItem>
+                        <asp:ListItem Value="InStock">In Stock</asp:ListItem>
+                        <asp:ListItem Value="LowStock">Low Stock Alert</asp:ListItem>
+                        <asp:ListItem Value="OutOfStock">Out of Stock</asp:ListItem>
                     </asp:DropDownList>
                 </div>
                 <asp:Button ID="btnFilter" runat="server" Text="Apply Filter" CssClass="btn-secondary" />

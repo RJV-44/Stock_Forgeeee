@@ -19,20 +19,20 @@
                 <div class="form-group">
                     <label class="form-label">Product <span class="required">*</span></label>
                     <asp:DropDownList ID="ddlProduct" runat="server" CssClass="form-select">
-                        <option value="">Select product</option>
-                        <option value="1">Bosch GSB 500W Impact Drill</option>
-                        <option value="2">Stanley Heavy Duty Hammer</option>
-                        <option value="3">Stainless Steel Hinges 4-inch</option>
-                        <option value="4">Finolex Copper Wire 1.5 sq mm</option>
+                        <asp:ListItem Value="">Select product</asp:ListItem>
+                        <asp:ListItem Value="1">Bosch GSB 500W Impact Drill</asp:ListItem>
+                        <asp:ListItem Value="2">Stanley Heavy Duty Hammer</asp:ListItem>
+                        <asp:ListItem Value="3">Stainless Steel Hinges 4-inch</asp:ListItem>
+                        <asp:ListItem Value="4">Finolex Copper Wire 1.5 sq mm</asp:ListItem>
                     </asp:DropDownList>
                 </div>
                 <div class="form-group">
                     <label class="form-label">Adjustment Type <span class="required">*</span></label>
                     <asp:DropDownList ID="ddlAdjustmentType" runat="server" CssClass="form-select">
-                        <option value="Increase">Increase</option>
-                        <option value="Decrease">Decrease</option>
-                        <option value="Correction">Correction</option>
-                        <option value="Damaged">Damaged</option>
+                        <asp:ListItem Value="Increase">Increase</asp:ListItem>
+                        <asp:ListItem Value="Decrease">Decrease</asp:ListItem>
+                        <asp:ListItem Value="Correction">Correction</asp:ListItem>
+                        <asp:ListItem Value="Damaged">Damaged</asp:ListItem>
                     </asp:DropDownList>
                 </div>
                 <div class="form-group">

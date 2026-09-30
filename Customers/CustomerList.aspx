@@ -46,19 +46,19 @@
                 </div>
                 <div class="filter-field">
                     <asp:DropDownList ID="ddlType" runat="server" CssClass="form-select">
-                        <option value="">All customer types</option>
-                        <option value="Retail">Retail</option>
-                        <option value="Contractor">Contractor</option>
-                        <option value="Wholesale">Wholesale</option>
-                        <option value="Industrial">Industrial</option>
+                        <asp:ListItem Value="">All customer types</asp:ListItem>
+                        <asp:ListItem Value="Retail">Retail</asp:ListItem>
+                        <asp:ListItem Value="Contractor">Contractor</asp:ListItem>
+                        <asp:ListItem Value="Wholesale">Wholesale</asp:ListItem>
+                        <asp:ListItem Value="Industrial">Industrial</asp:ListItem>
                     </asp:DropDownList>
                 </div>
                 <div class="filter-field">
                     <asp:DropDownList ID="ddlStatus" runat="server" CssClass="form-select">
-                        <option value="">All status</option>
-                        <option value="Active">Active</option>
-                        <option value="Pending">Pending</option>
-                        <option value="Blocked">Blocked</option>
+                        <asp:ListItem Value="">All status</asp:ListItem>
+                        <asp:ListItem Value="Active">Active</asp:ListItem>
+                        <asp:ListItem Value="Pending">Pending</asp:ListItem>
+                        <asp:ListItem Value="Blocked">Blocked</asp:ListItem>
                     </asp:DropDownList>
                 </div>
                 <asp:Button ID="btnFilter" runat="server" Text="Apply" CssClass="btn-secondary" />

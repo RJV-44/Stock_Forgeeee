@@ -45,19 +45,19 @@
                 </div>
                 <div class="filter-field">
                     <asp:DropDownList ID="ddlMovementType" runat="server" CssClass="form-select">
-                        <option value="">All movement types</option>
-                        <option value="Inbound">Inbound</option>
-                        <option value="Outbound">Outbound</option>
-                        <option value="Adjustment">Adjustment</option>
-                        <option value="Transfer">Transfer</option>
+                        <asp:ListItem Value="">All movement types</asp:ListItem>
+                        <asp:ListItem Value="Inbound">Inbound</asp:ListItem>
+                        <asp:ListItem Value="Outbound">Outbound</asp:ListItem>
+                        <asp:ListItem Value="Adjustment">Adjustment</asp:ListItem>
+                        <asp:ListItem Value="Transfer">Transfer</asp:ListItem>
                     </asp:DropDownList>
                 </div>
                 <div class="filter-field">
                     <asp:DropDownList ID="ddlDateRange" runat="server" CssClass="form-select">
-                        <option value="">Last 30 days</option>
-                        <option value="7">Last 7 days</option>
-                        <option value="14">Last 14 days</option>
-                        <option value="90">Last 90 days</option>
+                        <asp:ListItem Value="">Last 30 days</asp:ListItem>
+                        <asp:ListItem Value="7">Last 7 days</asp:ListItem>
+                        <asp:ListItem Value="14">Last 14 days</asp:ListItem>
+                        <asp:ListItem Value="90">Last 90 days</asp:ListItem>
                     </asp:DropDownList>
                 </div>
                 <asp:Button ID="btnFilter" runat="server" Text="Apply" CssClass="btn-secondary" />

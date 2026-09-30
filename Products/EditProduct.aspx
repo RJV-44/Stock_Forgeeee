@@ -27,19 +27,19 @@
                 <div class="form-group">
                     <label class="form-label">Category <span class="required">*</span></label>
                     <asp:DropDownList ID="ddlCategory" runat="server" CssClass="form-select">
-                        <option value="Power Tools" selected="selected">Power Tools</option>
-                        <option value="Hand Tools">Hand Tools</option>
-                        <option value="Fasteners">Fasteners</option>
-                        <option value="Electrical">Electrical</option>
+                        <asp:ListItem Value="Power Tools" Selected="True">Power Tools</asp:ListItem>
+                        <asp:ListItem Value="Hand Tools">Hand Tools</asp:ListItem>
+                        <asp:ListItem Value="Fasteners">Fasteners</asp:ListItem>
+                        <asp:ListItem Value="Electrical">Electrical</asp:ListItem>
                     </asp:DropDownList>
                 </div>
                 <div class="form-group">
                     <label class="form-label">Unit of Measure</label>
                     <asp:DropDownList ID="ddlUnit" runat="server" CssClass="form-select">
-                        <option value="Piece" selected="selected">Piece</option>
-                        <option value="Box">Box</option>
-                        <option value="Set">Set</option>
-                        <option value="Roll">Roll</option>
+                        <asp:ListItem Value="Piece" Selected="True">Piece</asp:ListItem>
+                        <asp:ListItem Value="Box">Box</asp:ListItem>
+                        <asp:ListItem Value="Set">Set</asp:ListItem>
+                        <asp:ListItem Value="Roll">Roll</asp:ListItem>
                     </asp:DropDownList>
                 </div>
                 <div class="form-group">

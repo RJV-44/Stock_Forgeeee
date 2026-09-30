@@ -78,8 +78,42 @@
     <Content Include="Controls\Pagination.ascx" />
     <Content Include="Default.aspx" />
     <Content Include="Dashboard.aspx" />
+    <Content Include="Account\MyProfile.aspx" />
+    <Content Include="Customers\AddCustomer.aspx" />
+    <Content Include="Customers\CustomerDetails.aspx" />
+    <Content Include="Customers\CustomerList.aspx" />
+    <Content Include="Customers\EditCustomer.aspx" />
+    <Content Include="Inventory\StockAdjustment.aspx" />
+    <Content Include="Inventory\StockMovementHistory.aspx" />
+    <Content Include="Inventory\StockOverview.aspx" />
+    <Content Include="Notifications\Notifications.aspx" />
     <Content Include="Products\ProductList.aspx" />
     <Content Include="Products\AddProduct.aspx" />
+    <Content Include="Products\ProductDetails.aspx" />
+    <Content Include="Products\EditProduct.aspx" />
+    <Content Include="Purchases\EditPurchaseOrder.aspx" />
+    <Content Include="Purchases\MyPurchase.aspx" />
+    <Content Include="Purchases\PurchaseOrderDetails.aspx" />
+    <Content Include="Purchases\ReceivePurchase.aspx" />
+    <Content Include="Reports\InventoryReport.aspx" />
+    <Content Include="Reports\PurchaseReport.aspx" />
+    <Content Include="Reports\ReportsDashboard.aspx" />
+    <Content Include="Reports\SalesReport.aspx" />
+    <Content Include="Reports\StockValuationReport.aspx" />
+    <Content Include="Sales\EditSale.aspx" />
+    <Content Include="Sales\NewSale.aspx" />
+    <Content Include="Sales\SaleDetails.aspx" />
+    <Content Include="Sales\SalesList.aspx" />
+    <Content Include="Settings\Settings.aspx" />
+    <Content Include="Suppliers\AddSupplier.aspx" />
+    <Content Include="Suppliers\EditSupplier.aspx" />
+    <Content Include="Suppliers\SupplierDetails.aspx" />
+    <Content Include="Suppliers\SupplierList.aspx" />
+    <Content Include="Users\AddUser.aspx" />
+    <Content Include="Users\EditUser.aspx" />
+    <Content Include="Users\RolesPermissions.aspx" />
+    <Content Include="Users\UserDetails.aspx" />
+    <Content Include="Users\UserManagement.aspx" />
     <Content Include="Site.Master" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -118,6 +152,142 @@
     </Compile>
     <Compile Include="Products\AddProduct.aspx.cs">
       <DependentUpon>AddProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Products\ProductDetails.aspx.cs">
+      <DependentUpon>ProductDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Products\EditProduct.aspx.cs">
+      <DependentUpon>EditProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customers\AddCustomer.aspx.cs">
+      <DependentUpon>AddCustomer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customers\CustomerDetails.aspx.cs">
+      <DependentUpon>CustomerDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customers\CustomerList.aspx.cs">
+      <DependentUpon>CustomerList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customers\EditCustomer.aspx.cs">
+      <DependentUpon>EditCustomer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inventory\StockOverview.aspx.cs">
+      <DependentUpon>StockOverview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inventory\StockAdjustment.aspx.cs">
+      <DependentUpon>StockAdjustment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inventory\StockMovementHistory.aspx.cs">
+      <DependentUpon>StockMovementHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Notifications\Notifications.aspx.cs">
+      <DependentUpon>Notifications.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Purchases\EditPurchaseOrder.aspx.cs">
+      <DependentUpon>EditPurchaseOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Purchases\MyPurchase.aspx.cs">
+      <DependentUpon>MyPurchase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Purchases\PurchaseOrderDetails.aspx.cs">
+      <DependentUpon>PurchaseOrderDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Purchases\ReceivePurchase.aspx.cs">
+      <DependentUpon>ReceivePurchase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\InventoryReport.aspx.cs">
+      <DependentUpon>InventoryReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\PurchaseReport.aspx.cs">
+      <DependentUpon>PurchaseReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\ReportsDashboard.aspx.cs">
+      <DependentUpon>ReportsDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\SalesReport.aspx.cs">
+      <DependentUpon>SalesReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\StockValuationReport.aspx.cs">
+      <DependentUpon>StockValuationReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sales\EditSale.aspx.cs">
+      <DependentUpon>EditSale.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sales\NewSale.aspx.cs">
+      <DependentUpon>NewSale.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sales\SaleDetails.aspx.cs">
+      <DependentUpon>SaleDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sales\SalesList.aspx.cs">
+      <DependentUpon>SalesList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Settings\Settings.aspx.cs">
+      <DependentUpon>Settings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Suppliers\AddSupplier.aspx.cs">
+      <DependentUpon>AddSupplier.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Suppliers\EditSupplier.aspx.cs">
+      <DependentUpon>EditSupplier.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Suppliers\SupplierDetails.aspx.cs">
+      <DependentUpon>SupplierDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Suppliers\SupplierList.aspx.cs">
+      <DependentUpon>SupplierList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users\AddUser.aspx.cs">
+      <DependentUpon>AddUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users\EditUser.aspx.cs">
+      <DependentUpon>EditUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users\RolesPermissions.aspx.cs">
+      <DependentUpon>RolesPermissions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users\UserDetails.aspx.cs">
+      <DependentUpon>UserDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users\UserManagement.aspx.cs">
+      <DependentUpon>UserManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\MyProfile.aspx.cs">
+      <DependentUpon>MyProfile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

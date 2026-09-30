@@ -31,11 +31,11 @@
                 <div class="form-group">
                     <label class="form-label">Customer Type <span class="required">*</span></label>
                     <asp:DropDownList ID="ddlCustomerType" runat="server" CssClass="form-select">
-                        <option value="">Select type</option>
-                        <option value="Retail">Retail</option>
-                        <option value="Contractor">Contractor</option>
-                        <option value="Wholesale">Wholesale</option>
-                        <option value="Industrial">Industrial</option>
+                        <asp:ListItem Value="">Select type</asp:ListItem>
+                        <asp:ListItem Value="Retail">Retail</asp:ListItem>
+                        <asp:ListItem Value="Contractor">Contractor</asp:ListItem>
+                        <asp:ListItem Value="Wholesale">Wholesale</asp:ListItem>
+                        <asp:ListItem Value="Industrial">Industrial</asp:ListItem>
                     </asp:DropDownList>
                 </div>
                 <div class="form-group">
@@ -57,9 +57,9 @@
                 <div class="form-group">
                     <label class="form-label">Customer Status</label>
                     <asp:DropDownList ID="ddlStatus" runat="server" CssClass="form-select">
-                        <option value="Active">Active</option>
-                        <option value="Pending">Pending</option>
-                        <option value="Blocked">Blocked</option>
+                        <asp:ListItem Value="Active">Active</asp:ListItem>
+                        <asp:ListItem Value="Pending">Pending</asp:ListItem>
+                        <asp:ListItem Value="Blocked">Blocked</asp:ListItem>
                     </asp:DropDownList>
                 </div>
                 <div class="form-group full-width">

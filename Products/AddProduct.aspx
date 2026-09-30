@@ -34,12 +34,12 @@
                 <div style="flex: 1; min-width: 200px;" class="form-group">
                     <label class="form-label">Category <span class="required">*</span></label>
                     <asp:DropDownList ID="ddlCategory" runat="server" CssClass="form-select">
-                        <option value="">Select Category</option>
-                        <option value="Power Tools">Power Tools</option>
-                        <option value="Hand Tools">Hand Tools</option>
-                        <option value="Fasteners">Fasteners & Screws</option>
-                        <option value="Electrical">Electrical Supplies</option>
-                        <option value="Plumbing">Plumbing Fittings</option>
+                        <asp:ListItem Value="">Select Category</asp:ListItem>
+                        <asp:ListItem Value="Power Tools">Power Tools</asp:ListItem>
+                        <asp:ListItem Value="Hand Tools">Hand Tools</asp:ListItem>
+                        <asp:ListItem Value="Fasteners">Fasteners &amp; Screws</asp:ListItem>
+                        <asp:ListItem Value="Electrical">Electrical Supplies</asp:ListItem>
+                        <asp:ListItem Value="Plumbing">Plumbing Fittings</asp:ListItem>
                     </asp:DropDownList>
                 </div>
 
@@ -47,12 +47,12 @@
                 <div style="flex: 1; min-width: 200px;" class="form-group">
                     <label class="form-label">Unit of Measure <span class="required">*</span></label>
                     <asp:DropDownList ID="ddlUnit" runat="server" CssClass="form-select">
-                        <option value="Piece">Piece (Pcs)</option>
-                        <option value="Box">Box</option>
-                        <option value="Set">Set</option>
-                        <option value="Kg">Kilogram (Kg)</option>
-                        <option value="Meter">Meter (m)</option>
-                        <option value="Roll">Roll</option>
+                        <asp:ListItem Value="Piece">Piece (Pcs)</asp:ListItem>
+                        <asp:ListItem Value="Box">Box</asp:ListItem>
+                        <asp:ListItem Value="Set">Set</asp:ListItem>
+                        <asp:ListItem Value="Kg">Kilogram (Kg)</asp:ListItem>
+                        <asp:ListItem Value="Meter">Meter (m)</asp:ListItem>
+                        <asp:ListItem Value="Roll">Roll</asp:ListItem>
                     </asp:DropDownList>
                 </div>
             </div>
@@ -88,10 +88,10 @@
                 <div style="flex: 1; min-width: 200px;" class="form-group">
                     <label class="form-label">Primary Supplier</label>
                     <asp:DropDownList ID="ddlSupplier" runat="server" CssClass="form-select">
-                        <option value="">Select Primary Supplier</option>
-                        <option value="1">National Hardware Distributors</option>
-                        <option value="2">Bosch India Power Tools Ltd</option>
-                        <option value="3">Stanley Black & Decker India</option>
+                        <asp:ListItem Value="">Select Primary Supplier</asp:ListItem>
+                        <asp:ListItem Value="1">National Hardware Distributors</asp:ListItem>
+                        <asp:ListItem Value="2">Bosch India Power Tools Ltd</asp:ListItem>
+                        <asp:ListItem Value="3">Stanley Black &amp; Decker India</asp:ListItem>
                     </asp:DropDownList>
                 </div>
             </div>

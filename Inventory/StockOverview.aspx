@@ -1,4 +1,5 @@
 <%@ Page Title="Stock Overview" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="StockOverview.aspx.cs" Inherits="Stock_Forgeeee.Inventory.StockOverview" %>
+<%@ Register Src="~/Controls/Pagination.ascx" TagPrefix="uc" TagName="Pagination" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="page-header">
@@ -48,19 +49,19 @@
                 </div>
                 <div class="filter-field">
                     <asp:DropDownList ID="ddlCategory" runat="server" CssClass="form-select">
-                        <option value="">All categories</option>
-                        <option value="Power Tools">Power Tools</option>
-                        <option value="Hand Tools">Hand Tools</option>
-                        <option value="Fasteners">Fasteners</option>
-                        <option value="Electrical">Electrical</option>
+                        <asp:ListItem Value="">All categories</asp:ListItem>
+                        <asp:ListItem Value="Power Tools">Power Tools</asp:ListItem>
+                        <asp:ListItem Value="Hand Tools">Hand Tools</asp:ListItem>
+                        <asp:ListItem Value="Fasteners">Fasteners</asp:ListItem>
+                        <asp:ListItem Value="Electrical">Electrical</asp:ListItem>
                     </asp:DropDownList>
                 </div>
                 <div class="filter-field">
                     <asp:DropDownList ID="ddlStockStatus" runat="server" CssClass="form-select">
-                        <option value="">All stock</option>
-                        <option value="Healthy">Healthy</option>
-                        <option value="Low">Low stock</option>
-                        <option value="Out">Out of stock</option>
+                        <asp:ListItem Value="">All stock</asp:ListItem>
+                        <asp:ListItem Value="Healthy">Healthy</asp:ListItem>
+                        <asp:ListItem Value="Low">Low stock</asp:ListItem>
+                        <asp:ListItem Value="Out">Out of stock</asp:ListItem>
                     </asp:DropDownList>
                 </div>
                 <asp:Button ID="btnFilter" runat="server" Text="Apply" CssClass="btn-secondary" />
