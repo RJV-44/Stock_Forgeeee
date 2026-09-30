@@ -8,7 +8,7 @@
         <div class="brand-icon">
             <i class="bi bi-box-seam-fill"></i>
         </div>
-        <div class="brand-text"
+        <div class="brand-text">
             <span class="sidebar-brand-name">StockForge</span>
             <span class="sidebar-brand-sub">Hardware System</span>
         </div>
