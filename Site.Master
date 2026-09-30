@@ -1,0 +1,58 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="Stock_Forgeeee.SiteMaster" %>
+<%@ Register Src="~/Controls/Sidebar.ascx" TagPrefix="uc" TagName="Sidebar" %>
+<%@ Register Src="~/Controls/Topbar.ascx" TagPrefix="uc" TagName="Topbar" %>
+<%@ Register Src="~/Controls/NotificationPanel.ascx" TagPrefix="uc" TagName="NotificationPanel" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - StockForge Hardware Management System</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <!-- Application CSS (Resolved for ASP.NET Web Forms) -->
+    <link href="<%= ResolveUrl("~/Content/site.css") %>" rel="stylesheet" type="text/css" />
+    <link href="<%= ResolveUrl("~/Content/components.css") %>" rel="stylesheet" type="text/css" />
+    <link href="<%= ResolveUrl("~/Content/responsive.css") %>" rel="stylesheet" type="text/css" />
+
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="app-shell">
+            <!-- Sidebar Navigation -->
+            <uc:Sidebar runat="server" ID="SidebarControl" />
+
+            <!-- Main Workspace Area -->
+            <div class="main-area">
+                <!-- Top Header Navigation -->
+                <uc:Topbar runat="server" ID="TopbarControl" />
+
+                <!-- Page Content Area -->
+                <main class="page-content">
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                    </asp:ContentPlaceHolder>
+                </main>
+            </div>
+        </div>
+
+        <!-- Notification Panel Control -->
+        <uc:NotificationPanel runat="server" ID="NotificationPanelControl" />
+    </form>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="<%= ResolveUrl("~/Scripts/site.js") %>"></script>
+    <asp:ContentPlaceHolder ID="ScriptsContent" runat="server">
+    </asp:ContentPlaceHolder>
+</body>
+</html>
