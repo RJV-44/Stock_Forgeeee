@@ -1139,6 +1139,52 @@ img {
     margin-top: 18px;
 }
 
+.sale-layout {
+    display: grid;
+    grid-template-columns: 1.5fr 0.8fr;
+    gap: 20px;
+    align-items: start;
+}
+
+.sale-summary-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 16px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border);
+    background: var(--surface-muted);
+}
+
+.sale-summary-box strong {
+    display: block;
+    font-size: 22px;
+    color: var(--text-primary);
+}
+
+.sale-items-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.sale-items-table th,
+.sale-items-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--border);
+    text-align: left;
+    vertical-align: middle;
+}
+
+.sale-items-table th {
+    background: var(--surface-muted);
+    color: var(--text-secondary);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
 .quick-list-item {
     display: flex;
     align-items: center;
