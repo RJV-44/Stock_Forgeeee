@@ -8,5 +8,15 @@ namespace Stock_Forgeeee.Customers
         protected void Page_Load(object sender, EventArgs e)
         {
         }
+
+        protected void btnUpdateCustomer_Click(object sender, EventArgs e)
+        {
+            if (Page.IsValid)
+            {
+                // Process valid customer data update
+                Response.Redirect("CustomerList.aspx");
+            }
+        }
     }
 }
+
