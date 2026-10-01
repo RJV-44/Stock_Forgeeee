@@ -31,7 +31,7 @@
                 <img src="<%= ResolveUrl("~/Images/avatars/admin.png") %>" onerror="this.src='https://ui-avatars.com/api/?name=Admin+User&background=4CAF7D&color=fff';" alt="User" class="avatar-img" />
                 <span class="user-chip-name">Admin</span>
             </a>
-            <a href="<%= ResolveUrl("~/Login.aspx") %>" class="icon-button text-danger" title="Logout">
+            <a href="<%= ResolveUrl("~/Account/Login.aspx") %>" class="icon-button text-danger" title="Logout">
                 <i class="bi bi-box-arrow-right"></i>
             </a>
         </div>

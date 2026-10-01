@@ -65,6 +65,16 @@
             <i class="bi bi-gear"></i>
             <span>Settings</span>
         </a>
+
+        <div class="nav-section">Support & Landing</div>
+        <a href="<%= ResolveUrl("~/Landing.aspx") %>" class="nav-item <%= IsActive("Landing.aspx") %>">
+            <i class="bi bi-globe"></i>
+            <span>Landing Page</span>
+        </a>
+        <a href="<%= ResolveUrl("~/Help.aspx") %>" class="nav-item <%= IsActive("Help.aspx") %>">
+            <i class="bi bi-question-circle"></i>
+            <span>Help Center</span>
+        </a>
     </nav>
 
     <!-- User Profile Footer Badge -->
