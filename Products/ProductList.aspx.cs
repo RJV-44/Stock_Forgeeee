@@ -9,5 +9,14 @@ namespace Stock_Forgeeee.Products
         {
 
         }
+
+        protected void btnFilter_Click(object sender, EventArgs e)
+        {
+            Page.Validate("ProductFilter");
+            if (!Page.IsValid)
+            {
+                return;
+            }
+        }
     }
 }

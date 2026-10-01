@@ -3,11 +3,11 @@
   "WorkspaceRootPath": "D:\\.net Project\\Stock_Forgeeee\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8B960D5B-EBC2-490F-8C3A-BB61FB0C231A}|Stock_Forgeeee.csproj|D:\\.net Project\\Stock_Forgeeee\\content\\responsive.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "AbsoluteMoniker": "D:0:0:{8B960D5B-EBC2-490F-8C3A-BB61FB0C231A}|Stock_Forgeeee.csproj|d:\\.net project\\stock_forgeeee\\content\\responsive.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{8B960D5B-EBC2-490F-8C3A-BB61FB0C231A}|Stock_Forgeeee.csproj|solutionrelative:content\\responsive.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8B960D5B-EBC2-490F-8C3A-BB61FB0C231A}|Stock_Forgeeee.csproj|d:\\.net project\\stock_forgeeee\\dashboard.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{8B960D5B-EBC2-490F-8C3A-BB61FB0C231A}|Stock_Forgeeee.csproj|D:\\.net Project\\Stock_Forgeeee\\dashboard.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{8B960D5B-EBC2-490F-8C3A-BB61FB0C231A}|Stock_Forgeeee.csproj|solutionrelative:dashboard.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
@@ -50,8 +50,7 @@
               "RelativeToolTip": "Dashboard.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2026-09-29T14:59:41.752Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-29T14:59:41.752Z"
             },
             {
               "$type": "Document",

@@ -12,6 +12,7 @@ namespace Stock_Forgeeee.Products
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
+            Page.Validate("ProductForm");
             if (Page.IsValid)
             {
                 Response.Redirect("ProductList.aspx");
