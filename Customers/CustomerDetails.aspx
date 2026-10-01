@@ -144,4 +144,23 @@
             </div>
         </div>
     </div>
+
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Log Customer Interaction / Activity Note</h3>
+        </div>
+        <div class="card-body">
+            <asp:ValidationSummary ID="valSummaryDetails" runat="server" CssClass="alert alert-danger" HeaderText="Please correct the following errors:" DisplayMode="BulletList" EnableClientScript="false" />
+            <div class="form-group">
+                <label class="form-label">Note Description <span class="required">*</span></label>
+                <asp:TextBox ID="txtQuickNote" runat="server" TextMode="MultiLine" Rows="3" CssClass="form-control" placeholder="Enter follow-up note, phone call summary, or special discount agreement..."></asp:TextBox>
+                <asp:RequiredFieldValidator ID="rfvQuickNote" runat="server" ControlToValidate="txtQuickNote" ErrorMessage="Note description is required." CssClass="validation-error" Display="Dynamic" EnableClientScript="false"></asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="revQuickNote" runat="server" ControlToValidate="txtQuickNote" ValidationExpression="^[\s\S]{1,250}$" ErrorMessage="Note exceeds maximum allowed length of 250 characters." CssClass="validation-error" Display="Dynamic" EnableClientScript="false"></asp:RegularExpressionValidator>
+            </div>
+            <div class="d-flex gap-2">
+                <asp:Button ID="btnSaveNote" runat="server" Text="Log Note" CssClass="btn-primary" OnClick="btnSaveNote_Click" />
+            </div>
+        </div>
+    </div>
 </asp:Content>
+

@@ -8,5 +8,14 @@ namespace Stock_Forgeeee.Suppliers
         protected void Page_Load(object sender, EventArgs e)
         {
         }
+
+        protected void btnFilter_Click(object sender, EventArgs e)
+        {
+            Page.Validate("SupplierFilter");
+            if (!Page.IsValid)
+            {
+                return;
+            }
+        }
     }
 }

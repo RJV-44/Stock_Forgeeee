@@ -15,14 +15,18 @@
 
     <div class="card" style="max-width: 980px;">
         <div class="card-body">
+            <asp:ValidationSummary ID="valSummary" runat="server" CssClass="alert alert-danger" HeaderText="Please correct the following errors:" DisplayMode="BulletList" EnableClientScript="false" />
+
             <div class="form-grid">
                 <div class="form-group">
                     <label class="form-label">First Name <span class="required">*</span></label>
                     <asp:TextBox ID="txtFirstName" runat="server" CssClass="form-control" placeholder="e.g. Aditi"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvFirstName" runat="server" ControlToValidate="txtFirstName" ErrorMessage="First Name is required." CssClass="validation-error" Display="Dynamic" EnableClientScript="false"></asp:RequiredFieldValidator>
                 </div>
                 <div class="form-group">
                     <label class="form-label">Last Name <span class="required">*</span></label>
                     <asp:TextBox ID="txtLastName" runat="server" CssClass="form-control" placeholder="e.g. Bansal"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvLastName" runat="server" ControlToValidate="txtLastName" ErrorMessage="Last Name is required." CssClass="validation-error" Display="Dynamic" EnableClientScript="false"></asp:RequiredFieldValidator>
                 </div>
                 <div class="form-group">
                     <label class="form-label">Business Name</label>
@@ -37,14 +41,18 @@
                         <asp:ListItem Value="Wholesale">Wholesale</asp:ListItem>
                         <asp:ListItem Value="Industrial">Industrial</asp:ListItem>
                     </asp:DropDownList>
+                    <asp:RequiredFieldValidator ID="rfvCustomerType" runat="server" ControlToValidate="ddlCustomerType" InitialValue="" ErrorMessage="Customer Type selection is required." CssClass="validation-error" Display="Dynamic" EnableClientScript="false"></asp:RequiredFieldValidator>
                 </div>
                 <div class="form-group">
                     <label class="form-label">Phone Number <span class="required">*</span></label>
                     <asp:TextBox ID="txtPhone" runat="server" CssClass="form-control" placeholder="+91 98765 43210"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvPhone" runat="server" ControlToValidate="txtPhone" ErrorMessage="Phone Number is required." CssClass="validation-error" Display="Dynamic" EnableClientScript="false"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="revPhone" runat="server" ControlToValidate="txtPhone" ValidationExpression="^(\+?\d{1,3}[- ]?)?\d{10}$" ErrorMessage="Please enter a valid phone number (e.g. 9876543210 or +91 98765 43210)." CssClass="validation-error" Display="Dynamic" EnableClientScript="false"></asp:RegularExpressionValidator>
                 </div>
                 <div class="form-group">
                     <label class="form-label">Email Address</label>
                     <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control" placeholder="name@company.com"></asp:TextBox>
+                    <asp:RegularExpressionValidator ID="revEmail" runat="server" ControlToValidate="txtEmail" ValidationExpression="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" ErrorMessage="Please enter a valid email address." CssClass="validation-error" Display="Dynamic" EnableClientScript="false"></asp:RegularExpressionValidator>
                 </div>
                 <div class="form-group full-width">
                     <label class="form-label">Billing Address</label>
@@ -53,6 +61,7 @@
                 <div class="form-group">
                     <label class="form-label">GST / Tax ID</label>
                     <asp:TextBox ID="txtGst" runat="server" CssClass="form-control" placeholder="e.g. 27ABCDE1234F1Z5"></asp:TextBox>
+                    <asp:RegularExpressionValidator ID="revGst" runat="server" ControlToValidate="txtGst" ValidationExpression="^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$" ErrorMessage="Please enter a valid 15-character GSTIN format." CssClass="validation-error" Display="Dynamic" EnableClientScript="false"></asp:RegularExpressionValidator>
                 </div>
                 <div class="form-group">
                     <label class="form-label">Customer Status</label>
@@ -69,9 +78,10 @@
             </div>
 
             <div class="d-flex gap-2 pt-3 border-top mt-2">
-                <asp:Button ID="btnSaveCustomer" runat="server" Text="Save Customer" CssClass="btn-primary" />
+                <asp:Button ID="btnSaveCustomer" runat="server" Text="Save Customer" CssClass="btn-primary" OnClick="btnSaveCustomer_Click" />
                 <a href="CustomerList.aspx" class="btn-secondary">Cancel</a>
             </div>
         </div>
     </div>
 </asp:Content>
+

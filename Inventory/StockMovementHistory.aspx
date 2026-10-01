@@ -42,6 +42,7 @@
                 <div class="search-box">
                     <i class="bi bi-search search-icon"></i>
                     <asp:TextBox ID="txtSearch" runat="server" CssClass="form-control" placeholder="Search movement, SKU, or reference..."></asp:TextBox>
+                    <asp:RegularExpressionValidator ID="revSearch" runat="server" ControlToValidate="txtSearch" ValidationExpression="^[a-zA-Z0-9\s\+\-\@\.\,]{0,50}$" ErrorMessage="Search query contains invalid characters (max 50 chars)." CssClass="validation-error" Display="Dynamic" EnableClientScript="false"></asp:RegularExpressionValidator>
                 </div>
                 <div class="filter-field">
                     <asp:DropDownList ID="ddlMovementType" runat="server" CssClass="form-select">
@@ -60,7 +61,7 @@
                         <asp:ListItem Value="90">Last 90 days</asp:ListItem>
                     </asp:DropDownList>
                 </div>
-                <asp:Button ID="btnFilter" runat="server" Text="Apply" CssClass="btn-secondary" />
+                <asp:Button ID="btnFilter" runat="server" Text="Apply" CssClass="btn-secondary" OnClick="btnFilter_Click" />
             </div>
 
             <div class="table-wrapper mt-2">

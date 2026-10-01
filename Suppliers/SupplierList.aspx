@@ -42,7 +42,8 @@
             <div class="filter-row">
                 <div class="search-box">
                     <i class="bi bi-search search-icon"></i>
-                    <asp:TextBox ID="txtSearch" runat="server" CssClass="form-control" placeholder="Search by vendor name, code, contact person, or phone..."></asp:TextBox>
+                    <asp:TextBox ID="txtSearch" runat="server" CssClass="form-control" MaxLength="50" placeholder="Search by vendor name, code, contact person, or phone..."></asp:TextBox>
+                    <asp:RegularExpressionValidator ID="revSupplierSearch" runat="server" ValidationGroup="SupplierFilter" ControlToValidate="txtSearch" ValidationExpression="^[\p{L}\p{M}0-9\s+@.&amp;,'/#()-]{0,50}$" ErrorMessage="Search may contain letters, numbers, spaces, and common supplier punctuation (maximum 50 characters)." CssClass="validation-error" Display="Dynamic" EnableClientScript="false"></asp:RegularExpressionValidator>
                 </div>
                 <div class="filter-field">
                     <asp:DropDownList ID="ddlCategory" runat="server" CssClass="form-select">
@@ -64,7 +65,7 @@
                         <asp:ListItem Value="Inactive">Inactive</asp:ListItem>
                     </asp:DropDownList>
                 </div>
-                <asp:Button ID="btnFilter" runat="server" Text="Apply Filter" CssClass="btn-secondary" />
+                <asp:Button ID="btnFilter" runat="server" Text="Apply Filter" CssClass="btn-secondary" ValidationGroup="SupplierFilter" OnClick="btnFilter_Click" />
             </div>
 
             <div class="table-wrapper mt-2">

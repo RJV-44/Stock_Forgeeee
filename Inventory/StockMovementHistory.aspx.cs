@@ -8,5 +8,14 @@ namespace Stock_Forgeeee.Inventory
         protected void Page_Load(object sender, EventArgs e)
         {
         }
+
+        protected void btnFilter_Click(object sender, EventArgs e)
+        {
+            if (Page.IsValid)
+            {
+                // Execute movement history search and filter
+            }
+        }
     }
 }
+

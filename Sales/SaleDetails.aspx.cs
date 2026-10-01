@@ -7,6 +7,13 @@ namespace Stock_Forgeeee.Sales
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            string idValue = Request.QueryString["id"];
+            int saleId;
+            if (string.IsNullOrWhiteSpace(idValue) || !int.TryParse(idValue, out saleId) || saleId <= 0)
+            {
+                Response.Redirect("SalesList.aspx");
+                return;
+            }
         }
     }
 }

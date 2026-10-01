@@ -20,7 +20,8 @@
             <div class="filter-bar">
                 <div class="search-box">
                     <i class="bi bi-search search-icon"></i>
-                    <asp:TextBox ID="txtSearch" runat="server" CssClass="form-control" placeholder="Search by SKU, product name, or category..."></asp:TextBox>
+                    <asp:TextBox ID="txtSearch" runat="server" CssClass="form-control" MaxLength="80" placeholder="Search by SKU, product name, or category..."></asp:TextBox>
+                    <asp:RegularExpressionValidator ID="revProductSearch" runat="server" ValidationGroup="ProductFilter" ControlToValidate="txtSearch" ValidationExpression="^[\p{L}\p{M}0-9\s+@.,/#()&amp;-]{0,80}$" ErrorMessage="Search may contain letters, numbers, spaces, and common product punctuation (maximum 80 characters)." CssClass="validation-error" Display="Dynamic" EnableClientScript="false"></asp:RegularExpressionValidator>
                 </div>
                 <div style="width: 180px;">
                     <asp:DropDownList ID="ddlCategoryFilter" runat="server" CssClass="form-select">
@@ -40,7 +41,7 @@
                         <asp:ListItem Value="OutOfStock">Out of Stock</asp:ListItem>
                     </asp:DropDownList>
                 </div>
-                <asp:Button ID="btnFilter" runat="server" Text="Apply Filter" CssClass="btn-secondary" />
+                <asp:Button ID="btnFilter" runat="server" Text="Apply Filter" CssClass="btn-secondary" ValidationGroup="ProductFilter" OnClick="btnFilter_Click" />
             </div>
 
             <!-- Product Table -->
