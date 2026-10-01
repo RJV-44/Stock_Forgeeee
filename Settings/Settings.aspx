@@ -7,7 +7,7 @@
             <div class="page-subtitle">Configure company details, stock valuation policies, invoice parameters, alerts, and system security.</div>
         </div>
         <div class="page-actions">
-            <asp:Button ID="btnSaveAll" runat="server" Text="Save All Changes" CssClass="btn-primary" />
+            <asp:Button ID="btnSaveAll" runat="server" Text="Save All Changes" CssClass="btn-primary" CausesValidation="false" OnClick="btnSaveAll_Click" />
         </div>
     </div>
 
@@ -38,22 +38,31 @@
             <h3 class="card-title"><i class="bi bi-building me-2 text-primary"></i> Business &amp; Organization Profile</h3>
         </div>
         <div class="card-body">
+            <asp:ValidationSummary ID="valGeneral" runat="server" ValidationGroup="GeneralSettings" CssClass="alert alert-danger" HeaderText="Please correct the following errors:" DisplayMode="BulletList" EnableClientScript="false" />
             <div class="form-grid">
                 <div class="form-group">
                     <label class="form-label">Company Name <span class="required">*</span></label>
                     <asp:TextBox ID="txtCompanyName" runat="server" CssClass="form-control" Text="StockForge Hardware Solutions Pvt Ltd"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvCompanyName" runat="server" ValidationGroup="GeneralSettings" ControlToValidate="txtCompanyName" ErrorMessage="Company name is required." CssClass="validation-error" Display="Dynamic" EnableClientScript="false"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="revCompanyName" runat="server" ValidationGroup="GeneralSettings" ControlToValidate="txtCompanyName" ValidationExpression="^[\s\S]{2,100}$" ErrorMessage="Company name must be between 2 and 100 characters." CssClass="validation-error" Display="Dynamic" EnableClientScript="false"></asp:RegularExpressionValidator>
                 </div>
                 <div class="form-group">
                     <label class="form-label">GSTIN / Business Registration No. <span class="required">*</span></label>
                     <asp:TextBox ID="txtGstin" runat="server" CssClass="form-control" Text="27AAACS9988K1Z2"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvGstin" runat="server" ValidationGroup="GeneralSettings" ControlToValidate="txtGstin" ErrorMessage="GSTIN or business registration number is required." CssClass="validation-error" Display="Dynamic" EnableClientScript="false"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="revGstin" runat="server" ValidationGroup="GeneralSettings" ControlToValidate="txtGstin" ValidationExpression="^[A-Za-z0-9][A-Za-z0-9&amp;./ -]{4,29}$" ErrorMessage="Registration number must be 5 to 30 characters and contain only letters, numbers, spaces, or - / . &amp;." CssClass="validation-error" Display="Dynamic" EnableClientScript="false"></asp:RegularExpressionValidator>
                 </div>
                 <div class="form-group">
                     <label class="form-label">Primary Support Email <span class="required">*</span></label>
                     <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control" Text="admin@stockforge.io"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvEmail" runat="server" ValidationGroup="GeneralSettings" ControlToValidate="txtEmail" ErrorMessage="Support email is required." CssClass="validation-error" Display="Dynamic" EnableClientScript="false"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="revEmail" runat="server" ValidationGroup="GeneralSettings" ControlToValidate="txtEmail" ValidationExpression="^[^@\s]+@[^@\s]+\.[^@\s]+$" ErrorMessage="Enter a valid support email address." CssClass="validation-error" Display="Dynamic" EnableClientScript="false"></asp:RegularExpressionValidator>
                 </div>
                 <div class="form-group">
                     <label class="form-label">Contact Hotline Phone <span class="required">*</span></label>
                     <asp:TextBox ID="txtPhone" runat="server" CssClass="form-control" Text="+91 1800-456-7890"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvPhone" runat="server" ValidationGroup="GeneralSettings" ControlToValidate="txtPhone" ErrorMessage="Contact phone is required." CssClass="validation-error" Display="Dynamic" EnableClientScript="false"></asp:RequiredFieldValidator>
+                    <asp:CustomValidator ID="cvPhone" runat="server" ValidationGroup="GeneralSettings" ControlToValidate="txtPhone" OnServerValidate="ValidatePhone" ErrorMessage="Phone must contain 7 to 15 digits and only common phone separators." CssClass="validation-error" Display="Dynamic" EnableClientScript="false"></asp:CustomValidator>
                 </div>
                 <div class="form-group">
                     <label class="form-label">System Currency Symbol</label>
@@ -75,10 +84,11 @@
                 <div class="form-group full-width">
                     <label class="form-label">Headquarters Address</label>
                     <asp:TextBox ID="txtAddress" runat="server" TextMode="MultiLine" Rows="3" CssClass="form-control" Text="102 Industrial Hub, Outer Ring Road, MIDC Tech Park, Mumbai, MH - 400072"></asp:TextBox>
+                    <asp:RegularExpressionValidator ID="revAddress" runat="server" ValidationGroup="GeneralSettings" ControlToValidate="txtAddress" ValidationExpression="^[\s\S]{0,500}$" ErrorMessage="Headquarters address cannot exceed 500 characters." CssClass="validation-error" Display="Dynamic" EnableClientScript="false"></asp:RegularExpressionValidator>
                 </div>
             </div>
             <div class="pt-3 border-top mt-2 text-end">
-                <asp:Button ID="btnSaveGeneral" runat="server" Text="Save Profile Settings" CssClass="btn-primary" />
+                <asp:Button ID="btnSaveGeneral" runat="server" Text="Save Profile Settings" CssClass="btn-primary" CausesValidation="false" OnClick="btnSaveGeneral_Click" />
             </div>
         </div>
     </div>
@@ -89,10 +99,13 @@
             <h3 class="card-title"><i class="bi bi-stack me-2 text-primary"></i> Stock &amp; Inventory Management Policies</h3>
         </div>
         <div class="card-body">
+            <asp:ValidationSummary ID="valInventory" runat="server" ValidationGroup="InventorySettings" CssClass="alert alert-danger" HeaderText="Please correct the following errors:" DisplayMode="BulletList" EnableClientScript="false" />
             <div class="form-grid">
                 <div class="form-group">
                     <label class="form-label">Default Low Stock Alert Threshold (Units)</label>
                     <asp:TextBox ID="txtLowStockThreshold" runat="server" CssClass="form-control" Text="10"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvLowStockThreshold" runat="server" ValidationGroup="InventorySettings" ControlToValidate="txtLowStockThreshold" ErrorMessage="Low-stock threshold is required." CssClass="validation-error" Display="Dynamic" EnableClientScript="false"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="revLowStockThreshold" runat="server" ValidationGroup="InventorySettings" ControlToValidate="txtLowStockThreshold" ValidationExpression="^(0|[1-9][0-9]{0,6})$" ErrorMessage="Low-stock threshold must be a whole number from 0 to 9999999." CssClass="validation-error" Display="Dynamic" EnableClientScript="false"></asp:RegularExpressionValidator>
                     <small class="text-secondary">Triggers system alert when product stock drops below this quantity.</small>
                 </div>
                 <div class="form-group">
@@ -106,6 +119,8 @@
                 <div class="form-group">
                     <label class="form-label">SKU Auto-Generation Format Pattern</label>
                     <asp:TextBox ID="txtSkuPattern" runat="server" CssClass="form-control" Text="HW-{CAT}-{NUM}"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvSkuPattern" runat="server" ValidationGroup="InventorySettings" ControlToValidate="txtSkuPattern" ErrorMessage="SKU format pattern is required." CssClass="validation-error" Display="Dynamic" EnableClientScript="false"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="revSkuPattern" runat="server" ValidationGroup="InventorySettings" ControlToValidate="txtSkuPattern" ValidationExpression="^[A-Za-z0-9{}_\-]{1,50}$" ErrorMessage="SKU pattern may contain letters, numbers, braces, hyphens, and underscores (maximum 50 characters)." CssClass="validation-error" Display="Dynamic" EnableClientScript="false"></asp:RegularExpressionValidator>
                     <small class="text-secondary">Example output: <code>HW-BSH-501</code></small>
                 </div>
                 <div class="form-group">
@@ -126,7 +141,7 @@
                 </div>
             </div>
             <div class="pt-3 border-top mt-2 text-end">
-                <asp:Button ID="btnSaveInventory" runat="server" Text="Save Inventory Rules" CssClass="btn-primary" />
+                <asp:Button ID="btnSaveInventory" runat="server" Text="Save Inventory Rules" CssClass="btn-primary" CausesValidation="false" OnClick="btnSaveInventory_Click" />
             </div>
         </div>
     </div>
@@ -137,6 +152,7 @@
             <h3 class="card-title"><i class="bi bi-receipt me-2 text-primary"></i> Invoicing, Billing &amp; Tax Configuration</h3>
         </div>
         <div class="card-body">
+            <asp:ValidationSummary ID="valBilling" runat="server" ValidationGroup="BillingSettings" CssClass="alert alert-danger" HeaderText="Please correct the following errors:" DisplayMode="BulletList" EnableClientScript="false" />
             <div class="form-grid">
                 <div class="form-group">
                     <label class="form-label">Default GST Tax Rate (%)</label>
@@ -150,6 +166,8 @@
                 <div class="form-group">
                     <label class="form-label">Invoice Number Prefix</label>
                     <asp:TextBox ID="txtInvoicePrefix" runat="server" CssClass="form-control" Text="INV-2026-"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvInvoicePrefix" runat="server" ValidationGroup="BillingSettings" ControlToValidate="txtInvoicePrefix" ErrorMessage="Invoice number prefix is required." CssClass="validation-error" Display="Dynamic" EnableClientScript="false"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="revInvoicePrefix" runat="server" ValidationGroup="BillingSettings" ControlToValidate="txtInvoicePrefix" ValidationExpression="^[A-Za-z0-9_-]{1,20}$" ErrorMessage="Invoice prefix may contain letters, numbers, hyphens, or underscores (maximum 20 characters)." CssClass="validation-error" Display="Dynamic" EnableClientScript="false"></asp:RegularExpressionValidator>
                 </div>
                 <div class="form-group">
                     <label class="form-label">Default Credit Payment Terms</label>
@@ -170,10 +188,11 @@
                 <div class="form-group full-width">
                     <label class="form-label">Invoice Footer Legal Notes &amp; Terms</label>
                     <asp:TextBox ID="txtInvoiceFooter" runat="server" TextMode="MultiLine" Rows="3" CssClass="form-control" Text="Thank you for choosing StockForge Hardware. Goods once sold carry manufacturer warranty terms. Please retain invoice copy for service claims."></asp:TextBox>
+                    <asp:RegularExpressionValidator ID="revInvoiceFooter" runat="server" ValidationGroup="BillingSettings" ControlToValidate="txtInvoiceFooter" ValidationExpression="^[\s\S]{0,1000}$" ErrorMessage="Invoice footer cannot exceed 1000 characters." CssClass="validation-error" Display="Dynamic" EnableClientScript="false"></asp:RegularExpressionValidator>
                 </div>
             </div>
             <div class="pt-3 border-top mt-2 text-end">
-                <asp:Button ID="btnSaveBilling" runat="server" Text="Save Billing Configuration" CssClass="btn-primary" />
+                <asp:Button ID="btnSaveBilling" runat="server" Text="Save Billing Configuration" CssClass="btn-primary" CausesValidation="false" OnClick="btnSaveBilling_Click" />
             </div>
         </div>
     </div>
@@ -215,7 +234,7 @@
                 </div>
             </div>
             <div class="pt-3 border-top mt-3 text-end">
-                <asp:Button ID="btnSaveNotif" runat="server" Text="Save Notification Preferences" CssClass="btn-primary" />
+                <asp:Button ID="btnSaveNotif" runat="server" Text="Save Notification Preferences" CssClass="btn-primary" CausesValidation="false" OnClick="btnSaveNotif_Click" />
             </div>
         </div>
     </div>
@@ -262,7 +281,7 @@
             </div>
 
             <div class="pt-3 border-top mt-3 text-end">
-                <asp:Button ID="btnSaveSecurity" runat="server" Text="Save Security Settings" CssClass="btn-primary" />
+                <asp:Button ID="btnSaveSecurity" runat="server" Text="Save Security Settings" CssClass="btn-primary" CausesValidation="false" OnClick="btnSaveSecurity_Click" />
             </div>
         </div>
     </div>
