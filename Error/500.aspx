@@ -13,8 +13,8 @@
     
     <style>
         body {
-            background-color: #0F172A;
-            color: #F8FAFC;
+            background-color: #F8FAFC;
+            color: #1F2937;
             font-family: 'Inter', sans-serif;
             margin: 0;
             display: flex;
@@ -38,11 +38,11 @@
             font-size: 26px;
             font-weight: 700;
             margin: 16px 0 12px;
-            color: #FFFFFF;
+            color: #1F2937;
         }
         .error-desc {
             font-size: 15px;
-            color: #94A3B8;
+            color: #6B7280;
             margin-bottom: 32px;
             line-height: 1.6;
         }
