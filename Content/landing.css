@@ -1,7 +1,9 @@
 /* StockForge Landing Page Stylesheet */
 .landing-body {
-    background-color: #0F172A;
-    color: #F8FAFC;
+    background:
+        radial-gradient(circle at top, rgba(76, 175, 125, 0.10), transparent 28%),
+        linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 30%, #F8FAFC 100%);
+    color: #1F2937;
     font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
@@ -15,9 +17,10 @@
     left: 0;
     right: 0;
     z-index: 1000;
-    background: rgba(15, 23, 42, 0.85);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid #E5E7EB;
+    box-shadow: 0 8px 24px rgba(31, 41, 55, 0.06);
     transition: all 0.3s ease;
 }
 
@@ -35,7 +38,7 @@
     align-items: center;
     gap: 12px;
     text-decoration: none;
-    color: #FFFFFF;
+    color: #1F2937;
 }
 
 .landing-brand-icon {
@@ -55,7 +58,7 @@
     font-size: 20px;
     font-weight: 700;
     letter-spacing: -0.5px;
-    background: linear-gradient(135deg, #FFFFFF 0%, #CBD5E1 100%);
+    background: linear-gradient(135deg, #1F2937 0%, #4B5563 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -80,7 +83,7 @@
 }
 
 .landing-nav-links a {
-    color: #94A3B8;
+    color: #6B7280;
     text-decoration: none;
     font-size: 14px;
     font-weight: 500;
@@ -88,7 +91,7 @@
 }
 
 .landing-nav-links a:hover {
-    color: #FFFFFF;
+    color: #3D946A;
 }
 
 .landing-nav-actions {
@@ -98,9 +101,9 @@
 }
 
 .btn-landing-outline {
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    background: rgba(255, 255, 255, 0.05);
-    color: #FFFFFF;
+    border: 1px solid rgba(76, 175, 125, 0.35);
+    background: #FFFFFF;
+    color: #3D946A;
     padding: 9px 18px;
     border-radius: 8px;
     font-size: 14px;
@@ -110,9 +113,9 @@
 }
 
 .btn-landing-outline:hover {
-    background: rgba(255, 255, 255, 0.15);
-    border-color: rgba(255, 255, 255, 0.4);
-    color: #FFFFFF;
+    background: #EAF7F0;
+    border-color: rgba(76, 175, 125, 0.55);
+    color: #2D7C55;
 }
 
 .btn-landing-primary {
@@ -142,7 +145,7 @@
 .hero-section {
     padding: 160px 24px 100px;
     position: relative;
-    background: radial-gradient(circle at 50% 20%, rgba(76, 175, 125, 0.15) 0%, rgba(15, 23, 42, 0) 70%);
+    background: radial-gradient(circle at 50% 20%, rgba(76, 175, 125, 0.09) 0%, rgba(255, 255, 255, 0) 70%);
 }
 
 .hero-container {
@@ -174,11 +177,11 @@
     line-height: 1.15;
     letter-spacing: -1.5px;
     margin: 0 0 20px;
-    color: #FFFFFF;
+    color: #1F2937;
 }
 
 .hero-title span {
-    background: linear-gradient(135deg, #4CAF7D 0%, #60A5FA 100%);
+    background: linear-gradient(135deg, #4CAF7D 0%, #2D8A5A 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -186,7 +189,7 @@
 .hero-subtitle {
     font-size: 18px;
     line-height: 1.6;
-    color: #94A3B8;
+    color: #6B7280;
     margin-bottom: 36px;
     max-width: 540px;
 }
@@ -204,19 +207,19 @@
     align-items: center;
     gap: 36px;
     padding-top: 32px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid #E5E7EB;
 }
 
 .hero-stat-item h4 {
     font-size: 28px;
     font-weight: 700;
     margin: 0;
-    color: #FFFFFF;
+    color: #1F2937;
 }
 
 .hero-stat-item p {
     font-size: 13px;
-    color: #94A3B8;
+    color: #6B7280;
     margin: 4px 0 0;
 }
 
@@ -226,12 +229,12 @@
 }
 
 .hero-card-preview {
-    background: rgba(30, 41, 59, 0.7);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 20px;
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 24px;
     padding: 24px;
     backdrop-filter: blur(16px);
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 24px 48px rgba(31, 41, 55, 0.12);
     position: relative;
 }
 
@@ -241,7 +244,7 @@
     justify-content: space-between;
     margin-bottom: 20px;
     padding-bottom: 16px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid #E5E7EB;
 }
 
 .showcase-dots {
@@ -267,8 +270,8 @@
 }
 
 .showcase-widget {
-    background: rgba(15, 23, 42, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: #F8FAFC;
+    border: 1px solid #E5E7EB;
     border-radius: 12px;
     padding: 16px;
 }
@@ -277,14 +280,14 @@
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    color: #64748B;
+    color: #6B7280;
     font-weight: 700;
 }
 
 .showcase-widget .value {
     font-size: 22px;
     font-weight: 700;
-    color: #FFFFFF;
+    color: #1F2937;
     margin-top: 4px;
 }
 
@@ -292,14 +295,14 @@
     position: absolute;
     bottom: -20px;
     left: -20px;
-    background: rgba(30, 41, 59, 0.9);
+    background: #FFFFFF;
     border: 1px solid rgba(76, 175, 125, 0.4);
     padding: 14px 20px;
     border-radius: 14px;
     display: flex;
     align-items: center;
     gap: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 10px 30px rgba(31, 41, 55, 0.14);
 }
 
 .floating-badge i {
@@ -310,13 +313,13 @@
 /* Feature Grid Section */
 .features-section {
     padding: 100px 24px;
-    background: #0B1120;
+    background: #F8FAFC;
     position: relative;
 }
 
 .section-header {
     text-align: center;
-    max-width: 640px;
+    max-width: 700px;
     margin: 0 auto 60px;
 }
 
@@ -333,13 +336,13 @@
 .section-title {
     font-size: 36px;
     font-weight: 700;
-    color: #FFFFFF;
+    color: #1F2937;
     margin: 0 0 16px;
 }
 
 .section-subtitle {
     font-size: 16px;
-    color: #94A3B8;
+    color: #6B7280;
     margin: 0;
     line-height: 1.5;
 }
@@ -353,8 +356,8 @@
 }
 
 .feature-card {
-    background: rgba(30, 41, 59, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
     border-radius: 16px;
     padding: 32px;
     transition: all 0.3s ease;
@@ -363,8 +366,8 @@
 .feature-card:hover {
     transform: translateY(-6px);
     border-color: rgba(76, 175, 125, 0.4);
-    background: rgba(30, 41, 59, 0.8);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    background: #FFFFFF;
+    box-shadow: 0 20px 40px rgba(31, 41, 55, 0.10);
 }
 
 .feature-icon-box {
@@ -384,13 +387,13 @@
 .feature-card h3 {
     font-size: 20px;
     font-weight: 600;
-    color: #FFFFFF;
+    color: #1F2937;
     margin: 0 0 12px;
 }
 
 .feature-card p {
     font-size: 14px;
-    color: #94A3B8;
+    color: #6B7280;
     line-height: 1.6;
     margin: 0;
 }
@@ -398,7 +401,7 @@
 /* Workflow Steps */
 .workflow-section {
     padding: 100px 24px;
-    background: #0F172A;
+    background: #FFFFFF;
 }
 
 .workflow-grid {
@@ -410,8 +413,8 @@
 }
 
 .step-card {
-    background: rgba(30, 41, 59, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: #F8FAFC;
+    border: 1px solid #E5E7EB;
     padding: 32px;
     border-radius: 16px;
     position: relative;
@@ -427,12 +430,12 @@
 
 .step-card h4 {
     font-size: 20px;
-    color: #FFFFFF;
+    color: #1F2937;
     margin: 0 0 10px;
 }
 
 .step-card p {
-    color: #94A3B8;
+    color: #6B7280;
     font-size: 14px;
     line-height: 1.5;
     margin: 0;
@@ -441,7 +444,7 @@
 /* Pricing Section */
 .pricing-section {
     padding: 100px 24px;
-    background: #0B1120;
+    background: #F8FAFC;
 }
 
 .pricing-grid {
@@ -453,8 +456,8 @@
 }
 
 .pricing-card {
-    background: rgba(30, 41, 59, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
     border-radius: 20px;
     padding: 36px;
     display: flex;
@@ -465,7 +468,7 @@
 
 .pricing-card.featured {
     border-color: #4CAF7D;
-    background: linear-gradient(180deg, rgba(30, 41, 59, 0.9) 0%, rgba(15, 23, 42, 0.9) 100%);
+    background: #EAF7F0;
     box-shadow: 0 15px 35px rgba(76, 175, 125, 0.15);
     transform: scale(1.04);
 }
@@ -487,21 +490,21 @@
 
 .pricing-card h3 {
     font-size: 22px;
-    color: #FFFFFF;
+    color: #1F2937;
     margin: 0 0 8px;
 }
 
 .pricing-card .price {
     font-size: 42px;
     font-weight: 800;
-    color: #FFFFFF;
+    color: #1F2937;
     margin: 16px 0 24px;
 }
 
 .pricing-card .price span {
     font-size: 14px;
     font-weight: 400;
-    color: #94A3B8;
+    color: #6B7280;
 }
 
 .pricing-features {
@@ -516,7 +519,7 @@
     align-items: center;
     gap: 10px;
     font-size: 14px;
-    color: #CBD5E1;
+    color: #4B5563;
     margin-bottom: 12px;
 }
 
@@ -528,7 +531,7 @@
 /* FAQ Accordion */
 .faq-section {
     padding: 100px 24px;
-    background: #0F172A;
+    background: #FFFFFF;
 }
 
 .faq-container {
@@ -537,8 +540,8 @@
 }
 
 .faq-item {
-    background: rgba(30, 41, 59, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: #F8FAFC;
+    border: 1px solid #E5E7EB;
     border-radius: 12px;
     margin-bottom: 16px;
     padding: 20px 24px;
@@ -547,21 +550,21 @@
 .faq-question {
     font-size: 18px;
     font-weight: 600;
-    color: #FFFFFF;
+    color: #1F2937;
     margin: 0 0 10px;
 }
 
 .faq-answer {
     font-size: 14px;
-    color: #94A3B8;
+    color: #6B7280;
     line-height: 1.6;
     margin: 0;
 }
 
 /* Footer */
 .landing-footer {
-    background: #080D1A;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    background: #FFFFFF;
+    border-top: 1px solid #E5E7EB;
     padding: 60px 24px 30px;
 }
 
@@ -575,7 +578,7 @@
 }
 
 .footer-brand p {
-    color: #64748B;
+    color: #6B7280;
     font-size: 14px;
     line-height: 1.6;
     margin-top: 16px;
@@ -583,7 +586,7 @@
 }
 
 .footer-col h5 {
-    color: #FFFFFF;
+    color: #1F2937;
     font-size: 15px;
     font-weight: 600;
     margin: 0 0 18px;
@@ -600,7 +603,7 @@
 }
 
 .footer-col ul li a {
-    color: #94A3B8;
+    color: #6B7280;
     text-decoration: none;
     font-size: 14px;
     transition: color 0.2s;
@@ -614,12 +617,12 @@
     max-width: 1280px;
     margin: 0 auto;
     padding-top: 24px;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    border-top: 1px solid #E5E7EB;
     display: flex;
     align-items: center;
     justify-content: space-between;
     font-size: 13px;
-    color: #64748B;
+    color: #6B7280;
 }
 
 /* Responsive Styles */

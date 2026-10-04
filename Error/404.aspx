@@ -13,8 +13,8 @@
     
     <style>
         body {
-            background-color: #0F172A;
-            color: #F8FAFC;
+            background-color: #F8FAFC;
+            color: #1F2937;
             font-family: 'Inter', sans-serif;
             margin: 0;
             display: flex;
@@ -32,7 +32,7 @@
             font-weight: 900;
             line-height: 1;
             margin: 0;
-            background: linear-gradient(135deg, #4CAF7D 0%, #60A5FA 100%);
+            background: linear-gradient(135deg, #4CAF7D 0%, #2D8A5A 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -40,11 +40,11 @@
             font-size: 26px;
             font-weight: 700;
             margin: 16px 0 12px;
-            color: #FFFFFF;
+            color: #1F2937;
         }
         .error-desc {
             font-size: 15px;
-            color: #94A3B8;
+            color: #6B7280;
             margin-bottom: 32px;
             line-height: 1.6;
         }
@@ -82,7 +82,7 @@
                 <a href="<%= ResolveUrl("~/Dashboard.aspx") %>" class="btn-home">
                     <i class="bi bi-grid-1x2-fill"></i> Go to Dashboard
                 </a>
-                <a href="<%= ResolveUrl("~/Landing.aspx") %>" class="btn-home" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);">
+                <a href="<%= ResolveUrl("~/Landing.aspx") %>" class="btn-home" style="background: #FFFFFF; border: 1px solid #D1D5DB; color: #3D946A;">
                     <i class="bi bi-house"></i> Landing Page
                 </a>
             </div>

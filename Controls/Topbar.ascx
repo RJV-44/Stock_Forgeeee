@@ -1,4 +1,6 @@
 <%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Topbar.ascx.cs" Inherits="Stock_Forgeeee.Controls.Topbar" %>
+<link rel="stylesheet" href="<%= ResolveUrl("~/Content/site.css") %>" />
+<link href="<%= ResolveUrl("~/Content/components.css") %>" rel="stylesheet" type="text/css" />
 
 <header class="topbar">
     <div class="topbar-left">

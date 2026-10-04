@@ -99,7 +99,7 @@
                                 <span class="dot dot-yellow"></span>
                                 <span class="dot dot-green"></span>
                             </div>
-                            <span style="font-size: 12px; color: #94A3B8; font-weight: 600;">StockForge Real-Time Analytics</span>
+                            <span style="font-size: 12px; color: #6B7280; font-weight: 600;">StockForge Real-Time Analytics</span>
                         </div>
                         
                         <div class="showcase-grid">
@@ -121,13 +121,13 @@
                             </div>
                         </div>
 
-                        <div style="background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 16px;">
+                        <div style="background: #F8FAFC; border: 1px solid #E5E7EB; border-radius: 12px; padding: 16px;">
                             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-                                <span style="font-size: 13px; font-weight: 600; color: #FFF;">Recent Stock Movement</span>
+                                <span style="font-size: 13px; font-weight: 600; color: #1F2937;">Recent Stock Movement</span>
                                 <span style="font-size: 11px; color: #4CAF7D; font-weight: 700;">+24% vs Last Week</span>
                             </div>
-                            <div style="height: 6px; background: rgba(255, 255, 255, 0.1); border-radius: 999px; overflow: hidden;">
-                                <div style="width: 78%; height: 100%; background: linear-gradient(90deg, #4CAF7D 0%, #60A5FA 100%);"></div>
+                            <div style="height: 6px; background: #E5E7EB; border-radius: 999px; overflow: hidden;">
+                                <div style="width: 78%; height: 100%; background: linear-gradient(90deg, #4CAF7D 0%, #2D8A5A 100%);"></div>
                             </div>
                         </div>
                     </div>
@@ -135,8 +135,8 @@
                     <div class="floating-badge">
                         <i class="bi bi-shield-check"></i>
                         <div>
-                            <strong style="display: block; font-size: 13px; color: #FFF;">Automated Reorder Alerts</strong>
-                            <small style="color: #94A3B8; font-size: 11px;">Zero stockouts guaranteed</small>
+                            <strong style="display: block; font-size: 13px; color: #1F2937;">Automated Reorder Alerts</strong>
+                            <small style="color: #6B7280; font-size: 11px;">Zero stockouts guaranteed</small>
                         </div>
                     </div>
                 </div>
@@ -243,7 +243,7 @@
                 <!-- Starter Plan -->
                 <div class="pricing-card">
                     <h3>Starter Outlet</h3>
-                    <p style="font-size: 13px; color: #94A3B8;">Perfect for single hardware shop or tool retail booth.</p>
+                    <p style="font-size: 13px; color: #6B7280;">Perfect for single hardware shop or tool retail booth.</p>
                     <div class="price">$29<span>/month</span></div>
                     <ul class="pricing-features">
                         <li><i class="bi bi-check-circle-fill"></i> Up to 1,000 SKUs</li>
@@ -259,7 +259,7 @@
                 <div class="pricing-card featured">
                     <div class="popular-badge">Most Popular</div>
                     <h3>Pro Retailer</h3>
-                    <p style="font-size: 13px; color: #94A3B8;">Ideal for growing hardware stores & building suppliers.</p>
+                    <p style="font-size: 13px; color: #6B7280;">Ideal for growing hardware stores & building suppliers.</p>
                     <div class="price" style="color: #4CAF7D;">$79<span>/month</span></div>
                     <ul class="pricing-features">
                         <li><i class="bi bi-check-circle-fill"></i> Unlimited SKUs & Products</li>
@@ -275,7 +275,7 @@
                 <!-- Enterprise Plan -->
                 <div class="pricing-card">
                     <h3>Chain & Wholesale</h3>
-                    <p style="font-size: 13px; color: #94A3B8;">For multi-location outlets and hardware distributors.</p>
+                    <p style="font-size: 13px; color: #6B7280;">For multi-location outlets and hardware distributors.</p>
                     <div class="price">$199<span>/month</span></div>
                     <ul class="pricing-features">
                         <li><i class="bi bi-check-circle-fill"></i> Multi-Warehouse Support</li>

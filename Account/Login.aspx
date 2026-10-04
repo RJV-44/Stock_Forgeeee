@@ -91,7 +91,7 @@
 
                     <div class="auth-row-between">
                         <label class="auth-checkbox">
-                            <asp:CheckBox ID="chkRememberMe" runat="server" Checked="true" />
+                            <asp:CheckBox ID="chkRemember" runat="server" Checked="true" />
                             <span>Remember me for 30 days</span>
                         </label>
                         <a href="<%= ResolveUrl("~/Account/ForgotPassword.aspx") %>" class="auth-link">Forgot Password?</a>
