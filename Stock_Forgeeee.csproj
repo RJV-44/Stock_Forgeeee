@@ -95,6 +95,7 @@
     <Content Include="Purchases\MyPurchase.aspx" />
     <Content Include="Purchases\PurchaseOrderDetails.aspx" />
     <Content Include="Purchases\ReceivePurchase.aspx" />
+    <Content Include="Purchases\PrintPurchaseOrder.aspx" />
     <Content Include="Reports\InventoryReport.aspx" />
     <Content Include="Reports\PurchaseReport.aspx" />
     <Content Include="Reports\ReportsDashboard.aspx" />
@@ -104,6 +105,7 @@
     <Content Include="Sales\NewSale.aspx" />
     <Content Include="Sales\SaleDetails.aspx" />
     <Content Include="Sales\SalesList.aspx" />
+    <Content Include="Sales\Invoice.aspx" />
     <Content Include="Settings\Settings.aspx" />
     <Content Include="Suppliers\AddSupplier.aspx" />
     <Content Include="Suppliers\EditSupplier.aspx" />
@@ -210,6 +212,10 @@
       <DependentUpon>ReceivePurchase.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Purchases\PrintPurchaseOrder.aspx.cs">
+      <DependentUpon>PrintPurchaseOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Reports\InventoryReport.aspx.cs">
       <DependentUpon>InventoryReport.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -244,6 +250,10 @@
     </Compile>
     <Compile Include="Sales\SalesList.aspx.cs">
       <DependentUpon>SalesList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sales\Invoice.aspx.cs">
+      <DependentUpon>Invoice.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Settings\Settings.aspx.cs">

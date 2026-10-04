@@ -4,3 +4,5 @@ obj/
 *.user
 *.suo
 *.userosset
+/.agents/
+skills-lock.json

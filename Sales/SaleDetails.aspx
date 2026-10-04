@@ -7,10 +7,13 @@
             <div class="page-subtitle">Review order history, invoice details, and payment status for this transaction.</div>
         </div>
         <div class="page-actions">
+            <a href="<%= ResolveUrl("~/Sales/Invoice.aspx?id=SO-2026-0125") %>" class="btn-primary" target="_blank">
+                <i class="bi bi-receipt"></i> View Invoice
+            </a>
             <a href="<%= ResolveUrl("~/Sales/EditSale.aspx?id=9824") %>" class="btn-secondary">
                 <i class="bi bi-pencil-square"></i> Edit Sale
             </a>
-            <a href="<%= ResolveUrl("~/Sales/SalesList.aspx") %>" class="btn-primary">
+            <a href="<%= ResolveUrl("~/Sales/SalesList.aspx") %>" class="btn-secondary">
                 <i class="bi bi-arrow-left"></i> Back to Sales
             </a>
         </div>
