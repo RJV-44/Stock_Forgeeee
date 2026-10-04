@@ -3,11 +3,11 @@ using System.Web.UI;
 
 namespace Stock_Forgeeee
 {
-    public partial class _Default : Page
+    public partial class Features : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Response.Redirect("~/Landing.aspx");
+
         }
     }
 }
