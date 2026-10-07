@@ -15,18 +15,27 @@
 
     <div class="card" style="max-width: 980px;">
         <div class="card-body">
+            <!-- Alert / Status Feedback -->
+            <asp:Panel ID="pnlAlert" runat="server" Visible="false" CssClass="val-alert val-alert-danger">
+                <i class="bi bi-exclamation-triangle-fill"></i>
+                <asp:Label ID="lblAlertMessage" runat="server"></asp:Label>
+            </asp:Panel>
+
             <div class="form-grid">
                 <div class="form-group">
                     <label class="form-label">Company / Vendor Name <span class="required">*</span></label>
                     <asp:TextBox ID="txtCompanyName" runat="server" CssClass="form-control" placeholder="e.g. Bosch Power Tools India Ltd"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvCompanyName" runat="server" ControlToValidate="txtCompanyName" ErrorMessage="Company name is required." CssClass="validation-error" Display="Dynamic"></asp:RequiredFieldValidator>
                 </div>
                 <div class="form-group">
                     <label class="form-label">Supplier Code <span class="required">*</span></label>
                     <asp:TextBox ID="txtSupplierCode" runat="server" CssClass="form-control" placeholder="e.g. SUP-1006"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvSupplierCode" runat="server" ControlToValidate="txtSupplierCode" ErrorMessage="Supplier code is required." CssClass="validation-error" Display="Dynamic"></asp:RequiredFieldValidator>
                 </div>
                 <div class="form-group">
                     <label class="form-label">Primary Contact Person <span class="required">*</span></label>
                     <asp:TextBox ID="txtContactName" runat="server" CssClass="form-control" placeholder="e.g. Rajesh Verma"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvContactName" runat="server" ControlToValidate="txtContactName" ErrorMessage="Contact person name is required." CssClass="validation-error" Display="Dynamic"></asp:RequiredFieldValidator>
                 </div>
                 <div class="form-group">
                     <label class="form-label">Category / Specialty <span class="required">*</span></label>
@@ -39,14 +48,19 @@
                         <asp:ListItem Value="Fasteners">Fasteners &amp; Screws</asp:ListItem>
                         <asp:ListItem Value="Paints">Paints &amp; Coatings</asp:ListItem>
                     </asp:DropDownList>
+                    <asp:RequiredFieldValidator ID="rfvCategory" runat="server" ControlToValidate="ddlCategory" InitialValue="" ErrorMessage="Please select a category." CssClass="validation-error" Display="Dynamic"></asp:RequiredFieldValidator>
                 </div>
                 <div class="form-group">
                     <label class="form-label">Phone Number <span class="required">*</span></label>
                     <asp:TextBox ID="txtPhone" runat="server" CssClass="form-control" placeholder="+91 98200 11223"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvPhone" runat="server" ControlToValidate="txtPhone" ErrorMessage="Phone number is required." CssClass="validation-error" Display="Dynamic"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="revPhone" runat="server" ControlToValidate="txtPhone" ValidationExpression="^(\+?[0-9\s\-\(\)]{8,16})$" ErrorMessage="Enter a valid phone number." CssClass="validation-error" Display="Dynamic"></asp:RegularExpressionValidator>
                 </div>
                 <div class="form-group">
                     <label class="form-label">Email Address <span class="required">*</span></label>
                     <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control" placeholder="contact@vendorcompany.com"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvEmail" runat="server" ControlToValidate="txtEmail" ErrorMessage="Email address is required." CssClass="validation-error" Display="Dynamic"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="revEmail" runat="server" ControlToValidate="txtEmail" ValidationExpression="^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$" ErrorMessage="Enter a valid email address." CssClass="validation-error" Display="Dynamic"></asp:RegularExpressionValidator>
                 </div>
                 <div class="form-group">
                     <label class="form-label">GSTIN / Tax ID</label>
@@ -73,6 +87,7 @@
                 <div class="form-group">
                     <label class="form-label">Credit Limit (₹)</label>
                     <asp:TextBox ID="txtCreditLimit" runat="server" CssClass="form-control" placeholder="e.g. 500000"></asp:TextBox>
+                    <asp:CompareValidator ID="cvCreditLimit" runat="server" ControlToValidate="txtCreditLimit" Operator="DataTypeCheck" Type="Double" ErrorMessage="Credit limit must be a valid number." CssClass="validation-error" Display="Dynamic"></asp:CompareValidator>
                 </div>
                 <div class="form-group full-width">
                     <label class="form-label">Office &amp; Warehouse Address</label>
@@ -85,7 +100,7 @@
             </div>
 
             <div class="d-flex gap-2 pt-3 border-top mt-2">
-                <asp:Button ID="btnSaveSupplier" runat="server" Text="Save Supplier Profile" CssClass="btn-primary" />
+                <asp:Button ID="btnSaveSupplier" runat="server" Text="Save Supplier Profile" CssClass="btn-primary" OnClick="btnSaveSupplier_Click" />
                 <a href="SupplierList.aspx" class="btn-secondary">Cancel</a>
             </div>
         </div>

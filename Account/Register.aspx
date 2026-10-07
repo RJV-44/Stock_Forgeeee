@@ -75,7 +75,7 @@
                             <asp:TextBox ID="txtStoreName" runat="server" CssClass="auth-input" placeholder="Apex Hardware & Tools"></asp:TextBox>
                         </div>
                         <asp:RequiredFieldValidator ID="rfvStoreName" runat="server" ControlToValidate="txtStoreName" 
-                            ErrorMessage="Store Name is required" CssClass="val-error" Display="Dynamic" EnableClientScript="false"></asp:RequiredFieldValidator>
+                            ErrorMessage="Store Name is required" CssClass="val-error" Display="Dynamic"></asp:RequiredFieldValidator>
                     </div>
 
                     <div class="auth-form-group">
@@ -99,7 +99,7 @@
                             <asp:TextBox ID="txtFullName" runat="server" CssClass="auth-input" placeholder="John Doe"></asp:TextBox>
                         </div>
                         <asp:RequiredFieldValidator ID="rfvFullName" runat="server" ControlToValidate="txtFullName" 
-                            ErrorMessage="Full name is required" CssClass="val-error" Display="Dynamic" EnableClientScript="false"></asp:RequiredFieldValidator>
+                            ErrorMessage="Full name is required" CssClass="val-error" Display="Dynamic"></asp:RequiredFieldValidator>
                     </div>
 
                     <div class="auth-form-group">
@@ -109,9 +109,9 @@
                             <asp:TextBox ID="txtEmail" runat="server" CssClass="auth-input" placeholder="john@apexhardware.com"></asp:TextBox>
                         </div>
                         <asp:RequiredFieldValidator ID="rfvEmail" runat="server" ControlToValidate="txtEmail" 
-                            ErrorMessage="Email address is required" CssClass="val-error" Display="Dynamic" EnableClientScript="false"></asp:RequiredFieldValidator>
+                            ErrorMessage="Email address is required" CssClass="val-error" Display="Dynamic"></asp:RequiredFieldValidator>
                         <asp:RegularExpressionValidator ID="revEmail" runat="server" ControlToValidate="txtEmail" 
-                            ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ErrorMessage="Invalid email address format" CssClass="val-error" Display="Dynamic" EnableClientScript="false"></asp:RegularExpressionValidator>
+                            ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ErrorMessage="Invalid email address format" CssClass="val-error" Display="Dynamic"></asp:RegularExpressionValidator>
                     </div>
 
                     <div class="auth-form-group">
@@ -121,7 +121,7 @@
                             <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" CssClass="auth-input" placeholder="••••••••"></asp:TextBox>
                         </div>
                         <asp:RequiredFieldValidator ID="rfvPassword" runat="server" ControlToValidate="txtPassword" 
-                            ErrorMessage="Password is required" CssClass="val-error" Display="Dynamic" EnableClientScript="false"></asp:RequiredFieldValidator>
+                            ErrorMessage="Password is required" CssClass="val-error" Display="Dynamic"></asp:RequiredFieldValidator>
                     </div>
 
                     <div class="auth-form-group">
@@ -131,9 +131,9 @@
                             <asp:TextBox ID="txtConfirmPassword" runat="server" TextMode="Password" CssClass="auth-input" placeholder="••••••••"></asp:TextBox>
                         </div>
                         <asp:RequiredFieldValidator ID="rfvConfirmPassword" runat="server" ControlToValidate="txtConfirmPassword" 
-                            ErrorMessage="Please confirm your password" CssClass="val-error" Display="Dynamic" EnableClientScript="false"></asp:RequiredFieldValidator>
+                            ErrorMessage="Please confirm your password" CssClass="val-error" Display="Dynamic"></asp:RequiredFieldValidator>
                         <asp:CompareValidator ID="cvPassword" runat="server" ControlToValidate="txtConfirmPassword" ControlToCompare="txtPassword"
-                            ErrorMessage="Passwords do not match" CssClass="val-error" Display="Dynamic" EnableClientScript="false"></asp:CompareValidator>
+                            ErrorMessage="Passwords do not match" CssClass="val-error" Display="Dynamic"></asp:CompareValidator>
                     </div>
 
                     <div class="auth-form-group" style="margin-bottom: 24px;">

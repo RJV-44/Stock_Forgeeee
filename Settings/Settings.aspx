@@ -32,6 +32,12 @@
         </a>
     </div>
 
+    <!-- Alert Feedback -->
+    <asp:Panel ID="pnlAlert" runat="server" Visible="false" CssClass="val-alert val-alert-danger" style="margin-bottom: 20px;">
+        <i class="bi bi-exclamation-triangle-fill"></i>
+        <asp:Label ID="lblAlertMessage" runat="server"></asp:Label>
+    </asp:Panel>
+
     <!-- Card 1: Business Profile -->
     <div class="sf-card" style="margin-bottom: 20px; padding: 24px;">
         <div class="sf-group-title">
@@ -39,30 +45,35 @@
         </div>
 
         <div style="margin-bottom: 16px;">
-            <label class="sf-form-label">Business Name</label>
-            <input type="text" class="sf-input" value="StockForge Hardware Supplies" />
+            <label class="sf-form-label">Business Name <span class="text-danger">*</span></label>
+            <asp:TextBox ID="txtBusinessName" runat="server" CssClass="sf-input" Text="StockForge Hardware Supplies"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="rfvBusinessName" runat="server" ControlToValidate="txtBusinessName" ErrorMessage="Business name is required." CssClass="validation-error" Display="Dynamic"></asp:RequiredFieldValidator>
         </div>
 
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 16px;">
             <div>
-                <label class="sf-form-label">Business Phone</label>
+                <label class="sf-form-label">Business Phone <span class="text-danger">*</span></label>
                 <div style="position: relative;">
                     <i class="bi bi-telephone text-muted" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%);"></i>
-                    <input type="tel" class="sf-input" value="+91 98765 43210" style="padding-left: 36px;" />
+                    <asp:TextBox ID="txtBusinessPhone" runat="server" CssClass="sf-input" Text="+91 98765 43210" style="padding-left: 36px;"></asp:TextBox>
                 </div>
+                <asp:RequiredFieldValidator ID="rfvBusinessPhone" runat="server" ControlToValidate="txtBusinessPhone" ErrorMessage="Phone number is required." CssClass="validation-error" Display="Dynamic"></asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="revBusinessPhone" runat="server" ControlToValidate="txtBusinessPhone" ValidationExpression="^(\+?[0-9\s\-\(\)]{8,16})$" ErrorMessage="Valid phone format required." CssClass="validation-error" Display="Dynamic"></asp:RegularExpressionValidator>
             </div>
             <div>
-                <label class="sf-form-label">Business Email</label>
+                <label class="sf-form-label">Business Email <span class="text-danger">*</span></label>
                 <div style="position: relative;">
                     <i class="bi bi-envelope text-muted" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%);"></i>
-                    <input type="email" class="sf-input" value="contact@stockforge.in" style="padding-left: 36px;" />
+                    <asp:TextBox ID="txtBusinessEmail" runat="server" CssClass="sf-input" Text="contact@stockforge.in" style="padding-left: 36px;"></asp:TextBox>
                 </div>
+                <asp:RequiredFieldValidator ID="rfvBusinessEmail" runat="server" ControlToValidate="txtBusinessEmail" ErrorMessage="Email is required." CssClass="validation-error" Display="Dynamic"></asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="revBusinessEmail" runat="server" ControlToValidate="txtBusinessEmail" ValidationExpression="^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$" ErrorMessage="Valid email format required." CssClass="validation-error" Display="Dynamic"></asp:RegularExpressionValidator>
             </div>
         </div>
 
         <div>
             <label class="sf-form-label">Address</label>
-            <textarea class="sf-textarea" rows="2">123 Industrial Estate, Ahmedabad, Gujarat</textarea>
+            <asp:TextBox ID="txtAddress" runat="server" TextMode="MultiLine" Rows="2" CssClass="sf-textarea" Text="123 Industrial Estate, Ahmedabad, Gujarat"></asp:TextBox>
         </div>
     </div>
 
@@ -108,7 +119,7 @@
         </div>
         <div style="display: flex; gap: 10px;">
             <button type="button" class="btn-outline-action">Discard</button>
-            <asp:Button ID="btnSaveSettings" runat="server" Text="Save Changes" CssClass="btn-success-dark" />
+            <asp:Button ID="btnSaveSettings" runat="server" Text="Save Changes" CssClass="btn-success-dark" OnClick="btnSaveSettings_Click" />
         </div>
     </div>
 </asp:Content>

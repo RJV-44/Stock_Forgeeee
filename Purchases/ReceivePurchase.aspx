@@ -29,6 +29,12 @@
 
     <!-- Summary Info Strip -->
     <div class="sf-card" style="padding: 16px 24px; margin-bottom: 20px;">
+        <!-- Alert Feedback -->
+        <asp:Panel ID="pnlAlert" runat="server" Visible="false" CssClass="val-alert val-alert-danger" style="margin-bottom: 14px;">
+            <i class="bi bi-exclamation-triangle-fill"></i>
+            <asp:Label ID="lblAlertMessage" runat="server"></asp:Label>
+        </asp:Panel>
+
         <div style="display: grid; grid-template-columns: 1fr 1.5fr 1fr 1fr; gap: 20px;">
             <div style="border-right: 1px solid #E5E7EB; padding-right: 16px;">
                 <div style="font-size: 11px; font-weight: 600; color: #6B7280; text-transform: uppercase; margin-bottom: 4px;">Purchase Order</div>
@@ -168,26 +174,29 @@
         <div class="sf-card" style="margin-bottom: 0; padding: 18px 20px;">
             <div style="display: grid; grid-template-columns: 1fr 1fr 1.2fr 1.5fr; gap: 14px;">
                 <div>
-                    <label class="sf-form-label">Received Date</label>
-                    <input type="text" class="sf-input" value="08/18/2026" />
+                    <label class="sf-form-label">Received Date <span class="text-danger">*</span></label>
+                    <asp:TextBox ID="txtReceivedDate" runat="server" CssClass="sf-input" Text="2026-08-18"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvReceivedDate" runat="server" ControlToValidate="txtReceivedDate" ErrorMessage="Date is required." CssClass="validation-error" Display="Dynamic"></asp:RequiredFieldValidator>
+                    <asp:CompareValidator ID="cvReceivedDate" runat="server" ControlToValidate="txtReceivedDate" Operator="DataTypeCheck" Type="Date" ErrorMessage="Valid date required." CssClass="validation-error" Display="Dynamic"></asp:CompareValidator>
                 </div>
                 <div>
                     <label class="sf-form-label">Received By</label>
-                    <input type="text" class="sf-input" value="System Admin" readonly />
+                    <asp:TextBox ID="txtReceivedBy" runat="server" CssClass="sf-input" Text="System Admin" ReadOnly="true"></asp:TextBox>
                 </div>
                 <div>
-                    <label class="sf-form-label">Delivery Ref (Waybill)</label>
-                    <input type="text" class="sf-input" placeholder="e.g. WB-12345" />
+                    <label class="sf-form-label">Delivery Ref (Waybill) <span class="text-danger">*</span></label>
+                    <asp:TextBox ID="txtWaybill" runat="server" CssClass="sf-input" Text="WB-12345" placeholder="e.g. WB-12345"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvWaybill" runat="server" ControlToValidate="txtWaybill" ErrorMessage="Delivery ref is required." CssClass="validation-error" Display="Dynamic"></asp:RequiredFieldValidator>
                 </div>
                 <div>
                     <label class="sf-form-label">Notes</label>
-                    <input type="text" class="sf-input" placeholder="Optional notes on receipt" />
+                    <asp:TextBox ID="txtNotes" runat="server" CssClass="sf-input" placeholder="Optional notes on receipt"></asp:TextBox>
                 </div>
             </div>
         </div>
 
         <div style="display: flex; flex-direction: column; gap: 8px;">
-            <asp:Button ID="btnConfirmReceipt" runat="server" Text="✔ Confirm Receipt" CssClass="btn-success-dark" style="width: 100%; justify-content: center; height: 42px; font-size: 14px;" />
+            <asp:Button ID="btnConfirmReceipt" runat="server" Text="✔ Confirm Receipt" CssClass="btn-success-dark" style="width: 100%; justify-content: center; height: 42px; font-size: 14px;" OnClick="btnConfirmReceipt_Click" />
             <a href="<%= ResolveUrl("~/Purchases/PurchaseOrderDetails.aspx?id=PO-2026-0048") %>" class="btn-outline-action" style="width: 100%; justify-content: center; text-align: center; height: 38px;">Cancel</a>
         </div>
     </div>

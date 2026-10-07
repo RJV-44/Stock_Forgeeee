@@ -6,6 +6,7 @@ namespace Stock_Forgeeee.Account
         protected global::System.Web.UI.WebControls.Label lblAlertMessage;
         protected global::System.Web.UI.WebControls.TextBox txtEmail;
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvEmail;
-        protected global::System.Web.UI.WebControls.Button btnReset;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revEmail;
+        protected global::System.Web.UI.WebControls.Button btnSendResetLink;
     }
 }

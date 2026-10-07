@@ -67,6 +67,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\StockForgeDatabse.mdf" />
+    <Content Include="App_Data\StockForgeDatabse_log.ldf">
+      <DependentUpon>StockForgeDatabse.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\site.css" />
     <Content Include="Content\components.css" />
     <Content Include="Content\responsive.css" />
@@ -134,6 +138,7 @@
     <Content Include="Users\UserManagement.aspx" />
     <Content Include="Site.Master" />
     <Content Include="Web.config" />
+    <Content Include="Database\StockForge.mdf" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controls\Sidebar.ascx.cs">
@@ -168,6 +173,16 @@
       <DependentUpon>ProductList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Products\ProductList.aspx.designer.cs">
+      <DependentUpon>ProductList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="DataAccess\IRepository.cs" />
+    <Compile Include="DataAccess\ISqlEntityMapper.cs" />
+    <Compile Include="DataAccess\GenericRepository.cs" />
+    <Compile Include="DataAccess\ProductSqlEntityMapper.cs" />
+    <Compile Include="DataAccess\ProductRepository.cs" />
     <Compile Include="Products\AddProduct.aspx.cs">
       <DependentUpon>AddProduct.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -399,6 +414,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

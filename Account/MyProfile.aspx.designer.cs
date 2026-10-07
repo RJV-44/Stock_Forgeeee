@@ -10,6 +10,8 @@ namespace Stock_Forgeeee.Account
         protected global::System.Web.UI.WebControls.TextBox txtEmail;
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvEmail;
         protected global::System.Web.UI.WebControls.TextBox txtPhone;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvPhone;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revPhone;
         protected global::System.Web.UI.WebControls.TextBox txtRole;
         protected global::System.Web.UI.WebControls.TextBox txtAddress;
         protected global::System.Web.UI.WebControls.Button btnSaveProfile;

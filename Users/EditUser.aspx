@@ -21,9 +21,15 @@
         </div>
         <div class="sf-header-actions">
             <a href="<%= ResolveUrl("~/Users/UserManagement.aspx") %>" class="btn-outline-action">Cancel</a>
-            <asp:Button ID="btnSaveChanges" runat="server" Text="Save Changes" CssClass="btn-primary-action" />
+            <asp:Button ID="btnSaveChanges" runat="server" Text="Save Changes" CssClass="btn-primary-action" OnClick="btnSaveChanges_Click" />
         </div>
     </div>
+
+    <!-- Alert Feedback -->
+    <asp:Panel ID="pnlAlert" runat="server" Visible="false" CssClass="val-alert val-alert-danger" style="margin-bottom: 20px;">
+        <i class="bi bi-exclamation-triangle-fill"></i>
+        <asp:Label ID="lblAlertMessage" runat="server"></asp:Label>
+    </asp:Panel>
 
     <!-- Main Card (Matching StockForge Edit User (No-Scroll).png) -->
     <div class="sf-card" style="padding: 28px;">
@@ -36,23 +42,28 @@
                 </div>
 
                 <div style="margin-bottom: 16px;">
-                    <label class="sf-form-label">Full Name</label>
-                    <input type="text" class="sf-input" value="Khush Dobariya" />
+                    <label class="sf-form-label">Full Name <span class="text-danger">*</span></label>
+                    <asp:TextBox ID="txtFullName" runat="server" CssClass="sf-input" Text="Khush Dobariya"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvFullName" runat="server" ControlToValidate="txtFullName" ErrorMessage="Full name is required." CssClass="validation-error" Display="Dynamic"></asp:RequiredFieldValidator>
                 </div>
 
                 <div style="margin-bottom: 16px;">
-                    <label class="sf-form-label">Email Address</label>
-                    <input type="email" class="sf-input" value="khush@example.in" />
+                    <label class="sf-form-label">Email Address <span class="text-danger">*</span></label>
+                    <asp:TextBox ID="txtEmail" runat="server" CssClass="sf-input" Text="khush@example.in"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvEmail" runat="server" ControlToValidate="txtEmail" ErrorMessage="Email is required." CssClass="validation-error" Display="Dynamic"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="revEmail" runat="server" ControlToValidate="txtEmail" ValidationExpression="^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$" ErrorMessage="Enter a valid email." CssClass="validation-error" Display="Dynamic"></asp:RegularExpressionValidator>
                 </div>
 
                 <div>
-                    <label class="sf-form-label">Phone Number</label>
+                    <label class="sf-form-label">Phone Number <span class="text-danger">*</span></label>
                     <div style="display: flex;">
                         <span style="display: inline-flex; align-items: center; padding: 0 12px; background: #F3F4F6; border: 1px solid #D1D5DB; border-right: none; border-radius: 6px 0 0 6px; font-size: 13.5px; color: #4B5563;">
                             +91
                         </span>
-                        <input type="tel" class="sf-input" value="98765 43210" style="border-radius: 0 6px 6px 0;" />
+                        <asp:TextBox ID="txtPhone" runat="server" CssClass="sf-input" Text="98765 43210" style="border-radius: 0 6px 6px 0;"></asp:TextBox>
                     </div>
+                    <asp:RequiredFieldValidator ID="rfvPhone" runat="server" ControlToValidate="txtPhone" ErrorMessage="Phone number is required." CssClass="validation-error" Display="Dynamic"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="revPhone" runat="server" ControlToValidate="txtPhone" ValidationExpression="^(\+?[0-9\s\-\(\)]{8,16})$" ErrorMessage="Enter a valid phone number." CssClass="validation-error" Display="Dynamic"></asp:RegularExpressionValidator>
                 </div>
             </div>
 
@@ -67,23 +78,23 @@
 
                 <div style="margin-bottom: 16px;">
                     <label class="sf-form-label">System Role</label>
-                    <select class="sf-select" style="width: 100%;">
-                        <option selected>Admin</option>
-                        <option>Inventory Manager</option>
-                        <option>Purchase Manager</option>
-                        <option>Sales Staff</option>
-                        <option>Viewer</option>
-                    </select>
+                    <asp:DropDownList ID="ddlRole" runat="server" CssClass="sf-select" style="width: 100%;">
+                        <asp:ListItem Value="Admin" Selected="True">Admin</asp:ListItem>
+                        <asp:ListItem Value="Inventory Manager">Inventory Manager</asp:ListItem>
+                        <asp:ListItem Value="Purchase Manager">Purchase Manager</asp:ListItem>
+                        <asp:ListItem Value="Sales Staff">Sales Staff</asp:ListItem>
+                        <asp:ListItem Value="Viewer">Viewer</asp:ListItem>
+                    </asp:DropDownList>
                     <div style="font-size: 12px; color: #6B7280; margin-top: 4px;">Full access to StockForge.</div>
                 </div>
 
                 <div>
                     <label class="sf-form-label">Account Status</label>
-                    <select class="sf-select" style="width: 100%;">
-                        <option selected>Active</option>
-                        <option>Inactive</option>
-                        <option>Suspended</option>
-                    </select>
+                    <asp:DropDownList ID="ddlStatus" runat="server" CssClass="sf-select" style="width: 100%;">
+                        <asp:ListItem Value="Active" Selected="True">Active</asp:ListItem>
+                        <asp:ListItem Value="Inactive">Inactive</asp:ListItem>
+                        <asp:ListItem Value="Suspended">Suspended</asp:ListItem>
+                    </asp:DropDownList>
                 </div>
             </div>
         </div>

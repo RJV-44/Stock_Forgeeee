@@ -23,32 +23,41 @@
         </div>
         <div class="sf-header-actions">
             <a href="<%= ResolveUrl("~/Purchases/PurchaseOrderDetails.aspx?id=PO-2026-0048") %>" class="btn-outline-action">Cancel</a>
-            <asp:Button ID="btnSaveOrder" runat="server" Text="Save Changes" CssClass="btn-success-dark" />
+            <asp:Button ID="btnSaveOrder" runat="server" Text="Save Changes" CssClass="btn-success-dark" OnClick="btnSaveOrder_Click" />
         </div>
     </div>
+
+    <!-- Alert Feedback -->
+    <asp:Panel ID="pnlAlert" runat="server" Visible="false" CssClass="val-alert val-alert-danger" style="margin-bottom: 20px;">
+        <i class="bi bi-exclamation-triangle-fill"></i>
+        <asp:Label ID="lblAlertMessage" runat="server"></asp:Label>
+    </asp:Panel>
 
     <!-- Top Fields Card -->
     <div class="sf-card" style="padding: 20px; margin-bottom: 20px;">
         <div style="display: grid; grid-template-columns: 1fr 1.2fr 1fr 1.5fr; gap: 16px;">
             <div>
                 <label class="sf-form-label">PO Number</label>
-                <input type="text" class="sf-input" value="PO-2026-0048" readonly />
+                <asp:TextBox ID="txtPoNumber" runat="server" CssClass="sf-input" Text="PO-2026-0048" ReadOnly="true"></asp:TextBox>
             </div>
             <div>
-                <label class="sf-form-label">Supplier</label>
-                <select class="sf-select" style="width: 100%;">
-                    <option selected>ABC Hardware Suppliers</option>
-                    <option>Patel Industrial Hardware</option>
-                    <option>Reliable Tools &amp; Hardware</option>
-                </select>
+                <label class="sf-form-label">Supplier <span class="text-danger">*</span></label>
+                <asp:DropDownList ID="ddlSupplier" runat="server" CssClass="sf-select" style="width: 100%;">
+                    <asp:ListItem Text="ABC Hardware Suppliers" Value="ABC Hardware Suppliers" Selected="True"></asp:ListItem>
+                    <asp:ListItem Text="Patel Industrial Hardware" Value="Patel Industrial Hardware"></asp:ListItem>
+                    <asp:ListItem Text="Reliable Tools &amp; Hardware" Value="Reliable Tools &amp; Hardware"></asp:ListItem>
+                </asp:DropDownList>
+                <asp:RequiredFieldValidator ID="rfvSupplier" runat="server" ControlToValidate="ddlSupplier" ErrorMessage="Supplier is required." CssClass="validation-error" Display="Dynamic"></asp:RequiredFieldValidator>
             </div>
             <div>
-                <label class="sf-form-label">Expected Delivery</label>
-                <input type="text" class="sf-input" value="10/15/2026" />
+                <label class="sf-form-label">Expected Delivery <span class="text-danger">*</span></label>
+                <asp:TextBox ID="txtExpectedDelivery" runat="server" CssClass="sf-input" Text="2026-10-15"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="rfvDelivery" runat="server" ControlToValidate="txtExpectedDelivery" ErrorMessage="Delivery date is required." CssClass="validation-error" Display="Dynamic"></asp:RequiredFieldValidator>
+                <asp:CompareValidator ID="cvDelivery" runat="server" ControlToValidate="txtExpectedDelivery" Operator="DataTypeCheck" Type="Date" ErrorMessage="Enter a valid date." CssClass="validation-error" Display="Dynamic"></asp:CompareValidator>
             </div>
             <div>
                 <label class="sf-form-label">Notes</label>
-                <input type="text" class="sf-input" placeholder="Add notes..." />
+                <asp:TextBox ID="txtNotes" runat="server" CssClass="sf-input" placeholder="Add notes..."></asp:TextBox>
             </div>
         </div>
     </div>

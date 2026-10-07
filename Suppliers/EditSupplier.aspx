@@ -21,6 +21,12 @@
 
     <!-- Main Container Card -->
     <div class="sf-card" style="padding: 24px; margin-bottom: 24px;">
+        <!-- Alert Feedback -->
+        <asp:Panel ID="pnlAlert" runat="server" Visible="false" CssClass="val-alert val-alert-danger">
+            <i class="bi bi-exclamation-triangle-fill"></i>
+            <asp:Label ID="lblAlertMessage" runat="server"></asp:Label>
+        </asp:Panel>
+
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
             <!-- Left Column -->
             <div>
@@ -29,23 +35,29 @@
                     <div class="sf-group-title">Supplier Information</div>
 
                     <div style="margin-bottom: 14px;">
-                        <label class="sf-form-label">Supplier Name</label>
-                        <input type="text" class="sf-input" value="ABC Hardware Suppliers" />
+                        <label class="sf-form-label">Supplier Name <span class="text-danger">*</span></label>
+                        <asp:TextBox ID="txtSupplierName" runat="server" CssClass="sf-input" Text="ABC Hardware Suppliers"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvSupplierName" runat="server" ControlToValidate="txtSupplierName" ErrorMessage="Supplier name is required." CssClass="validation-error" Display="Dynamic"></asp:RequiredFieldValidator>
                     </div>
 
                     <div style="margin-bottom: 14px;">
-                        <label class="sf-form-label">Primary Contact</label>
-                        <input type="text" class="sf-input" value="Rajesh Patel" />
+                        <label class="sf-form-label">Primary Contact <span class="text-danger">*</span></label>
+                        <asp:TextBox ID="txtContactPerson" runat="server" CssClass="sf-input" Text="Rajesh Patel"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvContactPerson" runat="server" ControlToValidate="txtContactPerson" ErrorMessage="Primary contact is required." CssClass="validation-error" Display="Dynamic"></asp:RequiredFieldValidator>
                     </div>
 
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
                         <div>
-                            <label class="sf-form-label">Phone Number</label>
-                            <input type="tel" class="sf-input" value="+91 98765 43210" />
+                            <label class="sf-form-label">Phone Number <span class="text-danger">*</span></label>
+                            <asp:TextBox ID="txtPhone" runat="server" CssClass="sf-input" Text="+91 98765 43210"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="rfvPhone" runat="server" ControlToValidate="txtPhone" ErrorMessage="Phone is required." CssClass="validation-error" Display="Dynamic"></asp:RequiredFieldValidator>
+                            <asp:RegularExpressionValidator ID="revPhone" runat="server" ControlToValidate="txtPhone" ValidationExpression="^(\+?[0-9\s\-\(\)]{8,16})$" ErrorMessage="Valid phone format required." CssClass="validation-error" Display="Dynamic"></asp:RegularExpressionValidator>
                         </div>
                         <div>
-                            <label class="sf-form-label">Email Address</label>
-                            <input type="email" class="sf-input" value="contact@abchardware.in" />
+                            <label class="sf-form-label">Email Address <span class="text-danger">*</span></label>
+                            <asp:TextBox ID="txtEmail" runat="server" CssClass="sf-input" Text="contact@abchardware.in"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="rfvEmail" runat="server" ControlToValidate="txtEmail" ErrorMessage="Email is required." CssClass="validation-error" Display="Dynamic"></asp:RequiredFieldValidator>
+                            <asp:RegularExpressionValidator ID="revEmail" runat="server" ControlToValidate="txtEmail" ValidationExpression="^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$" ErrorMessage="Valid email required." CssClass="validation-error" Display="Dynamic"></asp:RegularExpressionValidator>
                         </div>
                     </div>
                 </div>
@@ -57,31 +69,31 @@
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px;">
                         <div>
                             <label class="sf-form-label">Supplier Type</label>
-                            <select class="sf-select" style="width: 100%;">
-                                <option selected>Distributor</option>
-                                <option>Manufacturer</option>
-                                <option>Wholesaler</option>
-                            </select>
+                            <asp:DropDownList ID="ddlSupplierType" runat="server" CssClass="sf-select" style="width: 100%;">
+                                <asp:ListItem Text="Distributor" Value="Distributor" Selected="True"></asp:ListItem>
+                                <asp:ListItem Text="Manufacturer" Value="Manufacturer"></asp:ListItem>
+                                <asp:ListItem Text="Wholesaler" Value="Wholesaler"></asp:ListItem>
+                            </asp:DropDownList>
                         </div>
                         <div>
                             <label class="sf-form-label">Payment Terms</label>
-                            <select class="sf-select" style="width: 100%;">
-                                <option selected>30 Days</option>
-                                <option>15 Days</option>
-                                <option>60 Days</option>
-                                <option>Advance</option>
-                            </select>
+                            <asp:DropDownList ID="ddlPaymentTerms" runat="server" CssClass="sf-select" style="width: 100%;">
+                                <asp:ListItem Text="30 Days" Value="30 Days" Selected="True"></asp:ListItem>
+                                <asp:ListItem Text="15 Days" Value="15 Days"></asp:ListItem>
+                                <asp:ListItem Text="60 Days" Value="60 Days"></asp:ListItem>
+                                <asp:ListItem Text="Advance" Value="Advance"></asp:ListItem>
+                            </asp:DropDownList>
                         </div>
                     </div>
 
                     <div style="margin-bottom: 14px;">
                         <label class="sf-form-label">GSTIN</label>
-                        <input type="text" class="sf-input" value="24ABCDE1234F1Z5" />
+                        <asp:TextBox ID="txtGstin" runat="server" CssClass="sf-input" Text="24ABCDE1234F1Z5"></asp:TextBox>
                     </div>
 
                     <div>
                         <label class="sf-form-label">Internal Notes</label>
-                        <textarea class="sf-textarea" rows="3">Primary supplier for power tools and electrical hardware.</textarea>
+                        <asp:TextBox ID="txtNotes" runat="server" TextMode="MultiLine" Rows="3" CssClass="sf-textarea" Text="Primary supplier for power tools and electrical hardware."></asp:TextBox>
                     </div>
                 </div>
             </div>
@@ -92,29 +104,34 @@
                     <div class="sf-group-title">Address Details</div>
 
                     <div style="margin-bottom: 14px;">
-                        <label class="sf-form-label">Street Address</label>
-                        <input type="text" class="sf-input" value="123 Industrial Estate, Vatva" />
+                        <label class="sf-form-label">Street Address <span class="text-danger">*</span></label>
+                        <asp:TextBox ID="txtAddress" runat="server" CssClass="sf-input" Text="123 Industrial Estate, Vatva"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvAddress" runat="server" ControlToValidate="txtAddress" ErrorMessage="Street address is required." CssClass="validation-error" Display="Dynamic"></asp:RequiredFieldValidator>
                     </div>
 
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px;">
                         <div>
-                            <label class="sf-form-label">City</label>
-                            <input type="text" class="sf-input" value="Ahmedabad" />
+                            <label class="sf-form-label">City <span class="text-danger">*</span></label>
+                            <asp:TextBox ID="txtCity" runat="server" CssClass="sf-input" Text="Ahmedabad"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="rfvCity" runat="server" ControlToValidate="txtCity" ErrorMessage="City is required." CssClass="validation-error" Display="Dynamic"></asp:RequiredFieldValidator>
                         </div>
                         <div>
-                            <label class="sf-form-label">State</label>
-                            <input type="text" class="sf-input" value="Gujarat" />
+                            <label class="sf-form-label">State <span class="text-danger">*</span></label>
+                            <asp:TextBox ID="txtState" runat="server" CssClass="sf-input" Text="Gujarat"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="rfvState" runat="server" ControlToValidate="txtState" ErrorMessage="State is required." CssClass="validation-error" Display="Dynamic"></asp:RequiredFieldValidator>
                         </div>
                     </div>
 
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 16px;">
                         <div>
-                            <label class="sf-form-label">PIN Code</label>
-                            <input type="text" class="sf-input" value="382445" />
+                            <label class="sf-form-label">PIN Code <span class="text-danger">*</span></label>
+                            <asp:TextBox ID="txtPinCode" runat="server" CssClass="sf-input" Text="382445"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="rfvPin" runat="server" ControlToValidate="txtPinCode" ErrorMessage="PIN Code is required." CssClass="validation-error" Display="Dynamic"></asp:RequiredFieldValidator>
+                            <asp:RegularExpressionValidator ID="revPin" runat="server" ControlToValidate="txtPinCode" ValidationExpression="^\d{6}$" ErrorMessage="Enter a valid 6-digit PIN code." CssClass="validation-error" Display="Dynamic"></asp:RegularExpressionValidator>
                         </div>
                         <div>
                             <label class="sf-form-label">Country</label>
-                            <input type="text" class="sf-input" value="India" />
+                            <asp:TextBox ID="txtCountry" runat="server" CssClass="sf-input" Text="India"></asp:TextBox>
                         </div>
                     </div>
 
@@ -149,7 +166,7 @@
         <!-- Bottom Action Buttons Inside Card Footer -->
         <div style="display: flex; justify-content: flex-end; gap: 12px; margin-top: 24px; padding-top: 18px; border-top: 1px solid #E5E7EB;">
             <a href="<%= ResolveUrl("~/Suppliers/SupplierList.aspx") %>" class="btn-outline-action">Cancel</a>
-            <asp:Button ID="btnSaveSupplier" runat="server" Text="Save Changes" CssClass="btn-success-dark" />
+            <asp:Button ID="btnSaveSupplier" runat="server" Text="Save Changes" CssClass="btn-success-dark" OnClick="btnSaveSupplier_Click" />
         </div>
     </div>
 </asp:Content>

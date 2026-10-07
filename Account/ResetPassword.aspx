@@ -55,7 +55,7 @@
                             <asp:TextBox ID="txtNewPassword" runat="server" TextMode="Password" CssClass="auth-input" placeholder="••••••••"></asp:TextBox>
                         </div>
                         <asp:RequiredFieldValidator ID="rfvNewPassword" runat="server" ControlToValidate="txtNewPassword" 
-                            ErrorMessage="Please enter a new password" CssClass="val-error" Display="Dynamic" EnableClientScript="false"></asp:RequiredFieldValidator>
+                            ErrorMessage="Please enter a new password" CssClass="val-error" Display="Dynamic"></asp:RequiredFieldValidator>
                     </div>
 
                     <div class="auth-form-group">
@@ -65,9 +65,9 @@
                             <asp:TextBox ID="txtConfirmPassword" runat="server" TextMode="Password" CssClass="auth-input" placeholder="••••••••"></asp:TextBox>
                         </div>
                         <asp:RequiredFieldValidator ID="rfvConfirmPassword" runat="server" ControlToValidate="txtConfirmPassword" 
-                            ErrorMessage="Please confirm your new password" CssClass="val-error" Display="Dynamic" EnableClientScript="false"></asp:RequiredFieldValidator>
+                            ErrorMessage="Please confirm your new password" CssClass="val-error" Display="Dynamic"></asp:RequiredFieldValidator>
                         <asp:CompareValidator ID="cvPassword" runat="server" ControlToValidate="txtConfirmPassword" ControlToCompare="txtNewPassword"
-                            ErrorMessage="Passwords do not match" CssClass="val-error" Display="Dynamic" EnableClientScript="false"></asp:CompareValidator>
+                            ErrorMessage="Passwords do not match" CssClass="val-error" Display="Dynamic"></asp:CompareValidator>
                     </div>
 
                     <asp:Button ID="btnResetPassword" runat="server" Text="Update Password & Sign In" OnClick="btnResetPassword_Click" CssClass="btn-auth-submit" />

@@ -2063,3 +2063,53 @@ img {
         max-width: 100% !important;
     }
 }
+
+/* Validation Control Styling */
+.validation-error,
+.val-error,
+.text-danger {
+    display: block;
+    color: #DC2626 !important;
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 4px;
+    line-height: 1.4;
+}
+
+.validation-summary-errors {
+    background-color: #FEF2F2;
+    border: 1px solid #FCA5A5;
+    border-radius: 6px;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+    color: #B91C1C;
+    font-size: 13px;
+}
+
+.validation-summary-errors ul {
+    margin: 4px 0 0 18px;
+    padding: 0;
+}
+
+.val-alert {
+    padding: 12px 16px;
+    border-radius: 6px;
+    margin-bottom: 16px;
+    font-size: 13.5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.val-alert-danger {
+    background-color: #FEF2F2;
+    border: 1px solid #FCA5A5;
+    color: #B91C1C;
+}
+
+.val-alert-success {
+    background-color: #F0FDF4;
+    border: 1px solid #86EFAC;
+    color: #166534;
+}
+

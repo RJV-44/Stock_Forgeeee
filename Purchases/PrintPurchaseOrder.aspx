@@ -109,7 +109,7 @@
                         <i class="bi bi-box-seam"></i>
                     </div>
                     <div>
-                        <div style="font-size: 18px; font-weight: 700; color: #111827;">StockForge</div>
+                        <div style="font-size: 18px; font-weight: 700; color: #006C44;">StockForge</div>
                         <div style="font-size: 12.5px; color: #4B5563; margin-top: 2px;">Hardware Supplies, Ahmedabad</div>
                         <div style="font-size: 12.5px; color: #4B5563;">GSTIN: 24STOCKFORGE1Z5</div>
                         <div style="font-size: 12.5px; color: #4B5563;">info@stockforge.in | +91 98765 43210</div>
@@ -120,7 +120,7 @@
                     <div style="font-size: 16px; font-weight: 700; color: #111827; letter-spacing: 0.5px;">PURCHASE ORDER</div>
                     <div style="font-size: 13px; color: #4B5563; margin-top: 4px;"><strong>PO NUMBER:</strong> PO-2026-0048</div>
                     <div style="font-size: 13px; color: #4B5563;"><strong>DATE:</strong> 16/08/2026</div>
-                    <div style="margin-top: 4px;"><span class="sf-pill sf-pill-neutral" style="font-size: 11px;">PENDING</span></div>
+                    <div style="margin-top: 6px; font-size: 12.5px; color: #4B5563;"><strong>STATUS:</strong> <span class="sf-pill sf-pill-neutral" style="font-size: 11px; font-weight: 600; padding: 3px 10px; background: #E5E7EB; color: #374151; border-radius: 4px; display: inline-block;">PENDING</span></div>
                 </div>
             </div>
 
@@ -217,24 +217,26 @@
                 </div>
             </div>
 
-            <!-- Terms & Signatures -->
-            <div style="border-top: 1px solid #E5E7EB; padding-top: 24px; margin-top: 24px;">
-                <div style="font-size: 11px; font-weight: 700; color: #6B7280; text-transform: uppercase; margin-bottom: 6px;">Terms &amp; Notes</div>
-                <div style="font-size: 12.5px; color: #4B5563; line-height: 1.6; margin-bottom: 36px;">
-                    - Please deliver between 9 AM and 5 PM on weekdays.<br />
-                    - All items must include warranty cards where applicable.<br />
-                    - Invoices must reference PO-2026-0048.
+            <!-- Terms & Signatures (Side-by-side matching Figma) -->
+            <div style="border-top: 1px solid #E5E7EB; padding-top: 28px; margin-top: 24px; display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: flex-end;">
+                <div>
+                    <div style="font-size: 11px; font-weight: 700; color: #6B7280; text-transform: uppercase; margin-bottom: 8px;">TERMS &amp; NOTES</div>
+                    <div style="font-size: 12.5px; color: #4B5563; line-height: 1.7;">
+                        Please deliver between 9 AM and 5 PM on weekdays.<br />
+                        All items must include warranty cards where applicable.<br />
+                        Invoices must reference PO-2026-0048.
+                    </div>
                 </div>
 
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; text-align: center;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 28px; text-align: center;">
                     <div>
-                        <div style="border-top: 1px solid #D1D5DB; width: 180px; margin: 0 auto 8px;"></div>
-                        <div style="font-size: 11px; color: #6B7280;">Prepared By</div>
+                        <div style="border-top: 1px solid #D1D5DB; width: 100%; margin: 0 auto 8px;"></div>
+                        <div style="font-size: 11px; color: #6B7280; margin-bottom: 4px;">Prepared By</div>
                         <div style="font-size: 13.5px; font-weight: 600; color: #111827;">A. Sharma</div>
                     </div>
                     <div>
-                        <div style="border-top: 1px solid #D1D5DB; width: 180px; margin: 0 auto 8px;"></div>
-                        <div style="font-size: 11px; color: #6B7280;">Approved By</div>
+                        <div style="border-top: 1px solid #D1D5DB; width: 100%; margin: 0 auto 8px;"></div>
+                        <div style="font-size: 11px; color: #6B7280; margin-bottom: 4px;">Approved By</div>
                         <div style="font-size: 13.5px; font-weight: 600; color: #111827;">M. Patel</div>
                     </div>
                 </div>

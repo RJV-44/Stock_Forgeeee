@@ -15,9 +15,15 @@
             <div class="sf-page-subtitle">Manage your personal information and account security.</div>
         </div>
         <div class="sf-header-actions">
-            <asp:Button ID="btnSaveProfile" runat="server" Text="💾 Save Changes" CssClass="btn-primary-action" />
+            <asp:Button ID="btnSaveProfile" runat="server" Text="💾 Save Changes" CssClass="btn-primary-action" OnClick="btnSaveProfile_Click" />
         </div>
     </div>
+
+    <!-- Alert Feedback -->
+    <asp:Panel ID="pnlAlert" runat="server" Visible="false" CssClass="val-alert val-alert-danger" style="margin-bottom: 20px;">
+        <i class="bi bi-exclamation-triangle-fill"></i>
+        <asp:Label ID="lblAlertMessage" runat="server"></asp:Label>
+    </asp:Panel>
 
     <!-- 2 Column Layout -->
     <div style="display: grid; grid-template-columns: 320px 1fr; gap: 24px;">
@@ -87,13 +93,14 @@
 
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 18px;">
                     <div>
-                        <label class="sf-form-label">Full Name</label>
-                        <input type="text" class="sf-input" value="Khush Dobariya" />
+                        <label class="sf-form-label">Full Name <span class="text-danger">*</span></label>
+                        <asp:TextBox ID="txtFullName" runat="server" CssClass="sf-input" Text="Khush Dobariya"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvFullName" runat="server" ControlToValidate="txtFullName" ErrorMessage="Full name is required." CssClass="validation-error" Display="Dynamic"></asp:RequiredFieldValidator>
                     </div>
                     <div>
                         <label class="sf-form-label">Email Address</label>
                         <div style="position: relative;">
-                            <input type="email" class="sf-input" value="khush@example.in" readonly style="padding-right: 32px;" />
+                            <asp:TextBox ID="txtEmail" runat="server" CssClass="sf-input" Text="khush@example.in" ReadOnly="true" style="padding-right: 32px;"></asp:TextBox>
                             <i class="bi bi-lock" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); color: #9CA3AF;"></i>
                         </div>
                     </div>
@@ -101,13 +108,15 @@
 
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
                     <div>
-                        <label class="sf-form-label">Phone Number</label>
+                        <label class="sf-form-label">Phone Number <span class="text-danger">*</span></label>
                         <div style="display: flex;">
                             <span style="display: inline-flex; align-items: center; padding: 0 12px; background: #F3F4F6; border: 1px solid #D1D5DB; border-right: none; border-radius: 6px 0 0 6px; font-size: 13.5px; color: #4B5563;">
                                 +91
                             </span>
-                            <input type="tel" class="sf-input" value="98765 43210" style="border-radius: 0 6px 6px 0;" />
+                            <asp:TextBox ID="txtPhone" runat="server" CssClass="sf-input" Text="98765 43210" style="border-radius: 0 6px 6px 0;"></asp:TextBox>
                         </div>
+                        <asp:RequiredFieldValidator ID="rfvPhone" runat="server" ControlToValidate="txtPhone" ErrorMessage="Phone is required." CssClass="validation-error" Display="Dynamic"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="revPhone" runat="server" ControlToValidate="txtPhone" ValidationExpression="^(\+?[0-9\s\-\(\)]{8,16})$" ErrorMessage="Valid phone required." CssClass="validation-error" Display="Dynamic"></asp:RegularExpressionValidator>
                     </div>
                     <div>
                         <label class="sf-form-label">Timezone</label>

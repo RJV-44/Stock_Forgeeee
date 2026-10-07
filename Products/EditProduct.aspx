@@ -15,14 +15,23 @@
 
     <div class="card" style="max-width: 980px;">
         <div class="card-body">
+            <!-- Alert / Status Feedback -->
+            <asp:Panel ID="pnlAlert" runat="server" Visible="false" CssClass="val-alert val-alert-danger">
+                <i class="bi bi-exclamation-triangle-fill"></i>
+                <asp:Label ID="lblAlertMessage" runat="server"></asp:Label>
+            </asp:Panel>
+
             <div class="adjustment-form">
                 <div class="form-group">
                     <label class="form-label">Product Name <span class="required">*</span></label>
                     <asp:TextBox ID="txtProductName" runat="server" CssClass="form-control" Text="Bosch GSB 500W Impact Drill"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvName" runat="server" ControlToValidate="txtProductName" ErrorMessage="Product name is required." CssClass="validation-error" Display="Dynamic"></asp:RequiredFieldValidator>
                 </div>
                 <div class="form-group">
                     <label class="form-label">SKU / Part Number <span class="required">*</span></label>
                     <asp:TextBox ID="txtSKU" runat="server" CssClass="form-control" Text="HW-BSH-500"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvSKU" runat="server" ControlToValidate="txtSKU" ErrorMessage="SKU code is required." CssClass="validation-error" Display="Dynamic"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="revSKU" runat="server" ControlToValidate="txtSKU" ValidationExpression="^[a-zA-Z0-9_\-]+$" ErrorMessage="SKU must be alphanumeric." CssClass="validation-error" Display="Dynamic"></asp:RegularExpressionValidator>
                 </div>
                 <div class="form-group">
                     <label class="form-label">Category <span class="required">*</span></label>
@@ -32,6 +41,7 @@
                         <asp:ListItem Value="Fasteners">Fasteners</asp:ListItem>
                         <asp:ListItem Value="Electrical">Electrical</asp:ListItem>
                     </asp:DropDownList>
+                    <asp:RequiredFieldValidator ID="rfvCategory" runat="server" ControlToValidate="ddlCategory" ErrorMessage="Category is required." CssClass="validation-error" Display="Dynamic"></asp:RequiredFieldValidator>
                 </div>
                 <div class="form-group">
                     <label class="form-label">Unit of Measure</label>
@@ -43,20 +53,28 @@
                     </asp:DropDownList>
                 </div>
                 <div class="form-group">
-                    <label class="form-label">Purchase Price (₹)</label>
-                    <asp:TextBox ID="txtPurchasePrice" runat="server" CssClass="form-control" Text="₹3,200"></asp:TextBox>
+                    <label class="form-label">Purchase Price (₹) <span class="required">*</span></label>
+                    <asp:TextBox ID="txtPurchasePrice" runat="server" CssClass="form-control" Text="3200.00"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvPurchasePrice" runat="server" ControlToValidate="txtPurchasePrice" ErrorMessage="Purchase price is required." CssClass="validation-error" Display="Dynamic"></asp:RequiredFieldValidator>
+                    <asp:CompareValidator ID="cvPurchasePrice" runat="server" ControlToValidate="txtPurchasePrice" Operator="DataTypeCheck" Type="Double" ErrorMessage="Enter a valid numeric price." CssClass="validation-error" Display="Dynamic"></asp:CompareValidator>
                 </div>
                 <div class="form-group">
-                    <label class="form-label">Selling Price (₹)</label>
-                    <asp:TextBox ID="txtSellingPrice" runat="server" CssClass="form-control" Text="₹4,150"></asp:TextBox>
+                    <label class="form-label">Selling Price (₹) <span class="required">*</span></label>
+                    <asp:TextBox ID="txtSellingPrice" runat="server" CssClass="form-control" Text="4150.00"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvSellingPrice" runat="server" ControlToValidate="txtSellingPrice" ErrorMessage="Selling price is required." CssClass="validation-error" Display="Dynamic"></asp:RequiredFieldValidator>
+                    <asp:CompareValidator ID="cvSellingPrice" runat="server" ControlToValidate="txtSellingPrice" Operator="DataTypeCheck" Type="Double" ErrorMessage="Enter a valid numeric price." CssClass="validation-error" Display="Dynamic"></asp:CompareValidator>
                 </div>
                 <div class="form-group">
-                    <label class="form-label">Current Stock</label>
+                    <label class="form-label">Current Stock <span class="required">*</span></label>
                     <asp:TextBox ID="txtStockQty" runat="server" CssClass="form-control" Text="3"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvStockQty" runat="server" ControlToValidate="txtStockQty" ErrorMessage="Stock quantity is required." CssClass="validation-error" Display="Dynamic"></asp:RequiredFieldValidator>
+                    <asp:CompareValidator ID="cvStockQty" runat="server" ControlToValidate="txtStockQty" Operator="DataTypeCheck" Type="Integer" ErrorMessage="Enter a valid integer quantity." CssClass="validation-error" Display="Dynamic"></asp:CompareValidator>
                 </div>
                 <div class="form-group">
-                    <label class="form-label">Reorder Level</label>
+                    <label class="form-label">Reorder Level <span class="required">*</span></label>
                     <asp:TextBox ID="txtReorderLevel" runat="server" CssClass="form-control" Text="12"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvReorderLevel" runat="server" ControlToValidate="txtReorderLevel" ErrorMessage="Reorder level is required." CssClass="validation-error" Display="Dynamic"></asp:RequiredFieldValidator>
+                    <asp:CompareValidator ID="cvReorderLevel" runat="server" ControlToValidate="txtReorderLevel" Operator="DataTypeCheck" Type="Integer" ErrorMessage="Enter a valid integer reorder level." CssClass="validation-error" Display="Dynamic"></asp:CompareValidator>
                 </div>
                 <div class="form-group full-width">
                     <label class="form-label">Description</label>
@@ -65,7 +83,7 @@
             </div>
 
             <div class="d-flex gap-2 pt-3 border-top mt-2">
-                <asp:Button ID="btnUpdateProduct" runat="server" Text="Update Product" CssClass="btn-primary" />
+                <asp:Button ID="btnUpdateProduct" runat="server" Text="Update Product" CssClass="btn-primary" OnClick="btnUpdateProduct_Click" />
                 <a href="ProductList.aspx" class="btn-secondary">Cancel</a>
             </div>
         </div>

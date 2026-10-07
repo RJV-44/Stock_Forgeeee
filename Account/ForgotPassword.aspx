@@ -55,7 +55,10 @@
                             <asp:TextBox ID="txtEmail" runat="server" CssClass="auth-input" placeholder="admin@stockforge.com"></asp:TextBox>
                         </div>
                         <asp:RequiredFieldValidator ID="rfvEmail" runat="server" ControlToValidate="txtEmail" 
-                            ErrorMessage="Please enter your email address" CssClass="val-error" Display="Dynamic" EnableClientScript="false"></asp:RequiredFieldValidator>
+                            ErrorMessage="Please enter your email address" CssClass="val-error" Display="Dynamic"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="revEmail" runat="server" ControlToValidate="txtEmail"
+                            ValidationExpression="^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$"
+                            ErrorMessage="Please enter a valid email address format" CssClass="val-error" Display="Dynamic"></asp:RegularExpressionValidator>
                     </div>
 
                     <asp:Button ID="btnSendResetLink" runat="server" Text="Send Reset Instructions" OnClick="btnSendResetLink_Click" CssClass="btn-auth-submit" />

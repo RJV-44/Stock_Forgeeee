@@ -1,0 +1,52 @@
+IF OBJECT_ID(N'dbo.Categories', N'U') IS NULL
+BEGIN
+    CREATE TABLE dbo.Categories
+    (
+        CategoryId INT IDENTITY(1,1) NOT NULL
+            CONSTRAINT PK_Categories PRIMARY KEY,
+        CategoryName NVARCHAR(100) NOT NULL
+            CONSTRAINT UQ_Categories_CategoryName UNIQUE
+    );
+END;
+GO
+
+IF OBJECT_ID(N'dbo.Brands', N'U') IS NULL
+BEGIN
+    CREATE TABLE dbo.Brands
+    (
+        BrandId INT IDENTITY(1,1) NOT NULL
+            CONSTRAINT PK_Brands PRIMARY KEY,
+        BrandName NVARCHAR(100) NOT NULL
+            CONSTRAINT UQ_Brands_BrandName UNIQUE
+    );
+END;
+GO
+
+IF OBJECT_ID(N'dbo.Products', N'U') IS NULL
+BEGIN
+    CREATE TABLE dbo.Products
+    (
+        ProductId INT IDENTITY(1,1) NOT NULL
+            CONSTRAINT PK_Products PRIMARY KEY,
+        SKU NVARCHAR(50) NOT NULL
+            CONSTRAINT UQ_Products_SKU UNIQUE,
+        ProductName NVARCHAR(150) NOT NULL,
+        CategoryId INT NULL,
+        BrandId INT NULL,
+        Description NVARCHAR(1000) NULL,
+        UnitPrice DECIMAL(18,2) NOT NULL,
+        CostPrice DECIMAL(18,2) NOT NULL,
+        ReorderLevel INT NOT NULL
+            CONSTRAINT DF_Products_ReorderLevel DEFAULT (0),
+        IsActive BIT NOT NULL
+            CONSTRAINT DF_Products_IsActive DEFAULT (1),
+        CreatedAt DATETIME2 NOT NULL
+            CONSTRAINT DF_Products_CreatedAt DEFAULT (GETDATE()),
+        UpdatedAt DATETIME2 NULL,
+        CONSTRAINT FK_Products_Categories
+            FOREIGN KEY (CategoryId) REFERENCES dbo.Categories (CategoryId),
+        CONSTRAINT FK_Products_Brands
+            FOREIGN KEY (BrandId) REFERENCES dbo.Brands (BrandId)
+    );
+END;
+GO

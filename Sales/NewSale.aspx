@@ -16,6 +16,12 @@
     <div class="sale-layout">
         <div class="card">
             <div class="card-body">
+                <!-- Alert Feedback -->
+                <asp:Panel ID="pnlAlert" runat="server" Visible="false" CssClass="val-alert val-alert-danger">
+                    <i class="bi bi-exclamation-triangle-fill"></i>
+                    <asp:Label ID="lblAlertMessage" runat="server"></asp:Label>
+                </asp:Panel>
+
                 <div class="form-grid">
                     <div class="form-group">
                         <label class="form-label">Customer <span class="required">*</span></label>
@@ -26,14 +32,18 @@
                             <asp:ListItem Value="Modern Electricals">Modern Electricals</asp:ListItem>
                             <asp:ListItem Value="Royal Infra">Royal Infra</asp:ListItem>
                         </asp:DropDownList>
+                        <asp:RequiredFieldValidator ID="rfvCustomer" runat="server" ControlToValidate="ddlCustomer" InitialValue="" ErrorMessage="Please select a customer." CssClass="validation-error" Display="Dynamic"></asp:RequiredFieldValidator>
                     </div>
                     <div class="form-group">
                         <label class="form-label">Sales Date <span class="required">*</span></label>
                         <asp:TextBox ID="txtSalesDate" runat="server" CssClass="form-control" Text="2026-09-30"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvSalesDate" runat="server" ControlToValidate="txtSalesDate" ErrorMessage="Sales date is required." CssClass="validation-error" Display="Dynamic"></asp:RequiredFieldValidator>
+                        <asp:CompareValidator ID="cvSalesDate" runat="server" ControlToValidate="txtSalesDate" Operator="DataTypeCheck" Type="Date" ErrorMessage="Enter a valid date (YYYY-MM-DD)." CssClass="validation-error" Display="Dynamic"></asp:CompareValidator>
                     </div>
                     <div class="form-group">
                         <label class="form-label">Invoice Number <span class="required">*</span></label>
                         <asp:TextBox ID="txtInvoiceNo" runat="server" CssClass="form-control" Text="INV-9825"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvInvoiceNo" runat="server" ControlToValidate="txtInvoiceNo" ErrorMessage="Invoice number is required." CssClass="validation-error" Display="Dynamic"></asp:RequiredFieldValidator>
                     </div>
                     <div class="form-group">
                         <label class="form-label">Payment Method</label>
@@ -90,7 +100,7 @@
                 </div>
 
                 <div class="d-flex gap-2 pt-3 border-top mt-2">
-                    <asp:Button ID="btnCreateSale" runat="server" Text="Create Sale" CssClass="btn-primary" />
+                    <asp:Button ID="btnCreateSale" runat="server" Text="Create Sale" CssClass="btn-primary" OnClick="btnCreateSale_Click" />
                     <a href="SalesList.aspx" class="btn-secondary">Cancel</a>
                 </div>
             </div>

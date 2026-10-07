@@ -15,14 +15,22 @@
 
     <div class="card" style="max-width: 980px;">
         <div class="card-body">
+            <!-- Alert / Status Feedback -->
+            <asp:Panel ID="pnlAlert" runat="server" Visible="false" CssClass="val-alert val-alert-danger">
+                <i class="bi bi-exclamation-triangle-fill"></i>
+                <asp:Label ID="lblAlertMessage" runat="server"></asp:Label>
+            </asp:Panel>
+
             <div class="form-grid">
                 <div class="form-group">
                     <label class="form-label">First Name <span class="required">*</span></label>
                     <asp:TextBox ID="txtFirstName" runat="server" CssClass="form-control" placeholder="e.g. Aditi"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvFirstName" runat="server" ControlToValidate="txtFirstName" ErrorMessage="First name is required." CssClass="validation-error" Display="Dynamic"></asp:RequiredFieldValidator>
                 </div>
                 <div class="form-group">
                     <label class="form-label">Last Name <span class="required">*</span></label>
                     <asp:TextBox ID="txtLastName" runat="server" CssClass="form-control" placeholder="e.g. Bansal"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvLastName" runat="server" ControlToValidate="txtLastName" ErrorMessage="Last name is required." CssClass="validation-error" Display="Dynamic"></asp:RequiredFieldValidator>
                 </div>
                 <div class="form-group">
                     <label class="form-label">Business Name</label>
@@ -37,14 +45,18 @@
                         <asp:ListItem Value="Wholesale">Wholesale</asp:ListItem>
                         <asp:ListItem Value="Industrial">Industrial</asp:ListItem>
                     </asp:DropDownList>
+                    <asp:RequiredFieldValidator ID="rfvCustomerType" runat="server" ControlToValidate="ddlCustomerType" InitialValue="" ErrorMessage="Customer type is required." CssClass="validation-error" Display="Dynamic"></asp:RequiredFieldValidator>
                 </div>
                 <div class="form-group">
                     <label class="form-label">Phone Number <span class="required">*</span></label>
                     <asp:TextBox ID="txtPhone" runat="server" CssClass="form-control" placeholder="+91 98765 43210"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvPhone" runat="server" ControlToValidate="txtPhone" ErrorMessage="Phone number is required." CssClass="validation-error" Display="Dynamic"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="revPhone" runat="server" ControlToValidate="txtPhone" ValidationExpression="^(\+?[0-9\s\-\(\)]{8,16})$" ErrorMessage="Enter a valid phone number (e.g. +91 9876543210)." CssClass="validation-error" Display="Dynamic"></asp:RegularExpressionValidator>
                 </div>
                 <div class="form-group">
                     <label class="form-label">Email Address</label>
                     <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control" placeholder="name@company.com"></asp:TextBox>
+                    <asp:RegularExpressionValidator ID="revEmail" runat="server" ControlToValidate="txtEmail" ValidationExpression="^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$" ErrorMessage="Enter a valid email address." CssClass="validation-error" Display="Dynamic"></asp:RegularExpressionValidator>
                 </div>
                 <div class="form-group full-width">
                     <label class="form-label">Billing Address</label>
@@ -69,7 +81,7 @@
             </div>
 
             <div class="d-flex gap-2 pt-3 border-top mt-2">
-                <asp:Button ID="btnSaveCustomer" runat="server" Text="Save Customer" CssClass="btn-primary" />
+                <asp:Button ID="btnSaveCustomer" runat="server" Text="Save Customer" CssClass="btn-primary" OnClick="btnSaveCustomer_Click" />
                 <a href="CustomerList.aspx" class="btn-secondary">Cancel</a>
             </div>
         </div>

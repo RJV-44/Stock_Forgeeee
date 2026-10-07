@@ -1920,3 +1920,29 @@ the corresponding Figma screen and correct:
 The final result should look like the same StockForge product shown in
 Figma, but implemented as a working ASP.NET Web Forms application.
 
+## Database and repositories
+
+The product schema is in `Database/StockForge.sql`. Run it once against
+the LocalDB database referenced by the `StockForgeDb` connection string
+in `Web.config`. It creates `Categories`, `Brands`, and `Products`; the
+product columns and constraints follow the supplied Products schema.
+
+`DataAccess/GenericRepository.cs` provides reusable parameterized CRUD
+operations through `IRepository<T>`. `ProductRepository` uses the Product SQL mapper and exposes
+`GetAllArrayList()`, which returns a non-generic `ArrayList` of Product
+objects. `Products/ProductList.aspx` binds the database results from
+that `ArrayList`.
+
+```csharp
+var products = new ProductRepository();
+int productId = products.Add(new Product
+{
+    Sku = "HW-BSH-500",
+    ProductName = "Impact Drill",
+    UnitPrice = 4150m,
+    CostPrice = 3200m,
+    ReorderLevel = 3,
+    IsActive = true
+});
+System.Collections.ArrayList allProducts = products.GetAllArrayList();
+```

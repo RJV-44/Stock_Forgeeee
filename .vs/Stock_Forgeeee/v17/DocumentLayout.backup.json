@@ -1,36 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\.net Project\\Stock_Forgeeee\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{8B960D5B-EBC2-490F-8C3A-BB61FB0C231A}|Stock_Forgeeee.csproj|d:\\.net project\\stock_forgeeee\\landing.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{8B960D5B-EBC2-490F-8C3A-BB61FB0C231A}|Stock_Forgeeee.csproj|solutionrelative:landing.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8B960D5B-EBC2-490F-8C3A-BB61FB0C231A}|Stock_Forgeeee.csproj|D:\\.net Project\\Stock_Forgeeee\\dashboard.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{8B960D5B-EBC2-490F-8C3A-BB61FB0C231A}|Stock_Forgeeee.csproj|solutionrelative:dashboard.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8B960D5B-EBC2-490F-8C3A-BB61FB0C231A}|Stock_Forgeeee.csproj|D:\\.net Project\\Stock_Forgeeee\\site.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
-      "RelativeMoniker": "D:0:0:{8B960D5B-EBC2-490F-8C3A-BB61FB0C231A}|Stock_Forgeeee.csproj|solutionrelative:site.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8B960D5B-EBC2-490F-8C3A-BB61FB0C231A}|Stock_Forgeeee.csproj|D:\\.net Project\\Stock_Forgeeee\\controls\\topbar.ascx||{F390D63C-F7D8-4E74-AA04-57C1ECF53D4D}",
-      "RelativeMoniker": "D:0:0:{8B960D5B-EBC2-490F-8C3A-BB61FB0C231A}|Stock_Forgeeee.csproj|solutionrelative:controls\\topbar.ascx||{F390D63C-F7D8-4E74-AA04-57C1ECF53D4D}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8B960D5B-EBC2-490F-8C3A-BB61FB0C231A}|Stock_Forgeeee.csproj|D:\\.net Project\\Stock_Forgeeee\\Controls\\Sidebar.ascx||{F390D63C-F7D8-4E74-AA04-57C1ECF53D4D}",
-      "RelativeMoniker": "D:0:0:{8B960D5B-EBC2-490F-8C3A-BB61FB0C231A}|Stock_Forgeeee.csproj|solutionrelative:Controls\\Sidebar.ascx||{F390D63C-F7D8-4E74-AA04-57C1ECF53D4D}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8B960D5B-EBC2-490F-8C3A-BB61FB0C231A}|Stock_Forgeeee.csproj|D:\\.net Project\\Stock_Forgeeee\\content\\responsive.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{8B960D5B-EBC2-490F-8C3A-BB61FB0C231A}|Stock_Forgeeee.csproj|solutionrelative:content\\responsive.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8B960D5B-EBC2-490F-8C3A-BB61FB0C231A}|Stock_Forgeeee.csproj|D:\\.net Project\\Stock_Forgeeee\\inventory\\stockadjustment.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{8B960D5B-EBC2-490F-8C3A-BB61FB0C231A}|Stock_Forgeeee.csproj|solutionrelative:inventory\\stockadjustment.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -38,96 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Landing.aspx",
-              "DocumentMoniker": "D:\\.net Project\\Stock_Forgeeee\\Landing.aspx",
-              "RelativeDocumentMoniker": "Landing.aspx",
-              "ToolTip": "D:\\.net Project\\Stock_Forgeeee\\Landing.aspx",
-              "RelativeToolTip": "Landing.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2026-10-03T14:47:07.281Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Dashboard.aspx",
-              "DocumentMoniker": "D:\\.net Project\\Stock_Forgeeee\\Dashboard.aspx",
-              "RelativeDocumentMoniker": "Dashboard.aspx",
-              "ToolTip": "D:\\.net Project\\Stock_Forgeeee\\Dashboard.aspx",
-              "RelativeToolTip": "Dashboard.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2026-09-29T14:59:41.752Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "responsive.css",
-              "DocumentMoniker": "D:\\.net Project\\Stock_Forgeeee\\Content\\responsive.css",
-              "RelativeDocumentMoniker": "Content\\responsive.css",
-              "ToolTip": "D:\\.net Project\\Stock_Forgeeee\\Content\\responsive.css",
-              "RelativeToolTip": "Content\\responsive.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2026-09-29T14:56:23.519Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Sidebar.ascx",
-              "DocumentMoniker": "D:\\.net Project\\Stock_Forgeeee\\Controls\\Sidebar.ascx",
-              "RelativeDocumentMoniker": "Controls\\Sidebar.ascx",
-              "ToolTip": "D:\\.net Project\\Stock_Forgeeee\\Controls\\Sidebar.ascx",
-              "RelativeToolTip": "Controls\\Sidebar.ascx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003302|",
-              "WhenOpened": "2026-09-29T14:05:35.863Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Topbar.ascx",
-              "DocumentMoniker": "D:\\.net Project\\Stock_Forgeeee\\Controls\\Topbar.ascx",
-              "RelativeDocumentMoniker": "Controls\\Topbar.ascx",
-              "ToolTip": "D:\\.net Project\\Stock_Forgeeee\\Controls\\Topbar.ascx",
-              "RelativeToolTip": "Controls\\Topbar.ascx",
-              "LogicalView": "7651a702-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003302|",
-              "WhenOpened": "2026-09-29T13:59:08.251Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Site.Master",
-              "DocumentMoniker": "D:\\.net Project\\Stock_Forgeeee\\Site.Master",
-              "RelativeDocumentMoniker": "Site.Master",
-              "ToolTip": "D:\\.net Project\\Stock_Forgeeee\\Site.Master",
-              "RelativeToolTip": "Site.Master",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2026-09-29T13:55:41.134Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "StockAdjustment.aspx",
-              "DocumentMoniker": "D:\\.net Project\\Stock_Forgeeee\\Inventory\\StockAdjustment.aspx",
-              "RelativeDocumentMoniker": "Inventory\\StockAdjustment.aspx",
-              "ToolTip": "D:\\.net Project\\Stock_Forgeeee\\Inventory\\StockAdjustment.aspx",
-              "RelativeToolTip": "Inventory\\StockAdjustment.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2026-09-29T13:45:28.47Z"
             }
           ]
         }

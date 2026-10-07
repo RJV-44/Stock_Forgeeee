@@ -76,7 +76,7 @@
                             <asp:TextBox ID="txtEmail" runat="server" CssClass="auth-input" placeholder="admin@stockforge.com"></asp:TextBox>
                         </div>
                         <asp:RequiredFieldValidator ID="rfvEmail" runat="server" ControlToValidate="txtEmail" 
-                            ErrorMessage="Please enter your email or username" CssClass="val-error" Display="Dynamic" EnableClientScript="false"></asp:RequiredFieldValidator>
+                            ErrorMessage="Please enter your email or username" CssClass="val-error" Display="Dynamic"></asp:RequiredFieldValidator>
                     </div>
 
                     <div class="auth-form-group">
@@ -86,7 +86,7 @@
                             <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" CssClass="auth-input" placeholder="••••••••"></asp:TextBox>
                         </div>
                         <asp:RequiredFieldValidator ID="rfvPassword" runat="server" ControlToValidate="txtPassword" 
-                            ErrorMessage="Please enter your password" CssClass="val-error" Display="Dynamic" EnableClientScript="false"></asp:RequiredFieldValidator>
+                            ErrorMessage="Please enter your password" CssClass="val-error" Display="Dynamic"></asp:RequiredFieldValidator>
                     </div>
 
                     <div class="auth-row-between">

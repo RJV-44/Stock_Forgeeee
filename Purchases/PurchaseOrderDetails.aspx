@@ -24,10 +24,10 @@
                 <i class="bi bi-pencil"></i> Edit
             </a>
             <a href="<%= ResolveUrl("~/Purchases/ReceivePurchase.aspx?id=PO-2026-0048") %>" class="btn-primary-action">
-                <i class="bi bi-box-arrow-in-down"></i> Receive Purchase
+                Receive Purchase
             </a>
-            <a href="<%= ResolveUrl("~/Purchases/PrintPurchaseOrder.aspx?id=PO-2026-0048") %>" class="btn-outline-action" title="Print Purchase Order">
-                <i class="bi bi-printer"></i>
+            <a href="<%= ResolveUrl("~/Purchases/PrintPurchaseOrder.aspx?id=PO-2026-0048") %>" class="icon-button" title="Print Purchase Order / Actions">
+                <i class="bi bi-three-dots-vertical"></i>
             </a>
         </div>
     </div>
