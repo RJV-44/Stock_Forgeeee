@@ -18,6 +18,10 @@ GO
 
 IF DB_ID(N'StockForgeDatabse') IS NOT NULL
 BEGIN
+
+dag
+
+
     USE [StockForgeDatabse];
 END
 GO
