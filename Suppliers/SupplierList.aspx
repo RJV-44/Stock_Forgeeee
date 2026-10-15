@@ -177,7 +177,7 @@
                                 <div style="display: flex; align-items: center; gap: 12px;">
                                     <div style="width: 34px; height: 34px; border-radius: 5px; background: #F3E8FF; color: #9333EA; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; letter-spacing: 0.3px;">STH</div>
                                     <div>
-                                        <a href="<%= ResolveUrl("~/Suppliers/SupplierDetails.aspx?id=1003") %>" style="font-weight: 600; color: #111827; text-decoration: none;" onmouseover="this.style.color='#006C44'" onmouseout="this.style.color='#111827'">Shree Tools &amp; Hardware</a>
+                                        <a href="<%= ResolveUrl("~/Suppliers/SupplierDetails.aspx?id=1003") %>" style="font-weight: 600; color: #111827; text-decoration: none;" onmouseover="this.style.color='#006C44'" onmouseout="this.style.color='#111827'">Shree Tools & Hardware</a>
                                         <div style="font-size: 11.5px; color: #6B7280; margin-top: 1px;">contact@shreetools.in</div>
                                     </div>
                                 </div>
@@ -206,7 +206,7 @@
                                 <div style="display: flex; align-items: center; gap: 12px;">
                                     <div style="width: 34px; height: 34px; border-radius: 5px; background: #FFEDD5; color: #EA580C; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; letter-spacing: 0.3px;">BME</div>
                                     <div>
-                                        <a href="<%= ResolveUrl("~/Suppliers/SupplierDetails.aspx?id=1004") %>" style="font-weight: 600; color: #111827; text-decoration: none;" onmouseover="this.style.color='#006C44'" onmouseout="this.style.color='#111827'">Bombay Metals &amp; Fasteners</a>
+                                        <a href="<%= ResolveUrl("~/Suppliers/SupplierDetails.aspx?id=1004") %>" style="font-weight: 600; color: #111827; text-decoration: none;" onmouseover="this.style.color='#006C44'" onmouseout="this.style.color='#111827'">Bombay Metals & Fasteners</a>
                                         <div style="font-size: 11.5px; color: #6B7280; margin-top: 1px;">info@bombaymetals.co.in</div>
                                     </div>
                                 </div>
@@ -350,13 +350,13 @@
                 Showing 1-8 of 48 suppliers
             </div>
             <div style="display: flex; align-items: center; gap: 4px;">
-                <a href="javascript:void(0)" style="padding: 6px 12px; color: #6B7280; text-decoration: none; font-size: 13px;">&lsaquo; Previous</a>
+                <a href="javascript:void(0)" style="padding: 6px 12px; color: #6B7280; text-decoration: none; font-size: 13px;">‹ Previous</a>
                 <span style="width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center; background: #D1FAE5; color: #065F46; font-weight: 600; border-radius: 6px; font-size: 13px;">1</span>
                 <a href="javascript:void(0)" style="width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center; color: #374151; text-decoration: none; font-size: 13px; border-radius: 6px;" onmouseover="this.style.background='#F3F4F6'" onmouseout="this.style.background='transparent'">2</a>
                 <a href="javascript:void(0)" style="width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center; color: #374151; text-decoration: none; font-size: 13px; border-radius: 6px;" onmouseover="this.style.background='#F3F4F6'" onmouseout="this.style.background='transparent'">3</a>
                 <span style="color: #9CA3AF; padding: 0 4px;">...</span>
                 <a href="javascript:void(0)" style="width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center; color: #374151; text-decoration: none; font-size: 13px; border-radius: 6px;" onmouseover="this.style.background='#F3F4F6'" onmouseout="this.style.background='transparent'">6</a>
-                <a href="javascript:void(0)" style="padding: 6px 12px; color: #374151; text-decoration: none; font-size: 13px;" onmouseover="this.style.color='#006C44'" onmouseout="this.style.color='#374151'">Next &rsaquo;</a>
+                <a href="javascript:void(0)" style="padding: 6px 12px; color: #374151; text-decoration: none; font-size: 13px;" onmouseover="this.style.color='#006C44'" onmouseout="this.style.color='#374151'">Next ›</a>
             </div>
         </div>
     </div>

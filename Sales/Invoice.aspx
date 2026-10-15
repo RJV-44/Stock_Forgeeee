@@ -151,7 +151,7 @@
                 <thead>
                     <tr>
                         <th style="width: 5%;">#</th>
-                        <th style="width: 42%;">PRODUCT &amp; DESCRIPTION</th>
+                        <th style="width: 42%;">PRODUCT & DESCRIPTION</th>
                         <th style="width: 12%;">HSN/SAC</th>
                         <th style="width: 8%; text-align: center;">QTY</th>
                         <th style="width: 12%; text-align: right;">RATE (₹)</th>
@@ -214,7 +214,7 @@
                     </div>
 
                     <div style="border: 1px solid #E5E7EB; border-radius: 6px; padding: 16px;">
-                        <div style="font-size: 11px; font-weight: 700; color: #6B7280; text-transform: uppercase; margin-bottom: 6px;">TERMS &amp; NOTES</div>
+                        <div style="font-size: 11px; font-weight: 700; color: #6B7280; text-transform: uppercase; margin-bottom: 6px;">TERMS & NOTES</div>
                         <div style="font-size: 12px; color: #4B5563; line-height: 1.6;">
                             Goods once sold cannot be returned.<br />
                             Warranty claims as per manufacturer terms.<br />

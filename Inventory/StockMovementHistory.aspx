@@ -96,7 +96,7 @@
                 <table id="movementsMainTable" style="width: 100%; border-collapse: collapse; font-size: 12.5px; text-align: left;">
                     <thead>
                         <tr style="background: #FAFAFA; border-bottom: 1px solid #E5E7EB;">
-                            <th style="padding: 12px 18px; font-size: 11px; font-weight: 700; color: #374151; text-transform: uppercase; letter-spacing: 0.4px;">DATE &amp; TIME</th>
+                            <th style="padding: 12px 18px; font-size: 11px; font-weight: 700; color: #374151; text-transform: uppercase; letter-spacing: 0.4px;">DATE & TIME</th>
                             <th style="padding: 12px 16px; font-size: 11px; font-weight: 700; color: #374151; text-transform: uppercase; letter-spacing: 0.4px;">PRODUCT</th>
                             <th style="padding: 12px 16px; font-size: 11px; font-weight: 700; color: #374151; text-transform: uppercase; letter-spacing: 0.4px;">MOVEMENT</th>
                             <th style="padding: 12px 16px; font-size: 11px; font-weight: 700; color: #374151; text-transform: uppercase; letter-spacing: 0.4px;">REASON</th>
@@ -281,7 +281,7 @@
                                         <i class="bi bi-dash-circle"></i>
                                     </div>
                                     <div>
-                                        <div style="font-weight: 600; color: #111827;">PVC Pipe 2&quot; x 10'</div>
+                                        <div style="font-weight: 600; color: #111827;">PVC Pipe 2" x 10'</div>
                                         <div style="font-size: 11px; color: #6B7280;">SKU: PVC-2-10</div>
                                     </div>
                                 </div>
@@ -333,13 +333,13 @@
                 Showing 1-8 of 1,284 movements
             </div>
             <div style="display: flex; align-items: center; gap: 4px;">
-                <a href="javascript:void(0)" style="padding: 6px 12px; color: #6B7280; text-decoration: none; font-size: 13px;">&lsaquo;Previous</a>
+                <a href="javascript:void(0)" style="padding: 6px 12px; color: #6B7280; text-decoration: none; font-size: 13px;">‹ Previous</a>
                 <span style="width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center; background: #006C44; color: #FFFFFF; font-weight: 600; border-radius: 4px; font-size: 13px;">1</span>
                 <a href="javascript:void(0)" style="width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center; color: #374151; text-decoration: none; font-size: 13px; border-radius: 4px;" onmouseover="this.style.background='#F3F4F6'" onmouseout="this.style.background='transparent'">2</a>
                 <a href="javascript:void(0)" style="width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center; color: #374151; text-decoration: none; font-size: 13px; border-radius: 4px;" onmouseover="this.style.background='#F3F4F6'" onmouseout="this.style.background='transparent'">3</a>
                 <span style="color: #9CA3AF; padding: 0 4px;">...</span>
                 <a href="javascript:void(0)" style="width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center; color: #374151; text-decoration: none; font-size: 13px; border-radius: 4px;" onmouseover="this.style.background='#F3F4F6'" onmouseout="this.style.background='transparent'">161</a>
-                <a href="javascript:void(0)" style="padding: 6px 12px; color: #374151; text-decoration: none; font-size: 13px; font-weight: 500;" onmouseover="this.style.color='#006C44'" onmouseout="this.style.color='#374151'">Next&rsaquo;</a>
+                <a href="javascript:void(0)" style="padding: 6px 12px; color: #374151; text-decoration: none; font-size: 13px; font-weight: 500;" onmouseover="this.style.color='#006C44'" onmouseout="this.style.color='#374151'">Next ›</a>
             </div>
         </div>
     </div>

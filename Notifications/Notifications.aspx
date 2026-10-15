@@ -63,7 +63,7 @@
                 </div>
                 <div>
                     <a href="<%= ResolveUrl("~/Products/ProductList.aspx") %>" style="color: #006C44; font-size: 13px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
-                        View Product &rarr;
+                        View Product <i class="bi bi-arrow-right"></i>
                     </a>
                 </div>
             </div>
@@ -84,7 +84,7 @@
                 </div>
                 <div>
                     <a href="<%= ResolveUrl("~/Products/ProductList.aspx") %>" style="color: #006C44; font-size: 13px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
-                        View Product &rarr;
+                        View Product <i class="bi bi-arrow-right"></i>
                     </a>
                 </div>
             </div>
@@ -105,7 +105,7 @@
                 </div>
                 <div>
                     <a href="<%= ResolveUrl("~/Purchases/PurchaseOrderDetails.aspx?id=PO-2026-0048") %>" style="color: #006C44; font-size: 13px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
-                        View Purchase &rarr;
+                        View Purchase <i class="bi bi-arrow-right"></i>
                     </a>
                 </div>
             </div>
@@ -126,7 +126,7 @@
                 </div>
                 <div>
                     <a href="<%= ResolveUrl("~/Sales/SaleDetails.aspx?id=SO-2026-0125") %>" style="color: #006C44; font-size: 13px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
-                        View Sale &rarr;
+                        View Sale <i class="bi bi-arrow-right"></i>
                     </a>
                 </div>
             </div>
@@ -147,7 +147,7 @@
                 </div>
                 <div>
                     <a href="<%= ResolveUrl("~/Purchases/MyPurchase.aspx") %>" style="color: #006C44; font-size: 13px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
-                        View Purchase &rarr;
+                        View Purchase <i class="bi bi-arrow-right"></i>
                     </a>
                 </div>
             </div>
@@ -168,7 +168,7 @@
                 </div>
                 <div>
                     <a href="<%= ResolveUrl("~/Products/ProductList.aspx") %>" style="color: #006C44; font-size: 13px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
-                        View Product &rarr;
+                        View Product <i class="bi bi-arrow-right"></i>
                     </a>
                 </div>
             </div>
@@ -189,7 +189,7 @@
                 </div>
                 <div>
                     <a href="<%= ResolveUrl("~/Users/UserManagement.aspx") %>" style="color: #006C44; font-size: 13px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
-                        View User &rarr;
+                        View User <i class="bi bi-arrow-right"></i>
                     </a>
                 </div>
             </div>

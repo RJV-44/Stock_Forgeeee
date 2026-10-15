@@ -75,7 +75,7 @@
             <div style="font-size: 12.5px; color: #4B5563; margin-bottom: 12px;">contact@abchardware.in</div>
             <div>
                 <a href="<%= ResolveUrl("~/Suppliers/EditSupplier.aspx?id=1001") %>" style="color: #006C44; font-size: 13px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
-                    View Supplier Details &rarr;
+                    View Supplier Details <i class="bi bi-arrow-right"></i>
                 </a>
             </div>
         </div>

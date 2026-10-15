@@ -87,7 +87,7 @@
             <!-- Access & Role Card -->
             <div class="sf-card">
                 <div class="sf-group-title">
-                    <i class="bi bi-shield-lock"></i> Access &amp; Role
+                    <i class="bi bi-shield-lock"></i> Access & Role
                 </div>
 
                 <div style="margin-bottom: 16px;">

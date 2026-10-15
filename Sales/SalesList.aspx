@@ -271,13 +271,13 @@
         <div class="sf-table-footer" style="padding: 14px 20px; display: flex; justify-content: space-between; align-items: center; background: #ffffff; border-top: 1px solid #E5E7EB;">
             <div style="font-size: 12.5px; color: #6B7280;">Showing 1-8 of 124 sales</div>
             <div class="sf-pagination" style="display: flex; align-items: center; gap: 4px;">
-                <button type="button" class="sf-page-btn" style="border: 1px solid #D1D5DB; background: #ffffff; color: #4B5563; padding: 4px 10px; border-radius: 4px; font-size: 12px; cursor: pointer;">&lt; Previous</button>
+                <button type="button" class="sf-page-btn" style="border: 1px solid #D1D5DB; background: #ffffff; color: #4B5563; padding: 4px 10px; border-radius: 4px; font-size: 12px; cursor: pointer;">‹ Previous</button>
                 <button type="button" class="sf-page-btn active" style="border: 1px solid #3DA86F; background: #3DA86F; color: #ffffff; font-weight: 600; padding: 4px 11px; border-radius: 4px; font-size: 12px; cursor: pointer;">1</button>
                 <button type="button" class="sf-page-btn" style="border: 1px solid #D1D5DB; background: #ffffff; color: #4B5563; padding: 4px 10px; border-radius: 4px; font-size: 12px; cursor: pointer;">2</button>
                 <button type="button" class="sf-page-btn" style="border: 1px solid #D1D5DB; background: #ffffff; color: #4B5563; padding: 4px 10px; border-radius: 4px; font-size: 12px; cursor: pointer;">3</button>
                 <span style="padding: 0 4px; color: #9CA3AF; font-size: 12px;">...</span>
                 <button type="button" class="sf-page-btn" style="border: 1px solid #D1D5DB; background: #ffffff; color: #4B5563; padding: 4px 10px; border-radius: 4px; font-size: 12px; cursor: pointer;">16</button>
-                <button type="button" class="sf-page-btn" style="border: 1px solid #D1D5DB; background: #ffffff; color: #4B5563; padding: 4px 10px; border-radius: 4px; font-size: 12px; cursor: pointer;">Next &gt;</button>
+                <button type="button" class="sf-page-btn" style="border: 1px solid #D1D5DB; background: #ffffff; color: #4B5563; padding: 4px 10px; border-radius: 4px; font-size: 12px; cursor: pointer;">Next ›</button>
             </div>
         </div>
     </div>

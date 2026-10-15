@@ -4,7 +4,7 @@
     <!-- Breadcrumb -->
     <div style="font-size: 12px; color: #6B7280; margin-bottom: 12px; display: flex; align-items: center; gap: 6px;">
         <a href="<%= ResolveUrl("~/Suppliers/SupplierList.aspx") %>" style="color: #6B7280; text-decoration: none;">Suppliers</a>
-        <span style="color: #9CA3AF;">&rsaquo;</span>
+        <i class="bi bi-chevron-right" style="font-size: 10px; color: #9CA3AF;"></i>
         <span style="color: #111827; font-weight: 500;">Add Supplier</span>
     </div>
 

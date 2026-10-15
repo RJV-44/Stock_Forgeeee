@@ -267,7 +267,7 @@
             <!-- Terms & Signatures (Matching Image 1) -->
             <div style="border-top: 1px solid #E5E7EB; padding-top: 28px; margin-top: 24px; display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: flex-end;">
                 <div>
-                    <div style="font-size: 11px; font-weight: 700; color: #6B7280; text-transform: uppercase; margin-bottom: 8px; letter-spacing: 0.5px;">TERMS &amp; NOTES</div>
+                    <div style="font-size: 11px; font-weight: 700; color: #6B7280; text-transform: uppercase; margin-bottom: 8px; letter-spacing: 0.5px;">TERMS & NOTES</div>
                     <div style="font-size: 12.5px; color: #4B5563; line-height: 1.7;">
                         Please deliver between 9 AM and 5 PM on weekdays.<br />
                         All items must include warranty cards where applicable.<br />

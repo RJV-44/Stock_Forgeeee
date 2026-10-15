@@ -71,7 +71,7 @@
             <div>
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px;">
                     <div style="font-size: 15px; font-weight: 700; color: #111827;">
-                        Access &amp; Role
+                        Access & Role
                     </div>
                     <a href="javascript:void(0)" style="font-size: 12.5px; color: #DC2626; font-weight: 500; text-decoration: none;">Reset Password</a>
                 </div>
@@ -151,7 +151,7 @@
 
         <!-- Footer Meta Info -->
         <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 24px; padding-top: 18px; border-top: 1px solid #E5E7EB; font-family: monospace; font-size: 12px; color: #6B7280;">
-            <div>Created On: 01 Aug 2026 &nbsp;&nbsp;&nbsp; Last Active: Today, 10:42 AM</div>
+            <div>Created On: 01 Aug 2026 • Last Active: Today, 10:42 AM</div>
             <div>Created By: @ Admin</div>
         </div>
     </div>
