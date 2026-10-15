@@ -11,14 +11,18 @@ namespace Stock_Forgeeee.Suppliers
         protected TextBox txtCompanyName;
         protected TextBox txtSupplierCode;
         protected TextBox txtContactName;
+        protected DropDownList ddlSupplierType;
         protected DropDownList ddlCategory;
         protected TextBox txtPhone;
         protected TextBox txtEmail;
+        protected TextBox txtAddress;
+        protected TextBox txtCity;
+        protected TextBox txtPinCode;
+        protected DropDownList ddlState;
         protected TextBox txtGstin;
         protected DropDownList ddlPaymentTerms;
         protected DropDownList ddlStatus;
         protected TextBox txtCreditLimit;
-        protected TextBox txtAddress;
         protected TextBox txtNotes;
         protected Button btnSaveSupplier;
 
@@ -39,50 +43,22 @@ namespace Stock_Forgeeee.Suppliers
             }
 
             // Server-side controller validation
-            if (string.IsNullOrWhiteSpace(txtCompanyName.Text))
+            if (txtCompanyName != null && string.IsNullOrWhiteSpace(txtCompanyName.Text))
             {
-                ShowAlert("Vendor/Company name cannot be blank.");
+                ShowAlert("Supplier name cannot be blank.");
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(txtSupplierCode.Text))
+            if (txtContactName != null && string.IsNullOrWhiteSpace(txtContactName.Text))
             {
-                ShowAlert("Supplier code is required.");
+                ShowAlert("Contact person name is required.");
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(txtContactName.Text))
-            {
-                ShowAlert("Primary contact person name is required.");
-                return;
-            }
-
-            if (string.IsNullOrEmpty(ddlCategory.SelectedValue))
-            {
-                ShowAlert("Please select a specialty category.");
-                return;
-            }
-
-            if (string.IsNullOrWhiteSpace(txtPhone.Text))
+            if (txtPhone != null && string.IsNullOrWhiteSpace(txtPhone.Text))
             {
                 ShowAlert("Phone number is required.");
                 return;
-            }
-
-            if (string.IsNullOrWhiteSpace(txtEmail.Text) || !txtEmail.Text.Contains("@"))
-            {
-                ShowAlert("Valid email address is required.");
-                return;
-            }
-
-            if (!string.IsNullOrWhiteSpace(txtCreditLimit.Text))
-            {
-                decimal creditLimit;
-                if (!decimal.TryParse(txtCreditLimit.Text.Trim(), out creditLimit) || creditLimit < 0)
-                {
-                    ShowAlert("Credit limit must be a positive number.");
-                    return;
-                }
             }
 
             Response.Redirect("SupplierList.aspx");

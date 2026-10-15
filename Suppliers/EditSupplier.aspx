@@ -1,172 +1,198 @@
 <%@ Page Title="Edit Supplier" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EditSupplier.aspx.cs" Inherits="Stock_Forgeeee.Suppliers.EditSupplier" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <!-- Breadcrumb (Matching StockForge Edit Supplier.png) -->
-    <div style="font-size: 11px; font-weight: 700; color: #6B7280; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">
-        SUPPLIERS &nbsp;/&nbsp; ABC HARDWARE SUPPLIERS &nbsp;/&nbsp; EDIT
+    <!-- Breadcrumb -->
+    <div style="font-size: 11px; font-weight: 600; color: #6B7280; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+        <a href="<%= ResolveUrl("~/Suppliers/SupplierList.aspx") %>" style="color: #6B7280; text-decoration: none;">Suppliers</a>
+        <span style="color: #9CA3AF;">/</span>
+        <a href="<%= ResolveUrl("~/Suppliers/SupplierDetails.aspx?id=1001") %>" style="color: #6B7280; text-decoration: none;">ABC Hardware Suppliers</a>
+        <span style="color: #9CA3AF;">/</span>
+        <span style="color: #111827;">Edit</span>
     </div>
 
-    <!-- Page Header -->
-    <div class="sf-page-header">
-        <div>
-            <h1 class="sf-page-title">
-                Edit Supplier
-                <span class="sf-pill sf-pill-success" style="font-size: 12px; font-weight: 600;">
-                    <span class="sf-pill-dot"></span> Active
-                </span>
-            </h1>
-            <div class="sf-page-subtitle">Update supplier information and purchasing details.</div>
+    <!-- Header -->
+    <div style="margin-bottom: 24px;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+            <h1 style="font-size: 22px; font-weight: 700; color: #111827; margin: 0;">Edit Supplier</h1>
+            <span style="display: inline-flex; align-items: center; gap: 6px; padding: 2px 10px; background: #EAF8EF; border: 1px solid #BBF7D0; border-radius: 9999px; font-size: 11px; font-weight: 600; color: #15803D;">
+                <span style="width: 6px; height: 6px; border-radius: 50%; background: #15803D;"></span>
+                Active
+            </span>
         </div>
+        <p style="font-size: 13px; color: #6B7280; margin: 4px 0 0 0;">Update supplier information and purchasing details.</p>
     </div>
 
-    <!-- Main Container Card -->
-    <div class="sf-card" style="padding: 24px; margin-bottom: 24px;">
-        <!-- Alert Feedback -->
-        <asp:Panel ID="pnlAlert" runat="server" Visible="false" CssClass="val-alert val-alert-danger">
-            <i class="bi bi-exclamation-triangle-fill"></i>
-            <asp:Label ID="lblAlertMessage" runat="server"></asp:Label>
-        </asp:Panel>
+    <!-- Alert Panel -->
+    <asp:Panel ID="pnlAlert" runat="server" Visible="false" style="background: #FEE2E2; border: 1px solid #FCA5A5; color: #991B1B; padding: 10px 14px; border-radius: 6px; margin-bottom: 20px; font-size: 13px; display: flex; align-items: center; gap: 8px;">
+        <i class="bi bi-exclamation-triangle-fill"></i>
+        <asp:Label ID="lblAlertMessage" runat="server"></asp:Label>
+    </asp:Panel>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
-            <!-- Left Column -->
-            <div>
-                <!-- Supplier Information Group -->
-                <div class="sf-group-box">
-                    <div class="sf-group-title">Supplier Information</div>
-
-                    <div style="margin-bottom: 14px;">
-                        <label class="sf-form-label">Supplier Name <span class="text-danger">*</span></label>
-                        <asp:TextBox ID="txtSupplierName" runat="server" CssClass="sf-input" Text="ABC Hardware Suppliers"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="rfvSupplierName" runat="server" ControlToValidate="txtSupplierName" ErrorMessage="Supplier name is required." CssClass="validation-error" Display="Dynamic"></asp:RequiredFieldValidator>
+    <!-- Main Container Card (Figma Exact) -->
+    <div style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 12px; padding: 28px; box-shadow: 0 1px 3px rgba(0,0,0,0.02); max-width: 1040px;">
+        
+        <!-- 2 Columns Grid -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; margin-bottom: 32px;">
+            
+            <!-- Left Column: Supplier Information + Business Details -->
+            <div style="display: flex; flex-direction: column; gap: 24px;">
+                
+                <!-- Card 1: Supplier Information -->
+                <div style="border: 1px solid #E5E7EB; border-radius: 8px; padding: 20px; background: #FFFFFF; position: relative;">
+                    <div style="position: absolute; top: -10px; left: 14px; background: #FFFFFF; padding: 0 6px; font-size: 12px; font-weight: 600; color: #111827;">
+                        Supplier Information
                     </div>
 
-                    <div style="margin-bottom: 14px;">
-                        <label class="sf-form-label">Primary Contact <span class="text-danger">*</span></label>
-                        <asp:TextBox ID="txtContactPerson" runat="server" CssClass="sf-input" Text="Rajesh Patel"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="rfvContactPerson" runat="server" ControlToValidate="txtContactPerson" ErrorMessage="Primary contact is required." CssClass="validation-error" Display="Dynamic"></asp:RequiredFieldValidator>
-                    </div>
-
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+                    <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 6px;">
                         <div>
-                            <label class="sf-form-label">Phone Number <span class="text-danger">*</span></label>
-                            <asp:TextBox ID="txtPhone" runat="server" CssClass="sf-input" Text="+91 98765 43210"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="rfvPhone" runat="server" ControlToValidate="txtPhone" ErrorMessage="Phone is required." CssClass="validation-error" Display="Dynamic"></asp:RequiredFieldValidator>
-                            <asp:RegularExpressionValidator ID="revPhone" runat="server" ControlToValidate="txtPhone" ValidationExpression="^(\+?[0-9\s\-\(\)]{8,16})$" ErrorMessage="Valid phone format required." CssClass="validation-error" Display="Dynamic"></asp:RegularExpressionValidator>
+                            <label style="display: block; font-size: 11.5px; color: #4B5563; margin-bottom: 4px;">Supplier Name</label>
+                            <asp:TextBox ID="txtSupplierName" runat="server" Text="ABC Hardware Suppliers" style="width: 100%; height: 38px; padding: 6px 12px; border: 1px solid #D1D5DB; border-radius: 6px; font-size: 13px; color: #111827; background: #FFFFFF; outline: none;"></asp:TextBox>
                         </div>
+
                         <div>
-                            <label class="sf-form-label">Email Address <span class="text-danger">*</span></label>
-                            <asp:TextBox ID="txtEmail" runat="server" CssClass="sf-input" Text="contact@abchardware.in"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="rfvEmail" runat="server" ControlToValidate="txtEmail" ErrorMessage="Email is required." CssClass="validation-error" Display="Dynamic"></asp:RequiredFieldValidator>
-                            <asp:RegularExpressionValidator ID="revEmail" runat="server" ControlToValidate="txtEmail" ValidationExpression="^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$" ErrorMessage="Valid email required." CssClass="validation-error" Display="Dynamic"></asp:RegularExpressionValidator>
+                            <label style="display: block; font-size: 11.5px; color: #4B5563; margin-bottom: 4px;">Primary Contact</label>
+                            <asp:TextBox ID="txtContactPerson" runat="server" Text="Rajesh Patel" style="width: 100%; height: 38px; padding: 6px 12px; border: 1px solid #D1D5DB; border-radius: 6px; font-size: 13px; color: #111827; background: #FFFFFF; outline: none;"></asp:TextBox>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 12px;">
+                            <div>
+                                <label style="display: block; font-size: 11.5px; color: #4B5563; margin-bottom: 4px;">Phone Number</label>
+                                <asp:TextBox ID="txtPhone" runat="server" Text="+91 98765 43210" style="width: 100%; height: 38px; padding: 6px 12px; border: 1px solid #D1D5DB; border-radius: 6px; font-size: 12.5px; color: #111827; background: #FFFFFF; outline: none;"></asp:TextBox>
+                            </div>
+                            <div>
+                                <label style="display: block; font-size: 11.5px; color: #4B5563; margin-bottom: 4px;">Email Address</label>
+                                <asp:TextBox ID="txtEmail" runat="server" Text="contact@abchardware.in" style="width: 100%; height: 38px; padding: 6px 12px; border: 1px solid #D1D5DB; border-radius: 6px; font-size: 12.5px; color: #111827; background: #FFFFFF; outline: none;"></asp:TextBox>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Business Details Group -->
-                <div class="sf-group-box" style="margin-bottom: 0;">
-                    <div class="sf-group-title">Business Details</div>
-
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px;">
-                        <div>
-                            <label class="sf-form-label">Supplier Type</label>
-                            <asp:DropDownList ID="ddlSupplierType" runat="server" CssClass="sf-select" style="width: 100%;">
-                                <asp:ListItem Text="Distributor" Value="Distributor" Selected="True"></asp:ListItem>
-                                <asp:ListItem Text="Manufacturer" Value="Manufacturer"></asp:ListItem>
-                                <asp:ListItem Text="Wholesaler" Value="Wholesaler"></asp:ListItem>
-                            </asp:DropDownList>
-                        </div>
-                        <div>
-                            <label class="sf-form-label">Payment Terms</label>
-                            <asp:DropDownList ID="ddlPaymentTerms" runat="server" CssClass="sf-select" style="width: 100%;">
-                                <asp:ListItem Text="30 Days" Value="30 Days" Selected="True"></asp:ListItem>
-                                <asp:ListItem Text="15 Days" Value="15 Days"></asp:ListItem>
-                                <asp:ListItem Text="60 Days" Value="60 Days"></asp:ListItem>
-                                <asp:ListItem Text="Advance" Value="Advance"></asp:ListItem>
-                            </asp:DropDownList>
-                        </div>
+                <!-- Card 2: Business Details -->
+                <div style="border: 1px solid #E5E7EB; border-radius: 8px; padding: 20px; background: #FFFFFF; position: relative;">
+                    <div style="position: absolute; top: -10px; left: 14px; background: #FFFFFF; padding: 0 6px; font-size: 12px; font-weight: 600; color: #111827;">
+                        Business Details
                     </div>
 
-                    <div style="margin-bottom: 14px;">
-                        <label class="sf-form-label">GSTIN</label>
-                        <asp:TextBox ID="txtGstin" runat="server" CssClass="sf-input" Text="24ABCDE1234F1Z5"></asp:TextBox>
-                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 6px;">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                            <div>
+                                <label style="display: block; font-size: 11.5px; color: #4B5563; margin-bottom: 4px;">Supplier Type</label>
+                                <asp:DropDownList ID="ddlSupplierType" runat="server" style="width: 100%; height: 38px; padding: 6px 10px; border: 1px solid #D1D5DB; border-radius: 6px; font-size: 12.5px; color: #111827; background: #FFFFFF; outline: none;">
+                                    <asp:ListItem Value="Distributor" Selected="True">Distributor</asp:ListItem>
+                                    <asp:ListItem Value="Manufacturer">Manufacturer</asp:ListItem>
+                                    <asp:ListItem Value="Wholesaler">Wholesaler</asp:ListItem>
+                                </asp:DropDownList>
+                            </div>
+                            <div>
+                                <label style="display: block; font-size: 11.5px; color: #4B5563; margin-bottom: 4px;">Payment Terms</label>
+                                <asp:DropDownList ID="ddlPaymentTerms" runat="server" style="width: 100%; height: 38px; padding: 6px 10px; border: 1px solid #D1D5DB; border-radius: 6px; font-size: 12.5px; color: #111827; background: #FFFFFF; outline: none;">
+                                    <asp:ListItem Value="30 Days" Selected="True">30 Days</asp:ListItem>
+                                    <asp:ListItem Value="15 Days">15 Days</asp:ListItem>
+                                    <asp:ListItem Value="Immediate">Immediate</asp:ListItem>
+                                    <asp:ListItem Value="60 Days">60 Days</asp:ListItem>
+                                </asp:DropDownList>
+                            </div>
+                        </div>
 
+                        <div>
+                            <label style="display: block; font-size: 11.5px; color: #4B5563; margin-bottom: 4px;">GSTIN</label>
+                            <asp:TextBox ID="txtGstin" runat="server" Text="24ABCDE1234F1Z5" style="width: 100%; height: 38px; padding: 6px 12px; border: 1px solid #D1D5DB; border-radius: 6px; font-size: 12.5px; color: #111827; background: #FFFFFF; outline: none;"></asp:TextBox>
+                        </div>
+
+                        <div>
+                            <label style="display: block; font-size: 11.5px; color: #4B5563; margin-bottom: 4px;">Internal Notes</label>
+                            <asp:TextBox ID="txtNotes" runat="server" TextMode="MultiLine" Rows="3" Text="Primary supplier for power tools and electrical hardware." style="width: 100%; padding: 8px 12px; border: 1px solid #D1D5DB; border-radius: 6px; font-size: 12.5px; color: #111827; background: #FFFFFF; line-height: 1.5; outline: none;"></asp:TextBox>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Address Details with Map Preview -->
+            <div style="border: 1px solid #E5E7EB; border-radius: 8px; padding: 20px; background: #FFFFFF; position: relative;">
+                <div style="position: absolute; top: -10px; left: 14px; background: #FFFFFF; padding: 0 6px; font-size: 12px; font-weight: 600; color: #111827;">
+                    Address Details
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 6px;">
                     <div>
-                        <label class="sf-form-label">Internal Notes</label>
-                        <asp:TextBox ID="txtNotes" runat="server" TextMode="MultiLine" Rows="3" CssClass="sf-textarea" Text="Primary supplier for power tools and electrical hardware."></asp:TextBox>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Right Column: Address Details & Map -->
-            <div>
-                <div class="sf-group-box" style="margin-bottom: 0; height: 100%; display: flex; flex-direction: column;">
-                    <div class="sf-group-title">Address Details</div>
-
-                    <div style="margin-bottom: 14px;">
-                        <label class="sf-form-label">Street Address <span class="text-danger">*</span></label>
-                        <asp:TextBox ID="txtAddress" runat="server" CssClass="sf-input" Text="123 Industrial Estate, Vatva"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="rfvAddress" runat="server" ControlToValidate="txtAddress" ErrorMessage="Street address is required." CssClass="validation-error" Display="Dynamic"></asp:RequiredFieldValidator>
+                        <label style="display: block; font-size: 11.5px; color: #4B5563; margin-bottom: 4px;">Street Address</label>
+                        <asp:TextBox ID="txtAddress" runat="server" Text="123 Industrial Estate, Vatva" style="width: 100%; height: 38px; padding: 6px 12px; border: 1px solid #D1D5DB; border-radius: 6px; font-size: 13px; color: #111827; background: #FFFFFF; outline: none;"></asp:TextBox>
                     </div>
 
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
                         <div>
-                            <label class="sf-form-label">City <span class="text-danger">*</span></label>
-                            <asp:TextBox ID="txtCity" runat="server" CssClass="sf-input" Text="Ahmedabad"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="rfvCity" runat="server" ControlToValidate="txtCity" ErrorMessage="City is required." CssClass="validation-error" Display="Dynamic"></asp:RequiredFieldValidator>
+                            <label style="display: block; font-size: 11.5px; color: #4B5563; margin-bottom: 4px;">City</label>
+                            <asp:TextBox ID="txtCity" runat="server" Text="Ahmedabad" style="width: 100%; height: 38px; padding: 6px 12px; border: 1px solid #D1D5DB; border-radius: 6px; font-size: 13px; color: #111827; background: #FFFFFF; outline: none;"></asp:TextBox>
                         </div>
                         <div>
-                            <label class="sf-form-label">State <span class="text-danger">*</span></label>
-                            <asp:TextBox ID="txtState" runat="server" CssClass="sf-input" Text="Gujarat"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="rfvState" runat="server" ControlToValidate="txtState" ErrorMessage="State is required." CssClass="validation-error" Display="Dynamic"></asp:RequiredFieldValidator>
+                            <label style="display: block; font-size: 11.5px; color: #4B5563; margin-bottom: 4px;">State</label>
+                            <asp:TextBox ID="txtState" runat="server" Text="Gujarat" style="width: 100%; height: 38px; padding: 6px 12px; border: 1px solid #D1D5DB; border-radius: 6px; font-size: 13px; color: #111827; background: #FFFFFF; outline: none;"></asp:TextBox>
                         </div>
                     </div>
 
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 16px;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
                         <div>
-                            <label class="sf-form-label">PIN Code <span class="text-danger">*</span></label>
-                            <asp:TextBox ID="txtPinCode" runat="server" CssClass="sf-input" Text="382445"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="rfvPin" runat="server" ControlToValidate="txtPinCode" ErrorMessage="PIN Code is required." CssClass="validation-error" Display="Dynamic"></asp:RequiredFieldValidator>
-                            <asp:RegularExpressionValidator ID="revPin" runat="server" ControlToValidate="txtPinCode" ValidationExpression="^\d{6}$" ErrorMessage="Enter a valid 6-digit PIN code." CssClass="validation-error" Display="Dynamic"></asp:RegularExpressionValidator>
+                            <label style="display: block; font-size: 11.5px; color: #4B5563; margin-bottom: 4px;">PIN Code</label>
+                            <asp:TextBox ID="txtPinCode" runat="server" Text="382445" style="width: 100%; height: 38px; padding: 6px 12px; border: 1px solid #D1D5DB; border-radius: 6px; font-size: 13px; color: #111827; background: #FFFFFF; outline: none;"></asp:TextBox>
                         </div>
                         <div>
-                            <label class="sf-form-label">Country</label>
-                            <asp:TextBox ID="txtCountry" runat="server" CssClass="sf-input" Text="India"></asp:TextBox>
+                            <label style="display: block; font-size: 11.5px; color: #4B5563; margin-bottom: 4px;">Country</label>
+                            <asp:TextBox ID="txtCountry" runat="server" Text="India" style="width: 100%; height: 38px; padding: 6px 12px; border: 1px solid #D1D5DB; border-radius: 6px; font-size: 13px; color: #111827; background: #FFFFFF; outline: none;"></asp:TextBox>
                         </div>
                     </div>
 
-                    <!-- Map Illustration (Matching StockForge Edit Supplier.png) -->
-                    <div style="flex: 1; min-height: 180px; background: #EEF2F6; border: 1px solid #E2E8F0; border-radius: 6px; overflow: hidden; position: relative;">
-                        <svg viewBox="0 0 400 220" style="width: 100%; height: 100%; object-fit: cover;" preserveAspectRatio="none">
-                            <rect width="400" height="220" fill="#E8EEF5" />
-                            <!-- Roads & Blocks -->
-                            <path d="M 0,40 Q 150,60 400,20" stroke="#CBD5E1" stroke-width="8" fill="none" />
-                            <path d="M 0,160 Q 200,140 400,180" stroke="#CBD5E1" stroke-width="12" fill="none" />
-                            <path d="M 120,0 L 160,220" stroke="#CBD5E1" stroke-width="7" fill="none" />
-                            <path d="M 280,0 L 250,220" stroke="#CBD5E1" stroke-width="7" fill="none" />
-                            <path d="M 30,90 Q 200,100 380,80" stroke="#94A3B8" stroke-width="3" fill="none" stroke-dasharray="4,4" />
-                            <!-- Park / Water / Blocks -->
-                            <rect x="50" y="70" width="50" height="60" rx="3" fill="#D1E7DD" />
-                            <rect x="180" y="60" width="80" height="70" rx="3" fill="#E2E8F0" />
-                            <rect x="290" y="80" width="70" height="50" rx="3" fill="#D1E7DD" />
-                            <!-- Location Marker Pin -->
-                            <g transform="translate(220, 85)">
-                                <circle cx="0" cy="0" r="10" fill="#DC2626" opacity="0.3" />
-                                <circle cx="0" cy="0" r="5" fill="#DC2626" />
-                            </g>
+                    <!-- Clean Vector Map Graphic Preview Matching Figma -->
+                    <div style="border: 1px solid #E5E7EB; border-radius: 8px; overflow: hidden; margin-top: 6px; height: 160px; background: #F1F5F9; position: relative;">
+                        <svg width="100%" height="100%" viewBox="0 0 400 160" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Background land -->
+                            <rect width="400" height="160" fill="#EBF2EA"/>
+                            
+                            <!-- Green Park / River areas -->
+                            <path d="M 0 0 C 60 40, 70 90, 80 160 L 0 160 Z" fill="#D7E8D6"/>
+                            <path d="M 320 0 C 340 60, 360 110, 400 130 L 400 0 Z" fill="#D7E8D6"/>
+                            
+                            <!-- Street / Road Grid Lines -->
+                            <path d="M 60 0 L 100 160" stroke="#FFFFFF" stroke-width="6"/>
+                            <path d="M 160 0 L 140 160" stroke="#FFFFFF" stroke-width="5"/>
+                            <path d="M 240 0 L 260 160" stroke="#FFFFFF" stroke-width="6"/>
+                            <path d="M 330 0 L 310 160" stroke="#FFFFFF" stroke-width="4"/>
+                            
+                            <path d="M 0 45 L 400 35" stroke="#FFFFFF" stroke-width="6"/>
+                            <path d="M 0 85 L 400 95" stroke="#FFFFFF" stroke-width="7"/>
+                            <path d="M 0 130 L 400 120" stroke="#FFFFFF" stroke-width="5"/>
+
+                            <!-- City Blocks (Gray / Light Gray Footprints) -->
+                            <rect x="110" y="52" width="24" height="26" rx="2" fill="#CBD5E1"/>
+                            <rect x="112" y="54" width="8" height="10" fill="#94A3B8"/>
+                            <rect x="122" y="54" width="10" height="10" fill="#94A3B8"/>
+                            
+                            <rect x="175" y="48" width="48" height="32" rx="2" fill="#CBD5E1"/>
+                            <rect x="178" y="52" width="18" height="10" fill="#94A3B8"/>
+                            <rect x="200" y="52" width="20" height="10" fill="#94A3B8"/>
+                            <rect x="178" y="66" width="42" height="10" fill="#94A3B8"/>
+
+                            <rect x="275" y="46" width="30" height="34" rx="2" fill="#CBD5E1"/>
+                            <rect x="278" y="50" width="11" height="12" fill="#94A3B8"/>
+                            <rect x="292" y="50" width="10" height="12" fill="#94A3B8"/>
+
+                            <rect x="110" y="100" width="26" height="22" rx="2" fill="#CBD5E1"/>
+                            <rect x="170" y="104" width="55" height="14" rx="2" fill="#CBD5E1"/>
+                            <rect x="270" y="102" width="36" height="16" rx="2" fill="#CBD5E1"/>
+
+                            <!-- Location Pin Marker at Vatva Industrial Estate -->
+                            <circle cx="205" cy="74" r="8" fill="#3DA86F" fill-opacity="0.3"/>
+                            <circle cx="205" cy="74" r="4.5" fill="#006C44"/>
+                            <circle cx="205" cy="74" r="2" fill="#FFFFFF"/>
                         </svg>
-                        <div style="position: absolute; bottom: 8px; right: 8px; background: rgba(255,255,255,0.85); padding: 2px 8px; border-radius: 4px; font-size: 11px; color: #4B5563;">
-                            Vatva Industrial Zone
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Bottom Action Buttons Inside Card Footer -->
-        <div style="display: flex; justify-content: flex-end; gap: 12px; margin-top: 24px; padding-top: 18px; border-top: 1px solid #E5E7EB;">
-            <a href="<%= ResolveUrl("~/Suppliers/SupplierList.aspx") %>" class="btn-outline-action">Cancel</a>
-            <asp:Button ID="btnSaveSupplier" runat="server" Text="Save Changes" CssClass="btn-success-dark" OnClick="btnSaveSupplier_Click" />
+        <!-- Bottom Action Bar (Figma Exact) -->
+        <div style="display: flex; justify-content: flex-end; align-items: center; gap: 14px; padding-top: 20px; border-top: 1px solid #E5E7EB;">
+            <a href="<%= ResolveUrl("~/Suppliers/SupplierList.aspx") %>" style="display: inline-flex; align-items: center; justify-content: center; padding: 9px 22px; background: #FFFFFF; border: 1px solid #D1D5DB; border-radius: 6px; font-size: 13px; font-weight: 500; color: #374151; text-decoration: none;">Cancel</a>
+            <asp:Button ID="btnSaveSupplier" runat="server" Text="Save Changes" OnClick="btnSaveSupplier_Click" style="padding: 9px 24px; background: #006C44; border: 1px solid #006C44; border-radius: 6px; color: #FFFFFF; font-size: 13px; font-weight: 600; cursor: pointer; transition: background 0.15s ease;" />
         </div>
     </div>
 </asp:Content>

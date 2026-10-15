@@ -17,8 +17,11 @@ namespace Stock_Forgeeee.Products
         protected TextBox txtInitialStock;
         protected TextBox txtMinStock;
         protected DropDownList ddlSupplier;
+        protected TextBox txtBrand;
         protected TextBox txtDescription;
+        protected TextBox txtMaxStock;
         protected Button btnSave;
+        protected Button btnSaveBottom;
 
         protected void Page_Load(object sender, EventArgs e)
         {

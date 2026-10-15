@@ -15,26 +15,37 @@ namespace Stock_Forgeeee.Account
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            if (Page.IsValid)
+            string email = txtEmail != null ? txtEmail.Text.Trim() : string.Empty;
+            string password = txtPassword != null ? txtPassword.Text : string.Empty;
+
+            // Controller validation: check required fields and formats server-side
+            if (string.IsNullOrWhiteSpace(email))
             {
-                string email = txtEmail.Text.Trim();
-                string password = txtPassword.Text;
-
-                // Validate demo or store credentials
-                if (!string.IsNullOrEmpty(email) && !string.IsNullOrEmpty(password))
-                {
-                    Session["UserEmail"] = email;
-                    Session["UserName"] = email.Contains("@") ? email.Split('@')[0] : email;
-                    Session["IsAuthenticated"] = true;
-
-                    Response.Redirect("~/Dashboard.aspx");
-                }
-                else
-                {
-                    pnlAlert.Visible = true;
-                    lblAlertMessage.Text = "Invalid email or password. Please try again.";
-                }
+                pnlAlert.Visible = true;
+                lblAlertMessage.Text = "Email address is required.";
+                return;
             }
+
+            if (!email.Contains("@") || !email.Contains("."))
+            {
+                pnlAlert.Visible = true;
+                lblAlertMessage.Text = "Please enter a valid email address.";
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(password))
+            {
+                pnlAlert.Visible = true;
+                lblAlertMessage.Text = "Password is required.";
+                return;
+            }
+
+            // Authenticate and establish session
+            Session["UserEmail"] = email;
+            Session["UserName"] = email.Contains("@") ? email.Split('@')[0] : email;
+            Session["IsAuthenticated"] = true;
+
+            Response.Redirect("~/Dashboard.aspx");
         }
 
         protected void btnDemoAdmin_Click(object sender, EventArgs e)

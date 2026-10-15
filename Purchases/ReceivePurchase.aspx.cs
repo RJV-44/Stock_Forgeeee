@@ -30,15 +30,9 @@ namespace Stock_Forgeeee.Purchases
                 return;
             }
 
-            // Server-side controller validation
-            if (string.IsNullOrWhiteSpace(txtWaybill.Text))
-            {
-                ShowAlert("Waybill / Delivery reference is required.");
-                return;
-            }
-
+            // Validate received date format if supplied
             DateTime receivedDate;
-            if (!DateTime.TryParse(txtReceivedDate.Text.Trim(), out receivedDate))
+            if (!string.IsNullOrWhiteSpace(txtReceivedDate.Text) && !DateTime.TryParse(txtReceivedDate.Text.Trim(), out receivedDate))
             {
                 ShowAlert("Invalid received date format.");
                 return;

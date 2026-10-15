@@ -1,6 +1,4 @@
 <%@ Control Language="C#" AutoEventWireup="true" CodeBehind="NotificationPanel.ascx.cs" Inherits="Stock_Forgeeee.Controls.NotificationPanel" %>
-<link rel="stylesheet" href="<%= ResolveUrl("~/Content/site.css") %>" />
-<link href="<%= ResolveUrl("~/Content/components.css") %>" rel="stylesheet" type="text/css" />
 <div class="notification-panel-overlay" id="notificationOverlay"></div>
 <div class="notification-panel" id="notificationPanel">
     <div class="notification-header">

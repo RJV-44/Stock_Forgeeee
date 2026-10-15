@@ -8,15 +8,14 @@ namespace Stock_Forgeeee.Customers
     {
         protected Panel pnlAlert;
         protected Label lblAlertMessage;
-        protected TextBox txtFirstName;
-        protected TextBox txtLastName;
-        protected TextBox txtCompany;
+        protected TextBox txtCustomerName;
         protected DropDownList ddlCustomerType;
         protected TextBox txtPhone;
         protected TextBox txtEmail;
         protected TextBox txtAddress;
-        protected TextBox txtGst;
-        protected DropDownList ddlStatus;
+        protected TextBox txtCity;
+        protected DropDownList ddlState;
+        protected TextBox txtPinCode;
         protected TextBox txtNotes;
         protected Button btnSaveCustomer;
 
@@ -36,32 +35,19 @@ namespace Stock_Forgeeee.Customers
                 return;
             }
 
-            // Server-side controller validation
-            if (string.IsNullOrWhiteSpace(txtFirstName.Text))
+            if (txtCustomerName != null && string.IsNullOrWhiteSpace(txtCustomerName.Text))
             {
-                ShowAlert("Customer first name is required.");
+                ShowAlert("Customer Name is required.");
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(txtLastName.Text))
-            {
-                ShowAlert("Customer last name is required.");
-                return;
-            }
-
-            if (string.IsNullOrEmpty(ddlCustomerType.SelectedValue))
-            {
-                ShowAlert("Please select a valid customer category type.");
-                return;
-            }
-
-            if (string.IsNullOrWhiteSpace(txtPhone.Text))
+            if (txtPhone != null && string.IsNullOrWhiteSpace(txtPhone.Text))
             {
                 ShowAlert("Phone number is required.");
                 return;
             }
 
-            if (!string.IsNullOrWhiteSpace(txtEmail.Text))
+            if (txtEmail != null && !string.IsNullOrWhiteSpace(txtEmail.Text))
             {
                 string email = txtEmail.Text.Trim();
                 if (!email.Contains("@") || !email.Contains("."))

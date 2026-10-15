@@ -8,17 +8,20 @@ namespace Stock_Forgeeee.Customers
     {
         protected Panel pnlAlert;
         protected Label lblAlertMessage;
-        protected TextBox txtFirstName;
-        protected TextBox txtLastName;
-        protected TextBox txtCompany;
-        protected DropDownList ddlCustomerType;
-        protected TextBox txtPhone;
+        protected TextBox txtFullName;
         protected TextBox txtEmail;
-        protected TextBox txtAddress;
+        protected TextBox txtPhone;
+        protected DropDownList ddlCustomerType;
+        protected TextBox txtStreetAddress;
+        protected TextBox txtCity;
+        protected TextBox txtState;
+        protected TextBox txtPinCode;
+        protected DropDownList ddlCountry;
+        protected TextBox txtCompanyName;
         protected TextBox txtGst;
-        protected DropDownList ddlStatus;
+        protected DropDownList ddlPaymentTerms;
         protected TextBox txtNotes;
-        protected Button btnUpdateCustomer;
+        protected Button btnSaveChanges;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -28,7 +31,7 @@ namespace Stock_Forgeeee.Customers
             }
         }
 
-        protected void btnUpdateCustomer_Click(object sender, EventArgs e)
+        protected void btnSaveChanges_Click(object sender, EventArgs e)
         {
             if (!Page.IsValid)
             {
@@ -36,26 +39,19 @@ namespace Stock_Forgeeee.Customers
                 return;
             }
 
-            // Server-side controller validation
-            if (string.IsNullOrWhiteSpace(txtFirstName.Text))
+            if (txtFullName != null && string.IsNullOrWhiteSpace(txtFullName.Text))
             {
-                ShowAlert("Customer first name cannot be empty.");
+                ShowAlert("Full Name is required.");
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(txtLastName.Text))
+            if (txtPhone != null && string.IsNullOrWhiteSpace(txtPhone.Text))
             {
-                ShowAlert("Customer last name cannot be empty.");
+                ShowAlert("Phone Number is required.");
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(txtPhone.Text))
-            {
-                ShowAlert("Phone number cannot be empty.");
-                return;
-            }
-
-            if (!string.IsNullOrWhiteSpace(txtEmail.Text))
+            if (txtEmail != null && !string.IsNullOrWhiteSpace(txtEmail.Text))
             {
                 string email = txtEmail.Text.Trim();
                 if (!email.Contains("@") || !email.Contains("."))
@@ -65,7 +61,7 @@ namespace Stock_Forgeeee.Customers
                 }
             }
 
-            Response.Redirect("CustomerList.aspx");
+            Response.Redirect("CustomerDetails.aspx?id=101");
         }
 
         private void ShowAlert(string message)

@@ -1,225 +1,182 @@
 <%@ Page Title="Supplier Details" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="SupplierDetails.aspx.cs" Inherits="Stock_Forgeeee.Suppliers.SupplierDetails" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="page-header">
+    <!-- Breadcrumb -->
+    <div style="font-size: 12px; color: #6B7280; margin-bottom: 12px; display: flex; align-items: center; gap: 6px;">
+        <a href="<%= ResolveUrl("~/Suppliers/SupplierList.aspx") %>" style="color: #6B7280; text-decoration: none;">Suppliers</a>
+        <span style="color: #9CA3AF;">&rsaquo;</span>
+        <span style="color: #111827; font-weight: 500;">Supplier Details</span>
+    </div>
+
+    <!-- Header & Action Buttons -->
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 24px;">
         <div>
-            <div class="eyebrow"><i class="bi bi-truck me-1"></i> Supplier Profile</div>
-            <h1 class="page-title">Bosch Power Tools India Ltd</h1>
-            <div class="page-subtitle">Supplier Code: <code>SUP-1001</code> &bull; Primary Category: <strong>Power Tools</strong></div>
+            <h1 style="font-size: 22px; font-weight: 700; color: #111827; margin: 0 0 4px 0;">ABC Hardware Suppliers</h1>
+            <p style="font-size: 13px; color: #6B7280; margin: 0;">Supplier information and purchasing activity.</p>
         </div>
-        <div class="page-actions">
-            <a href="<%= ResolveUrl("~/Purchases/ReceivePurchase.aspx?supplier=1001") %>" class="btn-primary">
-                <i class="bi bi-plus-lg"></i> Create Purchase Order
-            </a>
-            <a href="<%= ResolveUrl("~/Suppliers/EditSupplier.aspx?id=1001") %>" class="btn-secondary">
-                <i class="bi bi-pencil"></i> Edit Supplier
-            </a>
-            <a href="<%= ResolveUrl("~/Suppliers/SupplierList.aspx") %>" class="btn-secondary">
-                <i class="bi bi-arrow-left"></i> Back to Directory
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <button type="button" style="display: inline-flex; align-items: center; gap: 6px; padding: 7px 14px; background: #FFFFFF; border: 1px solid #D1D5DB; border-radius: 6px; font-size: 13px; font-weight: 500; color: #374151; cursor: pointer;">
+                <i class="bi bi-toggles"></i>
+                <span>Deactivate</span>
+            </button>
+            <a href="<%= ResolveUrl("~/Suppliers/EditSupplier.aspx?id=1001") %>" style="display: inline-flex; align-items: center; gap: 6px; padding: 7px 16px; background: #3DA86F; border: 1px solid #3DA86F; border-radius: 6px; font-size: 13px; font-weight: 600; color: #FFFFFF; text-decoration: none; transition: background 0.15s ease;">
+                <i class="bi bi-pencil"></i>
+                <span>Edit Supplier</span>
             </a>
         </div>
     </div>
 
-    <div class="metric-grid">
-        <div class="metric-card">
-            <span class="metric-label">Total Purchase Orders</span>
-            <div class="metric-value">34 Orders</div>
-            <span class="metric-change positive"><i class="bi bi-check2-circle"></i> 31 Completed</span>
-        </div>
-        <div class="metric-card">
-            <span class="metric-label">Total Spend</span>
-            <div class="metric-value">&#8377;18,50,000</div>
-            <span class="metric-change positive"><i class="bi bi-graph-up-arrow"></i> Preferred Vendor</span>
-        </div>
-        <div class="metric-card">
-            <span class="metric-label">Outstanding Balance</span>
-            <div class="metric-value">&#8377;1,45,000</div>
-            <span class="metric-change negative"><i class="bi bi-clock-history"></i> Due in 12 days</span>
-        </div>
-        <div class="metric-card">
-            <span class="metric-label">On-Time Delivery Rate</span>
-            <div class="metric-value">98.5%</div>
-            <span class="metric-change positive"><i class="bi bi-star-fill text-warning"></i> Tier 1 Supplier</span>
-        </div>
-    </div>
+    <!-- 2 Column Layout Grid Matching Figma Screenshot -->
+    <div style="display: grid; grid-template-columns: 310px 1fr; gap: 24px; align-items: start; max-width: 1200px;">
+        
+        <!-- ================= Left Column: Profile Cards ================= -->
+        <div style="display: flex; flex-direction: column; gap: 16px;">
+            
+            <!-- Card 1: Primary Contact Card -->
+            <div style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 8px; padding: 18px 20px;">
+                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                    <span style="display: inline-block; padding: 2px 8px; background: #EAF8EF; border: 1px solid #BBF7D0; border-radius: 4px; font-size: 11px; font-weight: 600; color: #15803D;">Active</span>
+                    <strong style="font-size: 14px; color: #111827;">ABC Hardware Suppliers</strong>
+                </div>
 
-    <div class="info-grid">
-        <div class="info-card">
-            <div class="card-header">
-                <h3 class="card-title"><i class="bi bi-building me-2 text-primary"></i> Contact &amp; Business Profile</h3>
+                <div style="display: flex; flex-direction: column; gap: 10px; font-size: 12px; color: #4B5563;">
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <i class="bi bi-person" style="color: #6B7280; font-size: 14px;"></i>
+                        <span>Rajesh Patel</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <i class="bi bi-telephone" style="color: #6B7280; font-size: 13px;"></i>
+                        <span>+91 98765 43210</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <i class="bi bi-envelope" style="color: #6B7280; font-size: 13px;"></i>
+                        <span>contact@abchardware.in</span>
+                    </div>
+                </div>
             </div>
-            <div class="info-list">
-                <div class="info-row">
-                    <span>Contact Person</span>
-                    <strong>Rajesh Verma (Regional Sales Mgr)</strong>
+
+            <!-- Card 2: Business Information -->
+            <div style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 8px; padding: 18px 20px;">
+                <div style="font-size: 13px; font-weight: 700; color: #111827; margin-bottom: 14px;">
+                    Business Information
                 </div>
-                <div class="info-row">
-                    <span>Phone Number</span>
-                    <strong>+91 98200 11223</strong>
+
+                <div style="display: flex; flex-direction: column; gap: 12px; font-size: 12.5px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span style="color: #6B7280;">Type</span>
+                        <strong style="color: #111827; font-weight: 600;">Distributor</strong>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span style="color: #6B7280;">GSTIN</span>
+                        <strong style="color: #111827; font-weight: 600; letter-spacing: 0.3px;">24ABCDE1234F1Z5</strong>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span style="color: #6B7280;">Payment Terms</span>
+                        <strong style="color: #111827; font-weight: 600;">30 Days</strong>
+                    </div>
                 </div>
-                <div class="info-row">
-                    <span>Email Address</span>
-                    <strong>rajesh@bosch.co.in</strong>
-                </div>
-                <div class="info-row">
-                    <span>GSTIN / Tax ID</span>
-                    <strong><code>27AAACB1234F1Z5</code></strong>
-                </div>
-                <div class="info-row">
-                    <span>Payment Terms</span>
-                    <strong>Net 30 Days (Credit)</strong>
-                </div>
-                <div class="info-row">
-                    <span>Warehouse Address</span>
-                    <strong>Plot 14, MIDC Powai, Mumbai, MH 400093</strong>
+            </div>
+
+            <!-- Card 3: Registered Address with Subtle Graphic Curve -->
+            <div style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 8px; padding: 18px 20px; position: relative; overflow: hidden; min-height: 110px;">
+                <!-- Decorative background arc -->
+                <div style="position: absolute; right: -20px; bottom: -20px; width: 100px; height: 100px; border-radius: 50%; background: #F1F5F9; z-index: 1;"></div>
+                
+                <div style="position: relative; z-index: 2;">
+                    <div style="font-size: 13px; font-weight: 700; color: #111827; margin-bottom: 12px;">
+                        Registered Address
+                    </div>
+                    <div style="display: flex; align-items: flex-start; gap: 8px; font-size: 12.5px; color: #374151; line-height: 1.5;">
+                        <i class="bi bi-geo-alt" style="color: #15803D; font-size: 15px; margin-top: 2px;"></i>
+                        <span>123 Industrial Estate,<br />Vatva, Ahmedabad,<br />Gujarat - 382445</span>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="info-card">
-            <div class="card-header">
-                <h3 class="card-title"><i class="bi bi-shield-check me-2 text-primary"></i> Contract &amp; SLA Terms</h3>
-            </div>
-            <div class="info-list">
-                <div class="info-row">
-                    <span>Vendor Rating</span>
-                    <strong><i class="bi bi-star-fill text-warning me-1"></i> 4.9 / 5.0 (Preferred)</strong>
+        <!-- ================= Right Column: Stats & Recent POs ================= -->
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+            
+            <!-- Top 3 Stat Cards in a Row -->
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
+                <div style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 8px; padding: 18px 20px;">
+                    <div style="font-size: 11.5px; color: #6B7280; font-weight: 500;">Products Supplied</div>
+                    <div style="font-size: 26px; font-weight: 800; color: #111827; margin-top: 6px;">24</div>
                 </div>
-                <div class="info-row">
-                    <span>Average Delivery SLA</span>
-                    <strong>2 - 3 Business Days</strong>
-                </div>
-                <div class="info-row">
-                    <span>Minimum Order Value</span>
-                    <strong>&#8377;25,000</strong>
-                </div>
-                <div class="info-row">
-                    <span>Warranty Support</span>
-                    <strong>1 Year Manufacturer Replacement</strong>
-                </div>
-                <div class="info-row">
-                    <span>Defect Return Window</span>
-                    <strong>15 Days Defect Replacement</strong>
-                </div>
-                <div class="info-row">
-                    <span>Account Manager</span>
-                    <strong>StockForge Procurement Desk</strong>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <!-- Recent Purchase Orders Table -->
-    <div class="card">
-        <div class="card-header">
-            <h3 class="card-title"><i class="bi bi-cart-check me-2 text-primary"></i> Recent Purchase Orders</h3>
-            <a href="<%= ResolveUrl("~/Purchases/MyPurchase.aspx") %>" class="small-link">View All Purchases &rarr;</a>
-        </div>
-        <div class="card-body p-0">
-            <div class="table-wrapper">
-                <table class="data-table">
-                    <thead>
-                        <tr>
-                            <th>PO Reference</th>
-                            <th>Order Date</th>
-                            <th>Items Count</th>
-                            <th>Total Amount</th>
-                            <th>Delivery Status</th>
-                            <th>Payment Status</th>
-                            <th class="text-end">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><code>PO-2026-089</code></td>
-                            <td>Sep 24, 2026</td>
-                            <td>12 SKUs (45 Pcs)</td>
-                            <td><strong>&#8377;1,45,000</strong></td>
-                            <td><span class="badge badge-warning">In Transit</span></td>
-                            <td><span class="badge badge-neutral">Pending (Net 30)</span></td>
-                            <td class="text-end">
-                                <a href="<%= ResolveUrl("~/Purchases/PurchaseOrderDetails.aspx?id=89") %>" class="btn-icon" title="View PO"><i class="bi bi-eye"></i></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><code>PO-2026-074</code></td>
-                            <td>Aug 18, 2026</td>
-                            <td>8 SKUs (60 Pcs)</td>
-                            <td><strong>&#8377;3,20,000</strong></td>
-                            <td><span class="badge badge-success">Received</span></td>
-                            <td><span class="badge badge-success">Paid</span></td>
-                            <td class="text-end">
-                                <a href="<%= ResolveUrl("~/Purchases/PurchaseOrderDetails.aspx?id=74") %>" class="btn-icon" title="View PO"><i class="bi bi-eye"></i></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><code>PO-2026-051</code></td>
-                            <td>Jul 05, 2026</td>
-                            <td>15 SKUs (110 Pcs)</td>
-                            <td><strong>&#8377;4,80,000</strong></td>
-                            <td><span class="badge badge-success">Received</span></td>
-                            <td><span class="badge badge-success">Paid</span></td>
-                            <td class="text-end">
-                                <a href="<%= ResolveUrl("~/Purchases/PurchaseOrderDetails.aspx?id=51") %>" class="btn-icon" title="View PO"><i class="bi bi-eye"></i></a>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
+                <div style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 8px; padding: 18px 20px;">
+                    <div style="font-size: 11.5px; color: #6B7280; font-weight: 500;">Purchase Orders</div>
+                    <div style="font-size: 26px; font-weight: 800; color: #111827; margin-top: 6px;">18</div>
+                </div>
 
-    <!-- Supplied Products Summary Table -->
-    <div class="card">
-        <div class="card-header">
-            <h3 class="card-title"><i class="bi bi-box-seam me-2 text-primary"></i> Supplied Product Catalog</h3>
-        </div>
-        <div class="card-body p-0">
-            <div class="table-wrapper">
-                <table class="data-table">
-                    <thead>
-                        <tr>
-                            <th>Product Name</th>
-                            <th>SKU</th>
-                            <th>Unit Wholesale Price</th>
-                            <th>Retail Selling Price</th>
-                            <th>Current Stock</th>
-                            <th>Stock Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <strong>Bosch GSB 500W Impact Drill</strong>
-                            </td>
-                            <td><code>HW-BSH-500</code></td>
-                            <td>&#8377;3,200</td>
-                            <td>&#8377;4,150</td>
-                            <td>3 Pcs</td>
-                            <td><span class="badge badge-danger">Low Stock</span></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <strong>Bosch Professional Angle Grinder GWS 600</strong>
-                            </td>
-                            <td><code>HW-BSH-600</code></td>
-                            <td>&#8377;2,850</td>
-                            <td>&#8377;3,600</td>
-                            <td>18 Pcs</td>
-                            <td><span class="badge badge-success">In Stock</span></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <strong>Bosch Cordless Screw Driver IXO 6</strong>
-                            </td>
-                            <td><code>HW-BSH-006</code></td>
-                            <td>&#8377;2,100</td>
-                            <td>&#8377;2,790</td>
-                            <td>12 Pcs</td>
-                            <td><span class="badge badge-success">In Stock</span></td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 8px; padding: 18px 20px;">
+                    <div style="font-size: 11.5px; color: #6B7280; font-weight: 500;">Total Purchase Value</div>
+                    <div style="font-size: 24px; font-weight: 800; color: #15803D; margin-top: 6px;">₹8,45,750.00</div>
+                </div>
+            </div>
+
+            <!-- Recent Purchase Orders Table Card -->
+            <div style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 8px; padding: 20px; min-height: 380px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                    <h3 style="font-size: 14px; font-weight: 700; color: #111827; margin: 0;">Recent Purchase Orders</h3>
+                    <a href="<%= ResolveUrl("~/Purchases/MyPurchase.aspx") %>" style="font-size: 12px; font-weight: 600; color: #15803D; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+                        <span>View All</span>
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Table -->
+                <div style="overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse; font-size: 12.5px;">
+                        <thead>
+                            <tr style="border-bottom: 1px solid #E5E7EB; color: #6B7280; text-align: left;">
+                                <th style="padding: 10px 12px; font-weight: 500; font-size: 11.5px;">PO Number</th>
+                                <th style="padding: 10px 12px; font-weight: 500; font-size: 11.5px;">Date</th>
+                                <th style="padding: 10px 12px; font-weight: 500; font-size: 11.5px;">Items</th>
+                                <th style="padding: 10px 12px; font-weight: 500; font-size: 11.5px;">Total (INR)</th>
+                                <th style="padding: 10px 12px; font-weight: 500; font-size: 11.5px;">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Row 1 -->
+                            <tr style="border-bottom: 1px solid #F3F4F6;">
+                                <td style="padding: 12px;">
+                                    <a href="<%= ResolveUrl("~/Purchases/PurchaseOrderDetails.aspx?id=1048") %>" style="color: #15803D; font-weight: 600; text-decoration: none;">PO-2026-0048</a>
+                                </td>
+                                <td style="padding: 12px; color: #374151;">12 Oct 2026</td>
+                                <td style="padding: 12px; color: #374151;">45</td>
+                                <td style="padding: 12px; color: #111827; font-weight: 600;">₹1,24,500.00</td>
+                                <td style="padding: 12px;">
+                                    <span style="display: inline-block; padding: 2px 8px; background: #DBEAFE; border-radius: 4px; font-size: 11px; font-weight: 600; color: #1D4ED8;">Dispatched</span>
+                                </td>
+                            </tr>
+                            <!-- Row 2 -->
+                            <tr style="border-bottom: 1px solid #F3F4F6;">
+                                <td style="padding: 12px;">
+                                    <a href="<%= ResolveUrl("~/Purchases/PurchaseOrderDetails.aspx?id=1041") %>" style="color: #15803D; font-weight: 600; text-decoration: none;">PO-2026-0041</a>
+                                </td>
+                                <td style="padding: 12px; color: #374151;">28 Sep 2026</td>
+                                <td style="padding: 12px; color: #374151;">120</td>
+                                <td style="padding: 12px; color: #111827; font-weight: 600;">₹3,45,000.00</td>
+                                <td style="padding: 12px;">
+                                    <span style="display: inline-block; padding: 2px 8px; background: #DCFCE7; border-radius: 4px; font-size: 11px; font-weight: 600; color: #15803D;">Delivered</span>
+                                </td>
+                            </tr>
+                            <!-- Row 3 -->
+                            <tr style="border-bottom: 1px solid #F3F4F6;">
+                                <td style="padding: 12px;">
+                                    <a href="<%= ResolveUrl("~/Purchases/PurchaseOrderDetails.aspx?id=1036") %>" style="color: #15803D; font-weight: 600; text-decoration: none;">PO-2026-0036</a>
+                                </td>
+                                <td style="padding: 12px; color: #374151;">15 Sep 2026</td>
+                                <td style="padding: 12px; color: #374151;">18</td>
+                                <td style="padding: 12px; color: #111827; font-weight: 600;">₹85,250.00</td>
+                                <td style="padding: 12px;">
+                                    <span style="display: inline-block; padding: 2px 8px; background: #DCFCE7; border-radius: 4px; font-size: 11px; font-weight: 600; color: #15803D;">Delivered</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>

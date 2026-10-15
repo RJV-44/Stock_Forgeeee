@@ -2,182 +2,212 @@
 <%@ Register Src="~/Controls/Pagination.ascx" TagPrefix="uc" TagName="Pagination" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="page-header">
+    <!-- Breadcrumb -->
+    <div class="sf-breadcrumb" style="display: flex; align-items: center; gap: 6px; font-size: 12px; margin-bottom: 12px;">
+        <span style="color: #6B7280;">Inventory</span>
+        <i class="bi bi-chevron-right" style="font-size: 10px; color: #9CA3AF;"></i>
+        <span style="color: #111827; font-weight: 600;">Stock Overview</span>
+    </div>
+
+    <!-- Page Header -->
+    <div class="sf-page-header" style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 24px;">
         <div>
-            <h1 class="page-title">Inventory Overview</h1>
-            <div class="page-subtitle">Track available stock, reorder pressure, and warehouse movement in one place.</div>
+            <h1 class="sf-page-title" style="font-size: 24px; font-weight: 700; color: #111827; margin: 0 0 4px 0;">Inventory Overview</h1>
+            <div class="sf-page-subtitle" style="font-size: 13.5px; color: #6B7280;">Track available stock, reorder pressure, and warehouse movement in one place.</div>
         </div>
-        <div class="page-actions">
-            <a href="<%= ResolveUrl("~/Inventory/StockAdjustment.aspx") %>" class="btn-primary">
+        <div class="sf-header-actions" style="display: flex; align-items: center; gap: 10px;">
+            <a href="<%= ResolveUrl("~/Inventory/StockAdjustment.aspx") %>" style="display: inline-flex; align-items: center; gap: 6px; padding: 7px 16px; background: #006C44; border: 1px solid #006C44; border-radius: 6px; font-size: 13px; font-weight: 600; color: #FFFFFF; text-decoration: none;">
                 <i class="bi bi-plus-circle"></i> Adjust Stock
             </a>
-            <a href="<%= ResolveUrl("~/Inventory/StockMovementHistory.aspx") %>" class="btn-secondary">
-                <i class="bi bi-arrow-left-right"></i> View Movement History
+            <a href="<%= ResolveUrl("~/Inventory/StockMovementHistory.aspx") %>" style="display: inline-flex; align-items: center; gap: 6px; padding: 7px 14px; background: #FFFFFF; border: 1px solid #D1D5DB; border-radius: 6px; font-size: 13px; font-weight: 500; color: #374151; text-decoration: none;">
+                <i class="bi bi-arrow-left-right"></i> Movement History
             </a>
         </div>
     </div>
 
-    <div class="inventory-metric-grid">
-        <div class="inventory-metric-card">
-            <span class="metric-label">Total Items</span>
-            <div class="metric-value">486</div>
-            <span class="metric-change positive"><i class="bi bi-arrow-up-short"></i> +4.6%</span>
+    <!-- 4 Top Metric KPI Cards -->
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px;">
+        <div style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 8px; padding: 18px 20px;">
+            <div style="font-size: 11px; font-weight: 700; color: #6B7280; text-transform: uppercase; letter-spacing: 0.3px;">Total Items</div>
+            <div style="font-size: 22px; font-weight: 700; color: #111827; margin-top: 8px; font-variant-numeric: tabular-nums;">486</div>
+            <div style="font-size: 12px; color: #15803D; margin-top: 4px;">+4.6% this month</div>
         </div>
-        <div class="inventory-metric-card">
-            <span class="metric-label">Low Stock</span>
-            <div class="metric-value">8</div>
-            <span class="metric-change negative"><i class="bi bi-arrow-down-short"></i> 3 urgent</span>
+
+        <div style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 8px; padding: 18px 20px;">
+            <div style="font-size: 11px; font-weight: 700; color: #6B7280; text-transform: uppercase; letter-spacing: 0.3px;">Low Stock</div>
+            <div style="font-size: 22px; font-weight: 700; color: #DC2626; margin-top: 8px; font-variant-numeric: tabular-nums;">8</div>
+            <div style="font-size: 12px; color: #DC2626; margin-top: 4px;">3 below minimum threshold</div>
         </div>
-        <div class="inventory-metric-card">
-            <span class="metric-label">Inventory Value</span>
-            <div class="metric-value">₹18.4L</div>
-            <span class="metric-change positive"><i class="bi bi-arrow-up-short"></i> +7.2%</span>
+
+        <div style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 8px; padding: 18px 20px;">
+            <div style="font-size: 11px; font-weight: 700; color: #6B7280; text-transform: uppercase; letter-spacing: 0.3px;">Inventory Value</div>
+            <div style="font-size: 22px; font-weight: 700; color: #111827; margin-top: 8px; font-variant-numeric: tabular-nums;">₹18,40,000.00</div>
+            <div style="font-size: 12px; color: #15803D; margin-top: 4px;">+7.2% valuation</div>
         </div>
-        <div class="inventory-metric-card">
-            <span class="metric-label">Stock Accuracy</span>
-            <div class="metric-value">96.4%</div>
-            <span class="metric-change positive"><i class="bi bi-check-circle"></i> Stable</span>
+
+        <div style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 8px; padding: 18px 20px;">
+            <div style="font-size: 11px; font-weight: 700; color: #6B7280; text-transform: uppercase; letter-spacing: 0.3px;">Stock Accuracy</div>
+            <div style="font-size: 22px; font-weight: 700; color: #15803D; margin-top: 8px; font-variant-numeric: tabular-nums;">96.4%</div>
+            <div style="font-size: 12px; color: #15803D; margin-top: 4px;">Audit verified</div>
         </div>
     </div>
 
-    <div class="card">
-        <div class="card-body">
-            <div class="filter-row">
-                <div class="search-box">
-                    <i class="bi bi-search search-icon"></i>
-                    <asp:TextBox ID="txtSearch" runat="server" CssClass="form-control" placeholder="Search product, SKU, or category..."></asp:TextBox>
-                </div>
-                <div class="filter-field">
-                    <asp:DropDownList ID="ddlCategory" runat="server" CssClass="form-select">
-                        <asp:ListItem Value="">All categories</asp:ListItem>
-                        <asp:ListItem Value="Power Tools">Power Tools</asp:ListItem>
-                        <asp:ListItem Value="Hand Tools">Hand Tools</asp:ListItem>
-                        <asp:ListItem Value="Fasteners">Fasteners</asp:ListItem>
-                        <asp:ListItem Value="Electrical">Electrical</asp:ListItem>
-                    </asp:DropDownList>
-                </div>
-                <div class="filter-field">
-                    <asp:DropDownList ID="ddlStockStatus" runat="server" CssClass="form-select">
-                        <asp:ListItem Value="">All stock</asp:ListItem>
-                        <asp:ListItem Value="Healthy">Healthy</asp:ListItem>
-                        <asp:ListItem Value="Low">Low stock</asp:ListItem>
-                        <asp:ListItem Value="Out">Out of stock</asp:ListItem>
-                    </asp:DropDownList>
-                </div>
-                <asp:Button ID="btnFilter" runat="server" Text="Apply" CssClass="btn-secondary" />
+    <!-- Inventory Table Card Container -->
+    <div style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 8px; overflow: hidden; margin-bottom: 24px;">
+        <!-- Filter Toolbar -->
+        <div style="padding: 14px 20px; border-bottom: 1px solid #E5E7EB; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; background: #FFFFFF;">
+            <div style="position: relative; flex: 1; min-width: 280px;">
+                <i class="bi bi-search" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: #9CA3AF; font-size: 13.5px;"></i>
+                <asp:TextBox ID="txtSearch" runat="server" placeholder="Search product, SKU, or category..." style="width: 100%; height: 38px; padding: 6px 12px 6px 36px; border: 1px solid #D1D5DB; border-radius: 6px; font-size: 13px; color: #111827; outline: none; background: #FFFFFF; box-sizing: border-box;"></asp:TextBox>
             </div>
 
-            <div class="table-wrapper mt-2">
-                <table class="inventory-table">
-                    <thead>
-                        <tr>
-                            <th>Product</th>
-                            <th>Category</th>
-                            <th>SKU</th>
-                            <th>On Hand</th>
-                            <th>Reorder Level</th>
-                            <th>Unit Price</th>
-                            <th>Status</th>
-                            <th class="text-end">Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <div class="product-chip">
-                                    <div class="product-thumb"><i class="bi bi-tools"></i></div>
-                                    <div class="product-name">
-                                        <strong>Bosch GSB 500W Impact Drill</strong>
-                                        <small>Fast-moving item</small>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>Power Tools</td>
-                            <td>HW-BSH-500</td>
-                            <td><strong>3</strong></td>
-                            <td>12</td>
-                            <td>₹4,150</td>
-                            <td><span class="status-pill blocked">Low Stock</span></td>
-                            <td class="text-end">
-                                <div class="action-group">
-                                    <a href="<%= ResolveUrl("~/Products/ProductDetails.aspx?id=101") %>" class="btn-icon"><i class="bi bi-eye"></i></a>
-                                    <a href="<%= ResolveUrl("~/Inventory/StockAdjustment.aspx") %>" class="btn-icon"><i class="bi bi-arrow-repeat"></i></a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="product-chip">
-                                    <div class="product-thumb"><i class="bi bi-wrench"></i></div>
-                                    <div class="product-name">
-                                        <strong>Stanley Heavy Duty Hammer</strong>
-                                        <small>Manual tool</small>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>Hand Tools</td>
-                            <td>HW-STN-021</td>
-                            <td><strong>5</strong></td>
-                            <td>10</td>
-                            <td>₹680</td>
-                            <td><span class="status-pill pending">Low</span></td>
-                            <td class="text-end">
-                                <div class="action-group">
-                                    <a href="<%= ResolveUrl("~/Products/ProductDetails.aspx?id=102") %>" class="btn-icon"><i class="bi bi-eye"></i></a>
-                                    <a href="<%= ResolveUrl("~/Inventory/StockAdjustment.aspx") %>" class="btn-icon"><i class="bi bi-arrow-repeat"></i></a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="product-chip">
-                                    <div class="product-thumb"><i class="bi bi-box-seam"></i></div>
-                                    <div class="product-name">
-                                        <strong>Stainless Steel Hinges 4-inch</strong>
-                                        <small>Packaged hardware</small>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>Fasteners</td>
-                            <td>HW-HNG-401</td>
-                            <td><strong>120</strong></td>
-                            <td>35</td>
-                            <td>₹1,200</td>
-                            <td><span class="status-pill active">Healthy</span></td>
-                            <td class="text-end">
-                                <div class="action-group">
-                                    <a href="<%= ResolveUrl("~/Products/ProductDetails.aspx?id=103") %>" class="btn-icon"><i class="bi bi-eye"></i></a>
-                                    <a href="<%= ResolveUrl("~/Inventory/StockAdjustment.aspx") %>" class="btn-icon"><i class="bi bi-arrow-repeat"></i></a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="product-chip">
-                                    <div class="product-thumb"><i class="bi bi-plug"></i></div>
-                                    <div class="product-name">
-                                        <strong>Finolex Copper Wire 1.5 sq mm</strong>
-                                        <small>Electrical supply</small>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>Electrical</td>
-                            <td>HW-FNX-150</td>
-                            <td><strong>45</strong></td>
-                            <td>20</td>
-                            <td>₹1,850</td>
-                            <td><span class="status-pill active">Healthy</span></td>
-                            <td class="text-end">
-                                <div class="action-group">
-                                    <a href="<%= ResolveUrl("~/Products/ProductDetails.aspx?id=104") %>" class="btn-icon"><i class="bi bi-eye"></i></a>
-                                    <a href="<%= ResolveUrl("~/Inventory/StockAdjustment.aspx") %>" class="btn-icon"><i class="bi bi-arrow-repeat"></i></a>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+            <asp:DropDownList ID="ddlCategory" runat="server" style="height: 38px; padding: 6px 28px 6px 12px; border: 1px solid #D1D5DB; border-radius: 6px; font-size: 13px; color: #374151; background: #FFFFFF;">
+                <asp:ListItem Value="">All categories</asp:ListItem>
+                <asp:ListItem Value="Power Tools">Power Tools</asp:ListItem>
+                <asp:ListItem Value="Hand Tools">Hand Tools</asp:ListItem>
+                <asp:ListItem Value="Fasteners">Fasteners</asp:ListItem>
+                <asp:ListItem Value="Electrical">Electrical</asp:ListItem>
+            </asp:DropDownList>
 
+            <asp:DropDownList ID="ddlStockStatus" runat="server" style="height: 38px; padding: 6px 28px 6px 12px; border: 1px solid #D1D5DB; border-radius: 6px; font-size: 13px; color: #374151; background: #FFFFFF;">
+                <asp:ListItem Value="">All stock</asp:ListItem>
+                <asp:ListItem Value="Healthy">Healthy</asp:ListItem>
+                <asp:ListItem Value="Low">Low stock</asp:ListItem>
+                <asp:ListItem Value="Out">Out of stock</asp:ListItem>
+            </asp:DropDownList>
+
+            <asp:Button ID="btnFilter" runat="server" Text="Apply" style="padding: 7px 16px; background: #006C44; border: 1px solid #006C44; border-radius: 6px; font-size: 13px; font-weight: 600; color: #FFFFFF; cursor: pointer;" />
+        </div>
+
+        <!-- Inventory Table -->
+        <div style="overflow-x: auto;">
+            <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 13px;">
+                <thead>
+                    <tr style="background: #FAFAFA; border-bottom: 1px solid #E5E7EB; color: #6B7280; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.3px;">
+                        <th style="padding: 12px 20px;">Product</th>
+                        <th style="padding: 12px 16px;">Category</th>
+                        <th style="padding: 12px 16px;">SKU</th>
+                        <th style="padding: 12px 16px; text-align: center;">On Hand</th>
+                        <th style="padding: 12px 16px; text-align: center;">Reorder Level</th>
+                        <th style="padding: 12px 16px; text-align: right;">Unit Price</th>
+                        <th style="padding: 12px 16px; text-align: center;">Status</th>
+                        <th style="padding: 12px 20px; text-align: right;">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border-bottom: 1px solid #F3F4F6;">
+                        <td style="padding: 14px 20px;">
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <div style="width: 36px; height: 36px; border-radius: 6px; background: #F3F4F6; display: flex; align-items: center; justify-content: center; color: #6B7280;">
+                                    <i class="bi bi-tools"></i>
+                                </div>
+                                <div>
+                                    <div style="font-weight: 600; color: #111827;">Bosch GSB 500W Impact Drill</div>
+                                    <div style="font-size: 11.5px; color: #6B7280;">Fast-moving item</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td style="padding: 14px 16px; color: #4B5563;">Power Tools</td>
+                        <td style="padding: 14px 16px; font-family: monospace; color: #4B5563;">HW-BSH-500</td>
+                        <td style="padding: 14px 16px; text-align: center; font-weight: 700; color: #DC2626; font-variant-numeric: tabular-nums;">3</td>
+                        <td style="padding: 14px 16px; text-align: center; color: #6B7280; font-variant-numeric: tabular-nums;">12</td>
+                        <td style="padding: 14px 16px; text-align: right; font-weight: 600; color: #111827; font-variant-numeric: tabular-nums;">₹4,150.00</td>
+                        <td style="padding: 14px 16px; text-align: center;">
+                            <span style="display: inline-block; padding: 2px 8px; background: #FEE2E2; border-radius: 4px; font-size: 11px; font-weight: 600; color: #DC2626;">Low Stock</span>
+                        </td>
+                        <td style="padding: 14px 20px; text-align: right;">
+                            <div style="display: inline-flex; align-items: center; gap: 8px;">
+                                <a href="<%= ResolveUrl("~/Products/ProductDetails.aspx?id=101") %>" style="color: #6B7280; font-size: 14px;"><i class="bi bi-eye"></i></a>
+                                <a href="<%= ResolveUrl("~/Inventory/StockAdjustment.aspx") %>" style="color: #006C44; font-size: 14px;"><i class="bi bi-arrow-repeat"></i></a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #F3F4F6;">
+                        <td style="padding: 14px 20px;">
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <div style="width: 36px; height: 36px; border-radius: 6px; background: #F3F4F6; display: flex; align-items: center; justify-content: center; color: #6B7280;">
+                                    <i class="bi bi-wrench"></i>
+                                </div>
+                                <div>
+                                    <div style="font-weight: 600; color: #111827;">Stanley Heavy Duty Hammer</div>
+                                    <div style="font-size: 11.5px; color: #6B7280;">Manual tool</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td style="padding: 14px 16px; color: #4B5563;">Hand Tools</td>
+                        <td style="padding: 14px 16px; font-family: monospace; color: #4B5563;">HW-STN-021</td>
+                        <td style="padding: 14px 16px; text-align: center; font-weight: 700; color: #B45309; font-variant-numeric: tabular-nums;">5</td>
+                        <td style="padding: 14px 16px; text-align: center; color: #6B7280; font-variant-numeric: tabular-nums;">10</td>
+                        <td style="padding: 14px 16px; text-align: right; font-weight: 600; color: #111827; font-variant-numeric: tabular-nums;">₹680.00</td>
+                        <td style="padding: 14px 16px; text-align: center;">
+                            <span style="display: inline-block; padding: 2px 8px; background: #FEF3C7; border-radius: 4px; font-size: 11px; font-weight: 600; color: #B45309;">Low</span>
+                        </td>
+                        <td style="padding: 14px 20px; text-align: right;">
+                            <div style="display: inline-flex; align-items: center; gap: 8px;">
+                                <a href="<%= ResolveUrl("~/Products/ProductDetails.aspx?id=102") %>" style="color: #6B7280; font-size: 14px;"><i class="bi bi-eye"></i></a>
+                                <a href="<%= ResolveUrl("~/Inventory/StockAdjustment.aspx") %>" style="color: #006C44; font-size: 14px;"><i class="bi bi-arrow-repeat"></i></a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #F3F4F6;">
+                        <td style="padding: 14px 20px;">
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <div style="width: 36px; height: 36px; border-radius: 6px; background: #F3F4F6; display: flex; align-items: center; justify-content: center; color: #6B7280;">
+                                    <i class="bi bi-box-seam"></i>
+                                </div>
+                                <div>
+                                    <div style="font-weight: 600; color: #111827;">Stainless Steel Hinges 4-inch</div>
+                                    <div style="font-size: 11.5px; color: #6B7280;">Packaged hardware</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td style="padding: 14px 16px; color: #4B5563;">Fasteners</td>
+                        <td style="padding: 14px 16px; font-family: monospace; color: #4B5563;">HW-HNG-401</td>
+                        <td style="padding: 14px 16px; text-align: center; font-weight: 700; color: #15803D; font-variant-numeric: tabular-nums;">120</td>
+                        <td style="padding: 14px 16px; text-align: center; color: #6B7280; font-variant-numeric: tabular-nums;">35</td>
+                        <td style="padding: 14px 16px; text-align: right; font-weight: 600; color: #111827; font-variant-numeric: tabular-nums;">₹1,200.00</td>
+                        <td style="padding: 14px 16px; text-align: center;">
+                            <span style="display: inline-block; padding: 2px 8px; background: #EAF8EF; border-radius: 4px; font-size: 11px; font-weight: 600; color: #15803D;">Healthy</span>
+                        </td>
+                        <td style="padding: 14px 20px; text-align: right;">
+                            <div style="display: inline-flex; align-items: center; gap: 8px;">
+                                <a href="<%= ResolveUrl("~/Products/ProductDetails.aspx?id=103") %>" style="color: #6B7280; font-size: 14px;"><i class="bi bi-eye"></i></a>
+                                <a href="<%= ResolveUrl("~/Inventory/StockAdjustment.aspx") %>" style="color: #006C44; font-size: 14px;"><i class="bi bi-arrow-repeat"></i></a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 14px 20px;">
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <div style="width: 36px; height: 36px; border-radius: 6px; background: #F3F4F6; display: flex; align-items: center; justify-content: center; color: #6B7280;">
+                                    <i class="bi bi-plug"></i>
+                                </div>
+                                <div>
+                                    <div style="font-weight: 600; color: #111827;">Finolex Copper Wire 1.5 sq mm</div>
+                                    <div style="font-size: 11.5px; color: #6B7280;">Electrical supply</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td style="padding: 14px 16px; color: #4B5563;">Electrical</td>
+                        <td style="padding: 14px 16px; font-family: monospace; color: #4B5563;">HW-FNX-150</td>
+                        <td style="padding: 14px 16px; text-align: center; font-weight: 700; color: #15803D; font-variant-numeric: tabular-nums;">45</td>
+                        <td style="padding: 14px 16px; text-align: center; color: #6B7280; font-variant-numeric: tabular-nums;">20</td>
+                        <td style="padding: 14px 16px; text-align: right; font-weight: 600; color: #111827; font-variant-numeric: tabular-nums;">₹1,850.00</td>
+                        <td style="padding: 14px 16px; text-align: center;">
+                            <span style="display: inline-block; padding: 2px 8px; background: #EAF8EF; border-radius: 4px; font-size: 11px; font-weight: 600; color: #15803D;">Healthy</span>
+                        </td>
+                        <td style="padding: 14px 20px; text-align: right;">
+                            <div style="display: inline-flex; align-items: center; gap: 8px;">
+                                <a href="<%= ResolveUrl("~/Products/ProductDetails.aspx?id=104") %>" style="color: #6B7280; font-size: 14px;"><i class="bi bi-eye"></i></a>
+                                <a href="<%= ResolveUrl("~/Inventory/StockAdjustment.aspx") %>" style="color: #006C44; font-size: 14px;"><i class="bi bi-arrow-repeat"></i></a>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div style="padding: 12px 20px; border-top: 1px solid #E5E7EB;">
             <uc:Pagination runat="server" ID="PaginationControl" />
         </div>
     </div>

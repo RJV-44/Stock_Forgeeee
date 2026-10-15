@@ -8,13 +8,12 @@ namespace Stock_Forgeeee.Inventory
     {
         protected Panel pnlAlert;
         protected Label lblAlertMessage;
-        protected DropDownList ddlProduct;
+        protected TextBox txtProductSearch;
         protected DropDownList ddlAdjustmentType;
         protected TextBox txtQuantity;
-        protected TextBox txtReference;
-        protected TextBox txtReason;
-        protected TextBox txtAdjustmentDate;
-        protected TextBox txtApprovedBy;
+        protected TextBox txtNewStock;
+        protected DropDownList ddlReason;
+        protected TextBox txtNotes;
         protected Button btnSaveAdjustment;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -33,27 +32,14 @@ namespace Stock_Forgeeee.Inventory
                 return;
             }
 
-            // Server-side controller validation
-            if (string.IsNullOrEmpty(ddlProduct.SelectedValue))
-            {
-                ShowAlert("Please select a product for stock adjustment.");
-                return;
-            }
-
             int qty;
-            if (!int.TryParse(txtQuantity.Text.Trim(), out qty) || qty <= 0)
+            if (txtQuantity != null && (!int.TryParse(txtQuantity.Text.Trim(), out qty) || qty <= 0))
             {
                 ShowAlert("Adjustment quantity must be a positive integer greater than zero.");
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(txtReason.Text))
-            {
-                ShowAlert("Adjustment reason is required.");
-                return;
-            }
-
-            Response.Redirect("StockOverview.aspx");
+            Response.Redirect("StockMovementHistory.aspx");
         }
 
         private void ShowAlert(string message)

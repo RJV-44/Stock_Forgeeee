@@ -177,8 +177,8 @@
                     </tr>
                     <tr>
                         <td>
-                            <a href="<%= ResolveUrl("~/Purchases/PurchaseOrderDetails.aspx?id=PO-2026-00048") %>" style="color: #111827; font-weight: 600; text-decoration: none;">
-                                PO-2026-00048
+                            <a href="<%= ResolveUrl("~/Purchases/PurchaseOrderDetails.aspx?id=PO-2026-0048") %>" style="color: #111827; font-weight: 600; text-decoration: none;">
+                                PO-2026-0048
                             </a>
                         </td>
                         <td>ABC Hardware Suppliers</td>
@@ -188,7 +188,7 @@
                         <td><span class="sf-pill sf-pill-warning">Partially Paid</span></td>
                         <td><span class="sf-pill sf-pill-warning">Partially Received</span></td>
                         <td style="text-align: center;">
-                            <a href="<%= ResolveUrl("~/Purchases/PurchaseOrderDetails.aspx?id=PO-2026-00048") %>" class="icon-button" style="width: 32px; height: 32px;" title="View Details">
+                            <a href="<%= ResolveUrl("~/Purchases/PurchaseOrderDetails.aspx?id=PO-2026-0048") %>" class="icon-button" style="width: 32px; height: 32px;" title="View Details">
                                 <i class="bi bi-eye"></i>
                             </a>
                         </td>

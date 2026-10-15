@@ -1,6 +1,4 @@
 <%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Pagination.ascx.cs" Inherits="Stock_Forgeeee.Controls.Pagination" %>
-<link href="<%= ResolveUrl("~/Content/site.css") %>" rel="stylesheet" type="text/css" />
-<link href="<%= ResolveUrl("~/Content/components.css") %>" rel="stylesheet" type="text/css" />
 
 <div class="pagination-container">
     <div class="small-text text-secondary">

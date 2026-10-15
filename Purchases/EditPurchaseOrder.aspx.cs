@@ -22,6 +22,7 @@ namespace Stock_Forgeeee.Purchases
             }
         }
 
+
         protected void btnSaveOrder_Click(object sender, EventArgs e)
         {
             if (!Page.IsValid)
@@ -38,7 +39,8 @@ namespace Stock_Forgeeee.Purchases
             }
 
             DateTime deliveryDate;
-            if (!DateTime.TryParse(txtExpectedDelivery.Text.Trim(), out deliveryDate))
+            if (!DateTime.TryParse(txtExpectedDelivery.Text.Trim(), System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out deliveryDate) &&
+                !DateTime.TryParse(txtExpectedDelivery.Text.Trim(), out deliveryDate))
             {
                 ShowAlert("Invalid expected delivery date format.");
                 return;

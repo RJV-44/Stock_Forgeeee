@@ -18,10 +18,18 @@
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     
-    <!-- Application CSS (Resolved for ASP.NET Web Forms) -->
-    <link href="<%= ResolveUrl("~/Content/site.css") %>" rel="stylesheet" type="text/css" />
-    <link href="<%= ResolveUrl("~/Content/components.css") %>" rel="stylesheet" type="text/css" />
-    <link href="<%= ResolveUrl("~/Content/responsive.css") %>" rel="stylesheet" type="text/css" />
+    <!-- Application CSS (Resolved for ASP.NET Web Forms with cache-buster) -->
+    <link href="<%= ResolveUrl("~/Content/site.css?v=3.0") %>" rel="stylesheet" type="text/css" />
+    <link href="<%= ResolveUrl("~/Content/components.css?v=3.0") %>" rel="stylesheet" type="text/css" />
+    <link href="<%= ResolveUrl("~/Content/responsive.css?v=3.0") %>" rel="stylesheet" type="text/css" />
+
+    <style>
+        /* Baseline Reset: Prevent browser default blue/purple underlined links across all pages */
+        a, a:link, a:visited {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
 
     <asp:ContentPlaceHolder ID="HeadContent" runat="server">
     </asp:ContentPlaceHolder>
@@ -29,6 +37,9 @@
 <body>
     <form id="form1" runat="server">
         <div class="app-shell">
+            <!-- Mobile Sidebar Backdrop Overlay -->
+            <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
             <!-- Sidebar Navigation -->
             <uc:Sidebar runat="server" ID="SidebarControl" />
 

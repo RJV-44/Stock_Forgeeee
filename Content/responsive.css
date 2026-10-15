@@ -1,65 +1,400 @@
+/* ==========================================================================
+   StockForge - Universal Responsive Stylesheet (v3.0)
+   Covers Desktop, Tablet, and Mobile across all internal pages & master layout.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Base Mobile Controls & Defaults (Desktop: Hidden)
+   -------------------------------------------------------------------------- */
+.sidebar-toggle-btn {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 6px;
+    border: 1px solid #D1D5DB;
+    background: #FFFFFF;
+    color: #374151;
+    font-size: 20px;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.sidebar-toggle-btn:hover {
+    background: #F3F4F6;
+    border-color: #9CA3AF;
+    color: #111827;
+}
+
+.sidebar-close-btn {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    border: 1px solid #E5E7EB;
+    background: #F9FAFB;
+    color: #6B7280;
+    font-size: 15px;
+    cursor: pointer;
+    margin-left: auto;
+    flex-shrink: 0;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+.sidebar-close-btn:hover {
+    background: #F3F4F6;
+    color: #111827;
+}
+
+.sidebar-backdrop {
+    display: none;
+}
+
+body.sidebar-open-locked {
+    overflow: hidden !important;
+}
+
+/* --------------------------------------------------------------------------
+   2. Desktop & Wide Laptops (<= 1200px)
+   -------------------------------------------------------------------------- */
 @media (max-width: 1200px) {
-    .kpi-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+    .kpi-grid,
+    .sf-kpi-grid,
+    div[style*="repeat(4, 1fr)"],
+    div[style*="repeat(5, 1fr)"] {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 16px !important;
+    }
+
+    .topbar-search-wrap {
+        max-width: 280px !important;
     }
 }
 
+/* --------------------------------------------------------------------------
+   3. Tablets & Small Desktops (<= 992px)
+      Off-canvas Sidebar Navigation & Grid Stacking
+   -------------------------------------------------------------------------- */
 @media (max-width: 992px) {
     :root {
-        --sidebar-width: 0px;
+        --sidebar-width: 0px !important;
     }
 
+    /* Main Content Margins */
+    .main-area {
+        margin-left: 0 !important;
+        width: 100% !important;
+        min-width: 0 !important;
+    }
+
+    /* Off-canvas Sidebar */
     .sidebar {
-        transform: translateX(-100%);
-        width: 260px;
-        box-shadow: 4px 0 20px rgba(0,0,0,0.15);
+        position: fixed !important;
+        top: 0 !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        width: 270px !important;
+        max-width: 85vw !important;
+        height: 100vh !important;
+        z-index: 1200 !important;
+        transform: translateX(-100%) !important;
+        transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        box-shadow: 4px 0 24px rgba(0, 0, 0, 0.18) !important;
+        background: #FFFFFF !important;
+        overflow-y: auto !important;
     }
 
     .sidebar.open {
-        transform: translateX(0);
+        transform: translateX(0) !important;
     }
 
-    .main-area {
-        margin-left: 0;
+    /* Backdrop Overlay */
+    .sidebar-backdrop {
+        display: block !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        background: rgba(17, 24, 39, 0.5) !important;
+        backdrop-filter: blur(2px) !important;
+        -webkit-backdrop-filter: blur(2px) !important;
+        z-index: 1150 !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+        transition: opacity 0.25s ease !important;
     }
 
-    .topbar-search {
-        width: 200px;
+    .sidebar-backdrop.show {
+        opacity: 1 !important;
+        pointer-events: auto !important;
+    }
+
+    /* Toggle & Close Buttons */
+    .sidebar-toggle-btn {
+        display: inline-flex !important;
+    }
+
+    .sidebar-close-btn {
+        display: inline-flex !important;
+    }
+
+    /* Topbar Layout */
+    .topbar {
+        padding: 0 16px !important;
+        height: 60px !important;
+    }
+
+    .topbar-left {
+        gap: 12px !important;
+    }
+
+    .topbar-search-wrap {
+        max-width: 220px !important;
+    }
+
+    /* Stack Split-Column Layouts (Dashboard, Product Details, Orders, Invoices) */
+    div[style*="340px 1fr"],
+    div[style*="1fr 340px"],
+    div[style*="320px 1fr"],
+    div[style*="310px 1fr"],
+    div[style*="1fr 380px"],
+    div[style*="2.4fr 1fr"],
+    div[style*="2.3fr 1fr"],
+    div[style*="2fr 1fr"],
+    div[style*="1.6fr 1fr"],
+    div[style*="1.55fr 1fr"],
+    div[style*="1.5fr 1fr"],
+    div[style*="1.4fr 1fr"],
+    div[style*="1.25fr 1fr"],
+    div[style*="1.2fr 1fr"] {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+
+    /* Form Rows with 3 or 4 columns */
+    div[style*="repeat(3, 1fr)"],
+    div[style*="1fr 1fr 1fr"],
+    div[style*="1.5fr 1fr 1fr 1fr"],
+    div[style*="1fr 1.6fr 1fr 1fr"],
+    div[style*="1fr 1.3fr 1fr 1.5fr"],
+    div[style*="1fr 1fr 1.2fr 1.5fr"] {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 16px !important;
     }
 }
 
+/* --------------------------------------------------------------------------
+   4. Mobile Devices & Small Tablets (<= 768px)
+      Single Column Stacking, Form Full-Width, Touch Tables
+   -------------------------------------------------------------------------- */
 @media (max-width: 768px) {
+    /* Workspace Padding */
     .page-content {
-        padding: 16px;
+        padding: 16px 12px !important;
     }
 
-    .page-header {
-        align-items: flex-start;
-        flex-direction: column;
+    /* Topbar Mobile Streamline */
+    .topbar {
+        padding: 0 12px !important;
     }
 
-    .kpi-grid {
-        grid-template-columns: 1fr;
+    .topbar-search-wrap {
+        display: none !important; /* Hide long search bar to avoid crowding mobile topbar */
     }
 
-    .filter-bar {
-        flex-direction: column;
-        align-items: stretch;
+    .topbar-support-link {
+        display: none !important;
     }
 
-    .search-box {
-        width: 100%;
+    .topbar-help-icon {
+        display: none !important;
     }
 
-    .table-wrapper {
-        overflow-x: auto;
+    .topbar-user-name {
+        display: none !important;
     }
 
-    .data-table {
-        min-width: 760px;
+    .topbar-user-chevron {
+        display: none !important;
     }
 
-    .topbar-search {
-        display: none;
+    .topbar-actions {
+        gap: 8px !important;
+    }
+
+    /* Page Headers (Stack Title & Action Buttons) */
+    .page-header,
+    .sf-page-header,
+    div[style*="justify-content: space-between"][style*="align-items: flex-start"][style*="margin-bottom"],
+    div[style*="justify-content: space-between"][style*="align-items: center"][style*="margin-bottom"] {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 12px !important;
+    }
+
+    /* Action button container inside headers */
+    div[style*="justify-content: space-between"][style*="margin-bottom"] > div:last-child {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        align-items: stretch !important;
+        gap: 8px !important;
+        width: 100% !important;
+    }
+
+    div[style*="justify-content: space-between"][style*="margin-bottom"] > div:last-child > a,
+    div[style*="justify-content: space-between"][style*="margin-bottom"] > div:last-child > button,
+    div[style*="justify-content: space-between"][style*="margin-bottom"] > div:last-child > input[type="submit"] {
+        flex: 1 1 auto !important;
+        text-align: center !important;
+        justify-content: center !important;
+    }
+
+    /* Card Containers & Panels Padding */
+    div[style*="padding: 28px 32px"],
+    div[style*="padding: 24px 28px"],
+    div[style*="padding: 24px"],
+    div[style*="padding: 20px 24px"] {
+        padding: 16px 14px !important;
+    }
+
+    /* KPI Stat Grids */
+    .kpi-grid,
+    .sf-kpi-grid,
+    div[style*="repeat(4, 1fr)"],
+    div[style*="repeat(5, 1fr)"],
+    div[style*="repeat(3, 1fr)"],
+    div[style*="repeat(2, 1fr)"] {
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+    }
+
+    /* Form Grids (Stack all inputs to 1 column) */
+    div[style*="grid-template-columns: 1fr 1fr"],
+    div[style*="grid-template-columns: 1fr 1.2fr"],
+    div[style*="grid-template-columns: 1fr 1fr 1fr"],
+    div[style*="grid-template-columns: 1.5fr 1fr 1fr 1fr"],
+    div[style*="grid-template-columns: 1fr 1.6fr 1fr 1fr"],
+    div[style*="grid-template-columns: 1fr 1.3fr 1fr 1.5fr"],
+    div[style*="grid-template-columns: 1fr 1fr 1.2fr 1.5fr"],
+    div[style*="grid-template-columns: 1.4fr 1fr"],
+    div[style*="grid-template-columns: 1.5fr 1fr"],
+    div[style*="grid-template-columns: 2.3fr 1fr"],
+    div[style*="grid-template-columns: 2.4fr 1fr"],
+    div[style*="grid-template-columns: 2fr 1fr"],
+    div[style*="grid-template-columns: 340px 1fr"],
+    div[style*="grid-template-columns: 1fr 340px"] {
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+    }
+
+    /* Filter Bars & Search Rows */
+    .filter-bar,
+    div[style*="display: flex; align-items: center; justify-content: space-between"][style*="border-bottom"],
+    div[style*="display: flex; align-items: center; justify-content: space-between"][style*="padding: 12px 16px"] {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 10px !important;
+    }
+
+    .filter-bar > div,
+    div[style*="display: flex; align-items: center; gap: 10px; flex: 1"] {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        width: 100% !important;
+        gap: 10px !important;
+    }
+
+    div[style*="position: relative; width: 220px"],
+    div[style*="position: relative; width: 240px"],
+    div[style*="position: relative; width: 260px"],
+    div[style*="position: relative; width: 280px"],
+    div[style*="position: relative; width: 340px"] {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    select,
+    .filter-bar select {
+        width: 100% !important;
+        min-width: 0 !important;
+    }
+
+    /* Table Wrappers & Touch Horizontal Scrolling */
+    .table-wrapper,
+    div[style*="overflow-x: auto"] {
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        display: block !important;
+        border-radius: 0 0 8px 8px;
+    }
+
+    .data-table,
+    table.data-table,
+    #productsMainTable,
+    #ordersMainTable,
+    #salesTable,
+    #customersTable,
+    #suppliersTable,
+    #inventoryTable,
+    div[style*="overflow-x: auto"] > table {
+        min-width: 680px !important;
+    }
+
+    /* Modal Dialogs */
+    .modal-dialog,
+    .modal-content,
+    div[style*="position: fixed"][style*="z-index: 1000"] > div,
+    div[style*="position: fixed"][style*="z-index: 1050"] > div {
+        max-width: calc(100vw - 24px) !important;
+        width: 100% !important;
+        margin: 12px auto !important;
+    }
+
+    /* Pagination controls */
+    .pagination-container,
+    .sf-pagination,
+    div[style*="display: flex; justify-content: space-between; align-items: center"][style*="padding: 12px 16px"] {
+        flex-direction: column !important;
+        gap: 10px !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   5. Small Phones (<= 480px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+    h1,
+    div[style*="font-size: 24px"] {
+        font-size: 20px !important;
+    }
+
+    div[style*="font-size: 28px"],
+    div[style*="font-size: 32px"] {
+        font-size: 24px !important;
+    }
+
+    .topbar-user-btn {
+        padding: 2px !important;
+    }
+
+    #topbarUserDropdown {
+        width: calc(100vw - 32px) !important;
+        right: -8px !important;
+    }
+
+    /* Image upload previews */
+    div[style*="display: flex; align-items: center; gap: 18px"] {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 12px !important;
     }
 }

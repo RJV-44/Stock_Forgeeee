@@ -10,6 +10,9 @@
             <span class="sidebar-brand-name">StockForge</span>
             <span class="sidebar-brand-sub">Inventory Management</span>
         </div>
+        <button type="button" class="sidebar-close-btn" id="btnCloseSidebar" aria-label="Close sidebar" title="Close Menu">
+            <i class="bi bi-x-lg"></i>
+        </button>
     </div>
 
     <!-- Navigation Menu (Pixel-perfect match to SideNavBar.png) -->
@@ -59,15 +62,6 @@
             <span>Settings</span>
         </a>
 
-        <div class="nav-section">Support & Landing</div>
-        <a href="<%= ResolveUrl("~/Landing.aspx") %>" class="nav-item <%= IsActive("Landing.aspx") %>">
-            <i class="bi bi-globe"></i>
-            <span>Landing Page</span>
-        </a>
-        <a href="<%= ResolveUrl("~/Help.aspx") %>" class="nav-item <%= IsActive("Help.aspx") %>">
-            <i class="bi bi-question-circle"></i>
-            <span>Help Center</span>
-        </a>
     </nav>
 
     <!-- Logout Button (Pixel-perfect match to Container.png) -->

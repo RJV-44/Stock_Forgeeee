@@ -15,16 +15,29 @@ namespace Stock_Forgeeee.Account
 
         protected void btnSendResetLink_Click(object sender, EventArgs e)
         {
-            if (Page.IsValid)
+            string email = txtEmail != null ? txtEmail.Text.Trim() : string.Empty;
+
+            // Controller validation
+            if (string.IsNullOrWhiteSpace(email))
             {
-                string email = txtEmail.Text.Trim();
-
                 pnlAlert.Visible = true;
-                pnlAlert.CssClass = "auth-alert-box auth-alert-success";
-                lblAlertMessage.Text = "Password reset instructions have been sent to " + email + ". Please check your inbox.";
-
-                txtEmail.Text = string.Empty;
+                pnlAlert.CssClass = "auth-alert-box auth-alert-danger";
+                lblAlertMessage.Text = "Email address is required.";
+                return;
             }
+
+            if (!email.Contains("@") || !email.Contains("."))
+            {
+                pnlAlert.Visible = true;
+                pnlAlert.CssClass = "auth-alert-box auth-alert-danger";
+                lblAlertMessage.Text = "Please enter a valid email address.";
+                return;
+            }
+
+            pnlAlert.Visible = true;
+            pnlAlert.CssClass = "auth-alert-box auth-alert-success";
+            lblAlertMessage.Text = "Password reset instructions have been sent to " + email + ". Please check your inbox.";
+            txtEmail.Text = string.Empty;
         }
     }
 }

@@ -101,9 +101,13 @@
 }
 
 .nav-item.active {
-    background: var(--primary-light);
-    color: var(--primary);
+    background: #46A774 !important;
+    color: #0F5132 !important;
     font-weight: 600;
+}
+
+.nav-item.active i {
+    color: #0F5132 !important;
 }
 
 .sidebar-footer {
