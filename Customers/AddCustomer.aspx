@@ -48,6 +48,7 @@
                             Customer Name <span style="color: #DC2626;">*</span>
                         </label>
                         <asp:TextBox ID="txtCustomerName" runat="server" placeholder="Enter customer name" style="width: 100%; height: 38px; padding: 6px 12px; border: 1px solid #D1D5DB; border-radius: 6px; font-size: 13px; color: #111827; background: #FFFFFF; outline: none; box-sizing: border-box; transition: border-color 0.15s ease;" onfocus="this.style.borderColor='#006C44'" onblur="this.style.borderColor='#D1D5DB'"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvCustomerName" runat="server" ControlToValidate="txtCustomerName" ErrorMessage="Customer name is required." EnableClientScript="false" ForeColor="#DC2626" Display="Dynamic" style="font-size: 11.5px; margin-top: 4px; display: block;"></asp:RequiredFieldValidator>
                     </div>
 
                     <!-- Customer Type -->
@@ -73,6 +74,7 @@
                             Phone <span style="color: #DC2626;">*</span>
                         </label>
                         <asp:TextBox ID="txtPhone" runat="server" placeholder="+91 98765 43210" style="width: 100%; height: 38px; padding: 6px 12px; border: 1px solid #D1D5DB; border-radius: 6px; font-size: 13px; color: #111827; background: #FFFFFF; outline: none; box-sizing: border-box; transition: border-color 0.15s ease;" onfocus="this.style.borderColor='#006C44'" onblur="this.style.borderColor='#D1D5DB'"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvPhone" runat="server" ControlToValidate="txtPhone" ErrorMessage="Phone number is required." EnableClientScript="false" ForeColor="#DC2626" Display="Dynamic" style="font-size: 11.5px; margin-top: 4px; display: block;"></asp:RequiredFieldValidator>
                     </div>
 
                     <!-- Email -->
@@ -81,6 +83,7 @@
                             Email
                         </label>
                         <asp:TextBox ID="txtEmail" runat="server" placeholder="customer@example.in" style="width: 100%; height: 38px; padding: 6px 12px; border: 1px solid #D1D5DB; border-radius: 6px; font-size: 13px; color: #111827; background: #FFFFFF; outline: none; box-sizing: border-box; transition: border-color 0.15s ease;" onfocus="this.style.borderColor='#006C44'" onblur="this.style.borderColor='#D1D5DB'"></asp:TextBox>
+                        <asp:RegularExpressionValidator ID="revEmail" runat="server" ControlToValidate="txtEmail" ValidationExpression="^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$" ErrorMessage="Enter a valid email address." EnableClientScript="false" ForeColor="#DC2626" Display="Dynamic" style="font-size: 11.5px; margin-top: 4px; display: block;"></asp:RegularExpressionValidator>
                     </div>
                 </div>
 
@@ -103,6 +106,7 @@
                                 City <span style="color: #DC2626;">*</span>
                             </label>
                             <asp:TextBox ID="txtCity" runat="server" Text="Ahmedabad" placeholder="Ahmedabad" style="width: 100%; height: 38px; padding: 6px 12px; border: 1px solid #D1D5DB; border-radius: 6px; font-size: 13px; color: #111827; background: #FFFFFF; outline: none; box-sizing: border-box; transition: border-color 0.15s ease;" onfocus="this.style.borderColor='#006C44'" onblur="this.style.borderColor='#D1D5DB'"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="rfvCity" runat="server" ControlToValidate="txtCity" ErrorMessage="City is required." EnableClientScript="false" ForeColor="#DC2626" Display="Dynamic" style="font-size: 11.5px; margin-top: 4px; display: block;"></asp:RequiredFieldValidator>
                         </div>
 
                         <div>
@@ -131,6 +135,7 @@
                                 PIN Code <span style="color: #DC2626;">*</span>
                             </label>
                             <asp:TextBox ID="txtPinCode" runat="server" Text="380001" placeholder="380001" style="width: 100%; height: 38px; padding: 6px 12px; border: 1px solid #D1D5DB; border-radius: 6px; font-size: 13px; color: #111827; background: #FFFFFF; outline: none; box-sizing: border-box; transition: border-color 0.15s ease;" onfocus="this.style.borderColor='#006C44'" onblur="this.style.borderColor='#D1D5DB'"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="rfvPinCode" runat="server" ControlToValidate="txtPinCode" ErrorMessage="PIN Code is required." EnableClientScript="false" ForeColor="#DC2626" Display="Dynamic" style="font-size: 11.5px; margin-top: 4px; display: block;"></asp:RequiredFieldValidator>
                         </div>
                     </div>
                 </div>

@@ -109,6 +109,7 @@
             <div>
                 <label style="display: block; font-size: 11.5px; font-weight: 500; color: #374151; margin-bottom: 4px;">Product Name</label>
                 <asp:TextBox ID="txtProductName" runat="server" Text="Wireless Drill Pro" style="width: 100%; height: 36px; padding: 6px 12px; border: 1px solid #D1D5DB; border-radius: 6px; font-size: 13px; color: #111827; background: #FFFFFF; outline: none;"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="rfvProductName" runat="server" ControlToValidate="txtProductName" ErrorMessage="Product name is required." EnableClientScript="false" ForeColor="#DC2626" Display="Dynamic" style="font-size: 11px; margin-top: 3px; display: block;"></asp:RequiredFieldValidator>
             </div>
 
             <!-- SKU & Brand (2 columns) -->
@@ -119,6 +120,7 @@
                         <asp:TextBox ID="txtSKU" runat="server" Text="DRL-W-101" style="width: 100%; height: 36px; padding: 6px 32px 6px 12px; border: 1px solid #D1D5DB; border-radius: 6px; font-size: 13px; color: #111827; background: #FFFFFF; outline: none;"></asp:TextBox>
                         <i class="bi bi-lock" style="position: absolute; right: 10px; color: #9CA3AF; font-size: 13px;"></i>
                     </div>
+                    <asp:RequiredFieldValidator ID="rfvSKU" runat="server" ControlToValidate="txtSKU" ErrorMessage="SKU is required." EnableClientScript="false" ForeColor="#DC2626" Display="Dynamic" style="font-size: 11px; margin-top: 3px; display: block;"></asp:RequiredFieldValidator>
                 </div>
 
                 <div>
@@ -161,6 +163,7 @@
                             <span style="position: absolute; left: 8px; font-size: 12px; color: #6B7280;">₹</span>
                             <asp:TextBox ID="txtPurchasePrice" runat="server" Text="1,250.00" style="width: 100%; height: 34px; padding: 4px 6px 4px 20px; border: 1px solid #D1D5DB; border-radius: 6px; font-size: 12px; color: #111827; background: #FFFFFF; outline: none;"></asp:TextBox>
                         </div>
+                        <asp:RequiredFieldValidator ID="rfvPurchasePrice" runat="server" ControlToValidate="txtPurchasePrice" ErrorMessage="Purchase price required." EnableClientScript="false" ForeColor="#DC2626" Display="Dynamic" style="font-size: 11px; margin-top: 3px; display: block;"></asp:RequiredFieldValidator>
                     </div>
 
                     <div>
@@ -169,6 +172,7 @@
                             <span style="position: absolute; left: 8px; font-size: 12px; color: #15803D; font-weight: 600;">₹</span>
                             <asp:TextBox ID="txtSellingPrice" runat="server" Text="1,499.00" style="width: 100%; height: 34px; padding: 4px 6px 4px 20px; border: 1px solid #D1D5DB; border-radius: 6px; font-size: 12px; color: #15803D; font-weight: 600; background: #FFFFFF; outline: none;"></asp:TextBox>
                         </div>
+                        <asp:RequiredFieldValidator ID="rfvSellingPrice" runat="server" ControlToValidate="txtSellingPrice" ErrorMessage="Selling price required." EnableClientScript="false" ForeColor="#DC2626" Display="Dynamic" style="font-size: 11px; margin-top: 3px; display: block;"></asp:RequiredFieldValidator>
                     </div>
                 </div>
 

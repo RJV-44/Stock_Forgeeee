@@ -15,6 +15,13 @@ namespace Stock_Forgeeee.Account
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
+            if (!Page.IsValid)
+            {
+                pnlAlert.Visible = true;
+                lblAlertMessage.Text = "Please enter valid email and password.";
+                return;
+            }
+
             string email = txtEmail != null ? txtEmail.Text.Trim() : string.Empty;
             string password = txtPassword != null ? txtPassword.Text : string.Empty;
 

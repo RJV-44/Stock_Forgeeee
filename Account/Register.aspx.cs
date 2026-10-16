@@ -15,6 +15,14 @@ namespace Stock_Forgeeee.Account
 
         protected void btnRegister_Click(object sender, EventArgs e)
         {
+            if (!Page.IsValid)
+            {
+                pnlAlert.Visible = true;
+                pnlAlert.CssClass = "auth-alert-box auth-alert-danger";
+                lblAlertMessage.Text = "Please correct all validation errors.";
+                return;
+            }
+
             string storeName = txtStoreName != null ? txtStoreName.Text.Trim() : string.Empty;
             string fullName = txtFullName != null ? txtFullName.Text.Trim() : string.Empty;
             string email = txtEmail != null ? txtEmail.Text.Trim() : string.Empty;

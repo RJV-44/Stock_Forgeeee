@@ -47,7 +47,7 @@
             <div style="margin-bottom: 18px;">
                 <label style="display: block; font-size: 12px; font-weight: 600; color: #374151; margin-bottom: 6px;">Product Name</label>
                 <asp:TextBox ID="txtProductName" runat="server" placeholder="Enter product name" style="width: 100%; height: 40px; padding: 6px 14px; border: 1px solid #D1D5DB; border-radius: 6px; font-size: 13.5px; color: #111827; box-sizing: border-box; outline: none; background: #FFFFFF;"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="rfvName" runat="server" ControlToValidate="txtProductName" ErrorMessage="Product name is required." ForeColor="#DC2626" Display="Dynamic" style="font-size: 12px; margin-top: 4px; display: block;"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="rfvName" runat="server" ControlToValidate="txtProductName" ErrorMessage="Product name is required." EnableClientScript="false" ForeColor="#DC2626" Display="Dynamic" style="font-size: 12px; margin-top: 4px; display: block;"></asp:RequiredFieldValidator>
             </div>
 
             <!-- SKU & Category Row -->
@@ -56,7 +56,7 @@
                     <label style="display: block; font-size: 12px; font-weight: 600; color: #374151; margin-bottom: 6px;">SKU</label>
                     <asp:TextBox ID="txtSKU" runat="server" placeholder="Enter SKU" style="width: 100%; height: 40px; padding: 6px 14px; border: 1px solid #D1D5DB; border-radius: 6px; font-size: 13.5px; color: #111827; box-sizing: border-box; outline: none; background: #FFFFFF;"></asp:TextBox>
                     <div style="font-size: 11.5px; color: #9CA3AF; margin-top: 4px;">SKU must be unique.</div>
-                    <asp:RequiredFieldValidator ID="rfvSKU" runat="server" ControlToValidate="txtSKU" ErrorMessage="SKU code is required." ForeColor="#DC2626" Display="Dynamic" style="font-size: 12px; margin-top: 4px; display: block;"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="rfvSKU" runat="server" ControlToValidate="txtSKU" ErrorMessage="SKU code is required." EnableClientScript="false" ForeColor="#DC2626" Display="Dynamic" style="font-size: 12px; margin-top: 4px; display: block;"></asp:RequiredFieldValidator>
                 </div>
 
                 <div>
@@ -69,7 +69,7 @@
                         <asp:ListItem Value="Electrical">Electrical</asp:ListItem>
                         <asp:ListItem Value="Plumbing">Plumbing</asp:ListItem>
                     </asp:DropDownList>
-                    <asp:RequiredFieldValidator ID="rfvCategory" runat="server" ControlToValidate="ddlCategory" InitialValue="" ErrorMessage="Please select a category." ForeColor="#DC2626" Display="Dynamic" style="font-size: 12px; margin-top: 4px; display: block;"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="rfvCategory" runat="server" ControlToValidate="ddlCategory" InitialValue="" ErrorMessage="Please select a category." EnableClientScript="false" ForeColor="#DC2626" Display="Dynamic" style="font-size: 12px; margin-top: 4px; display: block;"></asp:RequiredFieldValidator>
                 </div>
             </div>
 

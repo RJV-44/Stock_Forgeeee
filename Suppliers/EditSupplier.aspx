@@ -45,23 +45,27 @@
 
                     <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 6px;">
                         <div>
-                            <label style="display: block; font-size: 11.5px; color: #4B5563; margin-bottom: 4px;">Supplier Name</label>
+                            <label style="display: block; font-size: 11.5px; color: #4B5563; margin-bottom: 4px;">Supplier Name <span style="color: #DC2626;">*</span></label>
                             <asp:TextBox ID="txtSupplierName" runat="server" Text="ABC Hardware Suppliers" style="width: 100%; height: 38px; padding: 6px 12px; border: 1px solid #D1D5DB; border-radius: 6px; font-size: 13px; color: #111827; background: #FFFFFF; outline: none;"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="rfvSupplierName" runat="server" ControlToValidate="txtSupplierName" ErrorMessage="Supplier name is required." EnableClientScript="false" ForeColor="#DC2626" Display="Dynamic" style="font-size: 11px; margin-top: 3px; display: block;"></asp:RequiredFieldValidator>
                         </div>
 
                         <div>
-                            <label style="display: block; font-size: 11.5px; color: #4B5563; margin-bottom: 4px;">Primary Contact</label>
+                            <label style="display: block; font-size: 11.5px; color: #4B5563; margin-bottom: 4px;">Primary Contact <span style="color: #DC2626;">*</span></label>
                             <asp:TextBox ID="txtContactPerson" runat="server" Text="Rajesh Patel" style="width: 100%; height: 38px; padding: 6px 12px; border: 1px solid #D1D5DB; border-radius: 6px; font-size: 13px; color: #111827; background: #FFFFFF; outline: none;"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="rfvContactPerson" runat="server" ControlToValidate="txtContactPerson" ErrorMessage="Contact person is required." EnableClientScript="false" ForeColor="#DC2626" Display="Dynamic" style="font-size: 11px; margin-top: 3px; display: block;"></asp:RequiredFieldValidator>
                         </div>
 
                         <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 12px;">
                             <div>
-                                <label style="display: block; font-size: 11.5px; color: #4B5563; margin-bottom: 4px;">Phone Number</label>
+                                <label style="display: block; font-size: 11.5px; color: #4B5563; margin-bottom: 4px;">Phone Number <span style="color: #DC2626;">*</span></label>
                                 <asp:TextBox ID="txtPhone" runat="server" Text="+91 98765 43210" style="width: 100%; height: 38px; padding: 6px 12px; border: 1px solid #D1D5DB; border-radius: 6px; font-size: 12.5px; color: #111827; background: #FFFFFF; outline: none;"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="rfvPhone" runat="server" ControlToValidate="txtPhone" ErrorMessage="Phone number is required." EnableClientScript="false" ForeColor="#DC2626" Display="Dynamic" style="font-size: 11px; margin-top: 3px; display: block;"></asp:RequiredFieldValidator>
                             </div>
                             <div>
-                                <label style="display: block; font-size: 11.5px; color: #4B5563; margin-bottom: 4px;">Email Address</label>
+                                <label style="display: block; font-size: 11.5px; color: #4B5563; margin-bottom: 4px;">Email Address <span style="color: #DC2626;">*</span></label>
                                 <asp:TextBox ID="txtEmail" runat="server" Text="contact@abchardware.in" style="width: 100%; height: 38px; padding: 6px 12px; border: 1px solid #D1D5DB; border-radius: 6px; font-size: 12.5px; color: #111827; background: #FFFFFF; outline: none;"></asp:TextBox>
+                                <asp:RegularExpressionValidator ID="revEmail" runat="server" ControlToValidate="txtEmail" ValidationExpression="^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$" ErrorMessage="Valid email required." EnableClientScript="false" ForeColor="#DC2626" Display="Dynamic" style="font-size: 11px; margin-top: 3px; display: block;"></asp:RegularExpressionValidator>
                             </div>
                         </div>
                     </div>

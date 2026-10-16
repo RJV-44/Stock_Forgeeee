@@ -15,6 +15,14 @@ namespace Stock_Forgeeee.Account
 
         protected void btnResetPassword_Click(object sender, EventArgs e)
         {
+            if (!Page.IsValid)
+            {
+                pnlAlert.Visible = true;
+                pnlAlert.CssClass = "auth-alert-box auth-alert-danger";
+                lblAlertMessage.Text = "Please correct the errors in the password fields.";
+                return;
+            }
+
             string newPassword = txtNewPassword != null ? txtNewPassword.Text : string.Empty;
             string confirmPassword = txtConfirmPassword != null ? txtConfirmPassword.Text : string.Empty;
 

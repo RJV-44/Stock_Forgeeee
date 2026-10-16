@@ -70,6 +70,7 @@
                     <asp:TextBox ID="txtSalesDate" runat="server" Text="10/27/2023" style="width: 100%; height: 38px; padding: 6px 36px 6px 12px; border: 1px solid #D1D5DB; border-radius: 6px; font-size: 13px; color: #111827; outline: none; box-sizing: border-box;"></asp:TextBox>
                     <i class="bi bi-calendar3" style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); color: #6B7280; font-size: 14px; pointer-events: none;"></i>
                 </div>
+                <asp:RequiredFieldValidator ID="rfvSalesDate" runat="server" ControlToValidate="txtSalesDate" ErrorMessage="Sale date is required." EnableClientScript="false" ForeColor="#DC2626" Display="Dynamic" style="font-size: 11px; margin-top: 3px; display: block;"></asp:RequiredFieldValidator>
             </div>
 
             <!-- Payment Status -->

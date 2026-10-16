@@ -45,6 +45,7 @@
                             Supplier Name <span style="color: #DC2626;">*</span>
                         </label>
                         <asp:TextBox ID="txtCompanyName" runat="server" placeholder="Enter company name" style="width: 100%; height: 38px; padding: 6px 12px; border: 1px solid #D1D5DB; border-radius: 6px; font-size: 12.5px; color: #111827; background: #FFFFFF; outline: none;"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvCompanyName" runat="server" ControlToValidate="txtCompanyName" ErrorMessage="Supplier name is required." EnableClientScript="false" ForeColor="#DC2626" Display="Dynamic" style="font-size: 11px; margin-top: 3px; display: block;"></asp:RequiredFieldValidator>
                     </div>
 
                     <!-- Contact Person -->
@@ -53,6 +54,7 @@
                             Contact Person <span style="color: #DC2626;">*</span>
                         </label>
                         <asp:TextBox ID="txtContactName" runat="server" placeholder="Full name" style="width: 100%; height: 38px; padding: 6px 12px; border: 1px solid #D1D5DB; border-radius: 6px; font-size: 12.5px; color: #111827; background: #FFFFFF; outline: none;"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvContactName" runat="server" ControlToValidate="txtContactName" ErrorMessage="Contact person is required." EnableClientScript="false" ForeColor="#DC2626" Display="Dynamic" style="font-size: 11px; margin-top: 3px; display: block;"></asp:RequiredFieldValidator>
                     </div>
 
                     <!-- Phone Number with +91 Prefix Box -->
@@ -64,6 +66,7 @@
                             <span style="display: inline-flex; align-items: center; justify-content: center; height: 38px; padding: 0 10px; background: #F9FAFB; border: 1px solid #D1D5DB; border-right: none; border-radius: 6px 0 0 6px; font-size: 12.5px; color: #374151; font-weight: 500;">+91</span>
                             <asp:TextBox ID="txtPhone" runat="server" placeholder="10-digit mobile number" style="width: 100%; height: 38px; padding: 6px 12px; border: 1px solid #D1D5DB; border-radius: 0 6px 6px 0; font-size: 12.5px; color: #111827; background: #FFFFFF; outline: none;"></asp:TextBox>
                         </div>
+                        <asp:RequiredFieldValidator ID="rfvPhone" runat="server" ControlToValidate="txtPhone" ErrorMessage="Phone number is required." EnableClientScript="false" ForeColor="#DC2626" Display="Dynamic" style="font-size: 11px; margin-top: 3px; display: block;"></asp:RequiredFieldValidator>
                     </div>
 
                     <!-- Email Address -->
@@ -110,12 +113,14 @@
                                 City <span style="color: #DC2626;">*</span>
                             </label>
                             <asp:TextBox ID="txtCity" runat="server" placeholder="City" style="width: 100%; height: 38px; padding: 6px 12px; border: 1px solid #D1D5DB; border-radius: 6px; font-size: 12.5px; color: #111827; background: #FFFFFF; outline: none;"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="rfvCity" runat="server" ControlToValidate="txtCity" ErrorMessage="City is required." EnableClientScript="false" ForeColor="#DC2626" Display="Dynamic" style="font-size: 11px; margin-top: 3px; display: block;"></asp:RequiredFieldValidator>
                         </div>
                         <div>
                             <label style="display: block; font-size: 11.5px; font-weight: 600; color: #374151; margin-bottom: 5px;">
                                 PIN Code <span style="color: #DC2626;">*</span>
                             </label>
                             <asp:TextBox ID="txtPinCode" runat="server" placeholder="6 Digits" style="width: 100%; height: 38px; padding: 6px 12px; border: 1px solid #D1D5DB; border-radius: 6px; font-size: 12.5px; color: #111827; background: #FFFFFF; outline: none;"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="rfvPinCode" runat="server" ControlToValidate="txtPinCode" ErrorMessage="PIN Code is required." EnableClientScript="false" ForeColor="#DC2626" Display="Dynamic" style="font-size: 11px; margin-top: 3px; display: block;"></asp:RequiredFieldValidator>
                         </div>
                     </div>
                 </div>

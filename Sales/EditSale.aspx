@@ -128,6 +128,8 @@
                             </td>
                             <td style="padding: 16px 10px;">
                                 <asp:TextBox ID="txtQty" runat="server" Text="5" style="width: 44px; height: 32px; text-align: center; border: 1px solid #D1D5DB; border-radius: 4px; font-size: 13px; font-weight: 600; color: #111827; outline: none;"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="rfvQty" runat="server" ControlToValidate="txtQty" ErrorMessage="Qty required" EnableClientScript="false" ForeColor="#DC2626" Display="Dynamic" style="font-size: 10px; display: block;"></asp:RequiredFieldValidator>
+                                <asp:CompareValidator ID="cvQty" runat="server" ControlToValidate="txtQty" Operator="GreaterThan" ValueToCompare="0" Type="Integer" ErrorMessage="Must be > 0" EnableClientScript="false" ForeColor="#DC2626" Display="Dynamic" style="font-size: 10px; display: block;"></asp:CompareValidator>
                             </td>
                             <td style="padding: 16px 12px; font-weight: 500; color: #111827;">
                                 ₹ 1,499.00

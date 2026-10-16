@@ -95,7 +95,7 @@
                     <div>
                         <label class="sf-form-label">Full Name <span class="text-danger">*</span></label>
                         <asp:TextBox ID="txtFullName" runat="server" CssClass="sf-input" Text="Khush Dobariya"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="rfvFullName" runat="server" ControlToValidate="txtFullName" ErrorMessage="Full name is required." CssClass="validation-error" Display="Dynamic"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="rfvFullName" runat="server" ControlToValidate="txtFullName" ErrorMessage="Full name is required." EnableClientScript="false" CssClass="validation-error" Display="Dynamic"></asp:RequiredFieldValidator>
                     </div>
                     <div>
                         <label class="sf-form-label">Email Address</label>
@@ -115,8 +115,8 @@
                             </span>
                             <asp:TextBox ID="txtPhone" runat="server" CssClass="sf-input" Text="98765 43210" style="border-radius: 0 6px 6px 0;"></asp:TextBox>
                         </div>
-                        <asp:RequiredFieldValidator ID="rfvPhone" runat="server" ControlToValidate="txtPhone" ErrorMessage="Phone is required." CssClass="validation-error" Display="Dynamic"></asp:RequiredFieldValidator>
-                        <asp:RegularExpressionValidator ID="revPhone" runat="server" ControlToValidate="txtPhone" ValidationExpression="^(\+?[0-9\s\-\(\)]{8,16})$" ErrorMessage="Valid phone required." CssClass="validation-error" Display="Dynamic"></asp:RegularExpressionValidator>
+                        <asp:RequiredFieldValidator ID="rfvPhone" runat="server" ControlToValidate="txtPhone" ErrorMessage="Phone is required." EnableClientScript="false" CssClass="validation-error" Display="Dynamic"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="revPhone" runat="server" ControlToValidate="txtPhone" ValidationExpression="^(\+?[0-9\s\-\(\)]{8,16})$" ErrorMessage="Valid phone required." EnableClientScript="false" CssClass="validation-error" Display="Dynamic"></asp:RegularExpressionValidator>
                     </div>
                     <div>
                         <label class="sf-form-label">Timezone</label>

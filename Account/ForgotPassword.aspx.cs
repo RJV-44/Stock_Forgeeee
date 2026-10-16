@@ -15,6 +15,14 @@ namespace Stock_Forgeeee.Account
 
         protected void btnSendResetLink_Click(object sender, EventArgs e)
         {
+            if (!Page.IsValid)
+            {
+                pnlAlert.Visible = true;
+                pnlAlert.CssClass = "auth-alert-box auth-alert-danger";
+                lblAlertMessage.Text = "Please enter a valid email address.";
+                return;
+            }
+
             string email = txtEmail != null ? txtEmail.Text.Trim() : string.Empty;
 
             // Controller validation
