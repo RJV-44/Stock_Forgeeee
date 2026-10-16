@@ -91,8 +91,8 @@
         <div class="sf-kpi-card" style="background: #ffffff; border: 1px solid #E5E7EB; border-radius: 10px; padding: 18px 20px;">
             <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                 <div style="font-size: 12.5px; font-weight: 500; color: #4B5563;">Average Sale</div>
-                <div style="width: 30px; height: 30px; border-radius: 6px; background: #F3F4F6; color: #4B5563; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700;">
-                    &Sigma;
+                <div style="width: 30px; height: 30px; border-radius: 6px; background: #F3F4F6; color: #4B5563; display: flex; align-items: center; justify-content: center; font-size: 15px;">
+                    <i class="bi bi-calculator"></i>
                 </div>
             </div>
             <div style="font-size: 24px; font-weight: 700; color: #111827; margin-top: 10px;">₹10,366.94</div>

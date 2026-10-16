@@ -97,7 +97,7 @@
                 <!-- Section 3: Reason & Notes -->
                 <div>
                     <div style="font-size: 13.5px; font-weight: 700; color: #111827; margin-bottom: 12px;">
-                        3. Reason &amp; Notes
+                        3. Reason & Notes
                     </div>
 
                     <div style="margin-bottom: 16px;">

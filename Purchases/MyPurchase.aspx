@@ -88,7 +88,7 @@
                 <option>All Suppliers</option>
                 <option>Shree Hardware Supplies</option>
                 <option>Patel Industrial Hardware</option>
-                <option>Reliable Tools &amp; Hardware</option>
+                <option>Reliable Tools & Hardware</option>
             </select>
             <select class="sf-select">
                 <option>All Statuses</option>
@@ -163,7 +163,7 @@
                                 PO-2026-00122
                             </a>
                         </td>
-                        <td>Reliable Tools &amp; Hardware</td>
+                        <td>Reliable Tools & Hardware</td>
                         <td>13 Aug 2026</td>
                         <td>20 Items</td>
                         <td><strong>₹75,200</strong></td>

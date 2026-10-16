@@ -53,7 +53,7 @@
                 <asp:DropDownList ID="ddlSupplier" runat="server" style="width: 100%; height: 36px; padding: 6px 28px 6px 12px; border: 1px solid #D1D5DB; border-radius: 6px; font-size: 13px; color: #111827; background: #FFFFFF; box-sizing: border-box; outline: none; appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;utf8,<svg fill=\'%236B7280\' height=\'14\' viewBox=\'0 0 24 24\' width=\'14\' xmlns=\'http://www.w3.org/2000/svg\'><path d=\'M7 10l5 5 5-5z\'/></svg>'); background-repeat: no-repeat; background-position: right 8px center;">
                     <asp:ListItem Text="ABC Hardware Suppliers" Value="ABC Hardware Suppliers" Selected="True"></asp:ListItem>
                     <asp:ListItem Text="Patel Industrial Hardware" Value="Patel Industrial Hardware"></asp:ListItem>
-                    <asp:ListItem Text="Reliable Tools &amp; Hardware" Value="Reliable Tools &amp; Hardware"></asp:ListItem>
+                    <asp:ListItem Text="Reliable Tools & Hardware" Value="Reliable Tools & Hardware"></asp:ListItem>
                 </asp:DropDownList>
             </div>
             <div>

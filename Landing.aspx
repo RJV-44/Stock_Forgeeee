@@ -1404,7 +1404,7 @@
                             <div class="about-stat-label">Hardware Stores</div>
                         </div>
                         <div class="about-stat-item">
-                            <div class="about-stat-num" style="color: #7C3AED;">&lt; 1 sec</div>
+                            <div class="about-stat-num" style="color: #7C3AED;">< 1 sec</div>
                             <div class="about-stat-label">Barcode Lookup</div>
                         </div>
                     </div>
@@ -1496,7 +1496,7 @@
                 </div>
 
                 <div class="footer-copy">
-                    &copy; <%= DateTime.Now.Year %> StockForge. All rights reserved.
+                    © <%= DateTime.Now.Year %> StockForge. All rights reserved.
                 </div>
             </div>
         </footer>

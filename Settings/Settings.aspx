@@ -80,7 +80,7 @@
     <!-- Card 2: Localization & Formats -->
     <div class="sf-card" style="margin-bottom: 30px; padding: 24px;">
         <div class="sf-group-title">
-            <i class="bi bi-globe"></i> Localization &amp; Formats
+            <i class="bi bi-globe"></i> Localization & Formats
         </div>
 
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 16px;">

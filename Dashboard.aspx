@@ -179,7 +179,7 @@
         <div style="background: #ffffff; border: 1px solid #E5E7EB; border-radius: 10px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.02);">
             <div style="padding: 16px 20px; border-bottom: 1px solid #E5E7EB; display: flex; justify-content: space-between; align-items: center;">
                 <div style="font-size: 14px; font-weight: 700; color: #111827;">Low Stock Products</div>
-                <a href="<%= ResolveUrl("~/Inventory/StockOverview.aspx") %>" style="font-size: 12.5px; color: #006C44; font-weight: 600; text-decoration: none;">View All &rarr;</a>
+                <a href="<%= ResolveUrl("~/Inventory/StockOverview.aspx") %>" style="font-size: 12.5px; color: #006C44; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">View All <i class="bi bi-arrow-right"></i></a>
             </div>
 
             <div style="overflow-x: auto;">

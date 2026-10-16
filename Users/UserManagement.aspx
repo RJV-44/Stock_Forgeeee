@@ -16,7 +16,7 @@
         </div>
         <div class="sf-header-actions">
             <a href="<%= ResolveUrl("~/Users/RolesPermissions.aspx") %>" class="btn-outline-action">
-                <i class="bi bi-shield-check"></i> Roles &amp; Permissions
+                <i class="bi bi-shield-check"></i> Roles & Permissions
             </a>
             <a href="<%= ResolveUrl("~/Users/AddUser.aspx") %>" class="btn-primary-action">
                 <i class="bi bi-plus-lg"></i> Add User

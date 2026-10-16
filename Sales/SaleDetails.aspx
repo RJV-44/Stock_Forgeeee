@@ -155,7 +155,7 @@
                         NOTES
                     </div>
                     <div style="background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 6px; padding: 10px 12px; font-size: 12.5px; color: #4B5563; line-height: 1.5; font-style: italic;">
-                        &ldquo;Customer requested expedited billing. Verified UPI payment reference.&rdquo;
+                        "Customer requested expedited billing. Verified UPI payment reference."
                     </div>
                 </div>
 

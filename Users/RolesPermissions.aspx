@@ -6,13 +6,13 @@
         <div style="display: flex; align-items: center; gap: 6px; font-size: 12px; color: #6B7280; margin-bottom: 10px;">
             <a href="<%= ResolveUrl("~/Users/UserManagement.aspx") %>" style="color: #6B7280; text-decoration: none;" onmouseover="this.style.color='#111827'" onmouseout="this.style.color='#6B7280'">Users</a>
             <i class="bi bi-chevron-right" style="font-size: 10px; color: #9CA3AF;"></i>
-            <span style="color: #111827; font-weight: 500;">Roles &amp; Permissions</span>
+            <span style="color: #111827; font-weight: 500;">Roles & Permissions</span>
         </div>
 
         <!-- Page Header (Matching Figma Screenshot 2) -->
         <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;">
             <div>
-                <h1 style="font-size: 24px; font-weight: 700; color: #111827; margin: 0 0 4px 0; letter-spacing: -0.02em;">Roles &amp; Permissions</h1>
+                <h1 style="font-size: 24px; font-weight: 700; color: #111827; margin: 0 0 4px 0; letter-spacing: -0.02em;">Roles & Permissions</h1>
                 <div style="font-size: 13.5px; color: #6B7280;">Manage access levels for StockForge user roles.</div>
             </div>
             <div>
@@ -65,9 +65,9 @@
                         <td style="padding: 14px 20px; text-align: center;">
                             <span class="chk-box active" onclick="toggleChk(this)"><i class="bi bi-check-lg"></i></span>
                         </td>
-                        <td style="padding: 14px 20px; text-align: center; color: #9CA3AF;">&mdash;</td>
-                        <td style="padding: 14px 20px; text-align: center; color: #9CA3AF;">&mdash;</td>
-                        <td style="padding: 14px 20px; text-align: center; color: #9CA3AF;">&mdash;</td>
+                        <td style="padding: 14px 20px; text-align: center; color: #9CA3AF;">—</td>
+                        <td style="padding: 14px 20px; text-align: center; color: #9CA3AF;">—</td>
+                        <td style="padding: 14px 20px; text-align: center; color: #9CA3AF;">—</td>
                     </tr>
 
                     <!-- Row 2: Products -->
@@ -133,7 +133,7 @@
                         <td style="padding: 14px 20px; text-align: center;">
                             <span class="chk-box active" onclick="toggleChk(this)"><i class="bi bi-check-lg"></i></span>
                         </td>
-                        <td style="padding: 14px 20px; text-align: center; color: #9CA3AF;">&mdash;</td>
+                        <td style="padding: 14px 20px; text-align: center; color: #9CA3AF;">—</td>
                     </tr>
 
                     <!-- Row 6: Sales -->
@@ -176,9 +176,9 @@
                         <td style="padding: 14px 20px; text-align: center;">
                             <span class="chk-box active" onclick="toggleChk(this)"><i class="bi bi-check-lg"></i></span>
                         </td>
-                        <td style="padding: 14px 20px; text-align: center; color: #9CA3AF;">&mdash;</td>
-                        <td style="padding: 14px 20px; text-align: center; color: #9CA3AF;">&mdash;</td>
-                        <td style="padding: 14px 20px; text-align: center; color: #9CA3AF;">&mdash;</td>
+                        <td style="padding: 14px 20px; text-align: center; color: #9CA3AF;">—</td>
+                        <td style="padding: 14px 20px; text-align: center; color: #9CA3AF;">—</td>
+                        <td style="padding: 14px 20px; text-align: center; color: #9CA3AF;">—</td>
                     </tr>
 
                     <!-- Row 9: Users -->
@@ -207,8 +207,8 @@
                         <td style="padding: 14px 20px; text-align: center;">
                             <span class="chk-box active" onclick="toggleChk(this)"><i class="bi bi-check-lg"></i></span>
                         </td>
-                        <td style="padding: 14px 20px; text-align: center; color: #9CA3AF;">&mdash;</td>
-                        <td style="padding: 14px 20px; text-align: center; color: #9CA3AF;">&mdash;</td>
+                        <td style="padding: 14px 20px; text-align: center; color: #9CA3AF;">—</td>
+                        <td style="padding: 14px 20px; text-align: center; color: #9CA3AF;">—</td>
                     </tr>
                 </tbody>
             </table>

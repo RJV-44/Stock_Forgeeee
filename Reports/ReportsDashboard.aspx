@@ -83,7 +83,7 @@
             </div>
             <div>
                 <a href="<%= ResolveUrl("~/Reports/SalesReport.aspx") %>" style="color: #006C44; font-size: 13px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
-                    View Report &rarr;
+                    View Report <i class="bi bi-arrow-right"></i>
                 </a>
             </div>
         </div>
@@ -108,7 +108,7 @@
             </div>
             <div>
                 <a href="<%= ResolveUrl("~/Reports/PurchaseReport.aspx") %>" style="color: #006C44; font-size: 13px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
-                    View Report &rarr;
+                    View Report <i class="bi bi-arrow-right"></i>
                 </a>
             </div>
         </div>
@@ -152,7 +152,7 @@
             </div>
             <div>
                 <a href="<%= ResolveUrl("~/Reports/InventoryReport.aspx") %>" style="color: #006C44; font-size: 13px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
-                    View Report &rarr;
+                    View Report <i class="bi bi-arrow-right"></i>
                 </a>
             </div>
         </div>
@@ -177,7 +177,7 @@
             </div>
             <div>
                 <a href="<%= ResolveUrl("~/Reports/PurchaseReport.aspx") %>" style="color: #006C44; font-size: 13px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
-                    View Report &rarr;
+                    View Report <i class="bi bi-arrow-right"></i>
                 </a>
             </div>
         </div>

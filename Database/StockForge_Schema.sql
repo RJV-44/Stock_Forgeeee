@@ -7,6 +7,26 @@
 -- ============================================================================
 
 -- ----------------------------------------------------------------------------
+-- 0. DATABASE CREATION & CONTEXT SWITCH
+-- ----------------------------------------------------------------------------
+IF DB_ID(N'StockForgeDatabse') IS NULL AND DB_NAME() NOT LIKE N'%StockForge%'
+BEGIN
+    CREATE DATABASE [StockForgeDatabse];
+END
+GO
+
+
+IF DB_ID(N'StockForgeDatabse') IS NOT NULL
+BEGIN
+
+dag
+
+
+    USE [StockForgeDatabse];
+END
+GO
+
+-- ----------------------------------------------------------------------------
 -- 1. DROP EXISTING CONSTRAINTS & TABLES (Clean Slate)
 -- ----------------------------------------------------------------------------
 
